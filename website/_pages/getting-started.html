@@ -1,0 +1,40 @@
+---
+layout: page
+permalink: /getting-started/
+title: Getting Started
+---
+
+<h2><span class="section-bar"></span>Overview</h2>
+<p>In this page, you can find information on how to download the data and make a submission to the leaderboard.</p>
+
+<h2><span class="section-bar"></span>Download data</h2>
+<p>You can download the data in json format from the <a href="/crow/tasks">Tasks</a> page for each task. Each data example comes with the following fields:</p>
+<ul>
+    <li><b>task</b>: Task identifier. One of <i>dialogue, summarization, intent, safety, stance, mt_zh_en, mt_en_de, mt_en_ru, mt_en_fr.</i></li>
+    <li><b>example_id</b>: Unique ID of the example. This is the unique ID that identifies a <i>(context, target)</i> pair across all examples for a task.</li>
+    <li><b>{context_field}</b>: This field contains the context data and varies across tasks. For example, in Dialogue task, this is the <i>dialogue</i> given as a list of turns.</li>
+    <li><b>{target_field}</b>: This field contains the target data and varies across tasks.  For example, in Dialogue task, this is the response (i.e. final turn) to the given dialogue.</li>
+</ul>
+
+<h2><span class="section-bar"></span>Make a leaderboard submission</h2>
+In order to make a submission to our leaderboard, please follow the steps below:
+<ol>
+    <li>Download the data.</li>
+    <li>
+        Prepare a predictions file by adding <i>prediction</i> field (with values 0 or 1) to each example in the downloaded data. While each example has multiple fields as described above, the only fields we require for each submission in addition to <i>prediction</i> field are <i>task and</i> and <i>example_id</i> fields which are already included in our data.
+        Here is the prediction value mapping for each task:
+        <ul>
+            <li><b>Dialogue</b>: 1=[plausible response], 0=[implausible response]</li>
+            <li><b>Dialogue Summarization</b>: 1=[correct summary], 0=[incorrect summary]</li>
+            <li><b>Intent Detection</b>: 1=[true intent], 0=[false summary]</li>
+            <li><b>Safety Detection</b>: 1=[safe action], 0=[unsafe action]</li>
+            <li><b>Stance Classification</b>: 1=[supporting argument], 0=[counter argument]</li>
+            <li><b>Machine Translation</b>: 1=[correct translation], 0=[incorrect translation]</li>
+        </ul>
+        Please, use the python script we have prepared to check if your prediction files are valid for submission. You can find the script <a href="https://github.com/mismayil/crow/blob/main/evaluation/check_submission.py" target="_blank">here</a>.
+    </li>
+    <li>Go to <a href="https://forms.gle/Eb4Dr4PPGNGygTeJ8">Submit</a> page which will redirect you to a Google Form where you can specify details of your submission (e.g. contributors, model details etc.) and upload the prediction file(s). You can submit only for one model and up to 10 prediction files at a time.</li>
+    <li>We will quickly process your submission and publish the results on the leaderboard.</li>
+</ol>
+
+<i><b>Note:</b> Each user is limited to 5 submissions per week and a total of 10 submissions per month.</i>

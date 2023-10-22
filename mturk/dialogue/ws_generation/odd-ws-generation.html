@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WS Generation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+  <!-- SEMANTIC UI CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+  <!-- HITPUB CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style id="hitpub_css">
+    body {
+      font-family: "Open Sans", "Roboto", sans-serif;
+      line-height: 1.5;
+      font-size: 1.1rem;
+    }
+
+    li {
+      margin: 0.6em;
+    }
+
+    .mt-1 {
+      margin-top: 1rem!important;
+    }
+
+    .mt-2 {
+      margin-top: 2rem!important;
+    }
+
+    .mb-1 {
+      margin-bottom: 1rem!important;
+    }
+
+    .mb-2 {
+      margin-bottom: 2rem!important;
+    }
+
+    .m-auto {
+      margin: auto;
+    }
+    
+    .ui.form {
+      font-size: 1.1rem;
+    }
+
+    .concept_a {
+      color: #0072B2;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    .concept_b {
+      color: #D55E00;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .concept_c {
+      border: 1px solid black;
+      background-color: #fff8db;
+      border-radius: 5px;
+      padding: 1px 3px;
+      font-weight: bold;
+    }
+
+    .concept_d {
+      border: 1px solid black;
+      background-color: #FF9800;
+      border-radius: 5px;
+      padding: 1px 3px;
+      font-weight: bold;
+    }
+    
+    .kg-relation {
+      border-radius: 5px;
+      font-family: Inconsolata;
+      font-size: 1.1rem;
+      background-color: #FF9800;
+      padding: 5px 5px;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .kg-head, .kg-tail {
+      border-radius: 5px;
+      font-family: Inconsolata;
+      font-size: 1.1rem;
+      background-color: #FFF3E0;
+      padding: 3px 5px;
+    }
+
+    .annotation-title {
+      text-align: center;
+      color: #06486F;
+      padding-top: 3rem;
+    }
+
+    .annotation-subtitle {
+      text-align: center;
+      color: #D55E00
+    }
+    
+    .ui.message .header {
+      font-size: 1.2rem;
+    }
+
+    .ui.message .description {
+      font-family: Inconsolata;
+      font-size: 1.2rem;
+      color: #06486F;
+    }
+  
+    .highlight {
+      background-color: yellow;
+    }
+    
+    .text-detail {
+      color: grey;
+    }
+  
+    .add-btn-container {
+      text-align: end;
+    }
+
+    .ui.styled.accordion .title {
+      padding: 2rem 1rem;
+      font-size: 1.5rem;
+      background-color: cornflowerblue;
+      color: white;
+    }
+
+    .ui.accordion .content {
+      background-color:#fbfbfb;
+    }
+
+    .ui.message .subheader {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+<!-- HIT START -->
+<div id="hit" class="ui container">
+
+  <div class="ui grid">
+    <div class="row">
+      <div class="column">
+        <h1 class="annotation-title">
+          <strong>Contextually Implausible Dialogue Turn Generation</strong>
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+
+        <!-- ACCORDION START -->
+        <div class="ui styled fluid accordion">
+
+          <!-- POLICY START -->
+          <div class="title">
+            <strong>Acceptance and Privacy Policies</strong> (click to expand/collapse)
+          </div>
+          <div class="content">
+            <h5>Acceptance Policy</h5>
+            <p>There is no obligation to participate in the task. We will not reject a job unless we observe the evidence of malicious behavior, such as random clicks or very short session times.</p>
+
+            <h5>Privacy Policy</h5>
+            <p>We may incidentally collect some personal data for the purpose of our research project, according to art. 36c and seq. of the ETH Act. Our target is to process and publish only anonymized data. Raw data will be kept confidential and secure. Only anonymized or aggregated personal data may be shared with other research partners.</p>
+            <p>Having established this, however, we should not collect any personal data in this task.</p>
+            <p>We are using the services of Amazon Mechanical Turk, Inc. and its affiliates, c/o Amazon.com, Inc., P.O. Box 81226, Seattle, WA 98108-1226, USA. Hence, the privacy policy of Amazon will apply for the processing of your personal information by Amazon.</p>
+            <p>If you wish to raise a complaint on how we have handled your personal data, or if you want to know if we hold personal data about you, you can contact our Data Protection Officer (dpo@epfl.ch) who will investigate the matter.</p>
+          </div>
+          <!-- POLICY END -->
+
+          <!-- INSTRUCTIONS START -->
+          <div class="active title">
+            <strong>Instructions</strong> (click to expand/collapse)
+          </div>
+          <div class="active content">
+            <p style="font-size: 12px; margin:0 0 0.5em 0;"><em>(WARNING: This HIT may contain adult content. Worker discretion is advised.)</em></p>
+
+            <p>Thanks for participating in this HIT!</p>
+
+            <div class="ui divider"></div>
+            <p>Given a <strong>short dialogue</strong> between two or more people, a <strong>plausible final turn</strong> of the dialogue and a <strong>commonsense knowledge</strong> connecting the dialogue and the final turn, you are asked to generate a <strong>contextually implausible final turn</strong> that satisfies the following conditions:
+              <ol>
+                <li><strong class="concept_a">minimally</strong> differs from the original (plausible) final turn</li>
+                <li><strong class="concept_b">violates</strong> the given commonsense knowledge</li>
+                <li>is <strong class="concept_b">contextually implausible</strong> final turn for the dialogue (something that wouldn't have followed the given dialogue, however, as a sentence on its own could be plausible!)</li>
+                <li>is still <strong class="concept_a">relevant</strong> for the given dialogue (something that is related to topics mentioned in the dialogue)</li>
+              </ol>
+            </p>
+            <p><strong>Commonsense knowledge</strong> consists of <span class="concept_a">implicit</span> and <span class="concept_b">commonly known</span> facts about the everyday life such as <i>"Lemons are sour"</i> or <i>"If someone is hungry, then they would like to eat."</i>. It is a type of knowledge that nearly <strong>everyone knows</strong> intuitively and considers obvious, but is typically <span class="concept_a">implicit</span> which means it is rarely stated explicitly in text. For example, encyclopedic facts such as <i>"Ottawa is the capital of Canada"</i> are <span style="color: red">not</span> considered commonsense knowledge because this information can be explicitly found online (e.g. Wikipedia) and not necessarily everyone knows it.</p>
+            <p>An example of a dialogue could be:</p>
+            <div class="ui yellow message">
+              <div class="header">Dialogue</div><br>
+              <div class="description">
+                <strong>1. #Person1#:</strong> Hi, Sam, can you help me this weekend? I need help moving a new sofa into my house.<br>
+                <strong>2. #Person2#:</strong> Hey, Jennifer, no problem. I'm free this weekend and my truck is great for moving stuff. Where did you get the sofa?<br>
+                <strong>3. #Person1#:</strong> My friend Jack is moving next week, but his new apartment is very small. So <strong class="highlight">he is giving me his sofa.</strong><br>
+              </div>
+            </div>
+            <p>There are 3 turns in this dialogue.</p>
+            <p>An example of a turn that could follow this dialogue:</p>
+            <div class="ui yellow message">
+              <div class="header">Plausible Final Turn</div><br>
+              <div class="description">
+                <strong>4. #Person2#:</strong> It's good that <strong class="highlight">your place is large enough to fit the sofa</strong>. Where will you put it?
+              </div>
+            </div>
+            <p>An example of a commonsense knowledge connecting this dialogue and the final turn could be:</p>
+            <span class="kg-relation"><span class="kg-head">he is giving me his sofa.</span>&nbsp;HasPrerequisite&nbsp;<span class="kg-tail">your place is large enough to fit the sofa</span></span><br><br>
+            <p>For example, in the above dialogue, #Person1# (Jennifer) needs to move a new sofa into his apartment and she got the sofa from her friend Jack whose new apartment didn't fit the new sofa. So, our commonsense knowledge allows us to infer that the #Person1#'s place is large enough to fit the sofa so she is getting it. Hence, we can connect the highlighted phrases <strong class="highlight">he is giving me his sofa</strong> and <strong class="highlight">your place is large enough to fit the sofa</strong> with an implicit relationship that the event in the first phrase <span class="concept_b">has the prerequisite</span> that the event in the second phrase happens (i.e. In order to get the sofa, your place should be large enough to fit it)</p>
+            <p>Your task is to <strong class="concept_a">minimally</strong> modify the final turn (i.e. change only few necessary words) so that the new turn <strong class="concept_b">violates</strong> the given commonsense knowledge and is <strong class="concept_b">contextually implausible</strong> and therefore <strong style="color: red">could not possibly follow</strong> this dialogue.</p>
+            <p>For example, in the above example, the given commonsense knowledge is about the fact that you need to have your place large enough to fit a sofa so that you can get a sofa, so we can simply modify the adjective <i>"large"</i> to <i>"small"</i> and we will get the following turn that <strong class="concept_b">violates</strong> the given commonsense knowledge and hence, could not reasonably follow this dialogue.</p>
+            <div class="ui yellow message">
+              <div class="header">Contextually Implausible Final Turn</div><br>
+              <div class="description">
+                <strong>4. #Person2#:</strong> It's good that <strong class="highlight">your place is <span class="concept_a">small</span> enough to fit the sofa</strong>. Where will you put it?
+              </div>
+            </div>
+            <p><h3><strong>Minimal Change Rules</strong></h3></p>
+            <p>In this task, we are essentially looking for a final turn that is <strong>deceptively close</strong> (hard to differentiate from) to the original one, but nonetheless is <strong class="concept_b">implausible</strong> and <strong class="concept_b">violates</strong> our everyday knowledge. So, please be creative, but also follow the rules below to achieve this goal:</p>
+            <ul>
+              <li>You are allowed to change <strong>up to 5 words</strong> in the final turn. Note that you can also alternatively <strong>swap</strong> the existing words in place instead of replacing them as long as the resulting turn satisfies the conditions above.</li>
+              <li>You should make sure that the implausible final turn is still <strong class="concept_a">relevant</strong> to the given dialogue. So, you are not allowed to <strong>arbitrarily</strong> change the words such that it is completely out of context. For example, in the above example, if you replaced the <i>"sofa"</i> with <i>"rocket"</i>, this can be said to satisfy the conditions, but it is now out of context because <i>"rocket"</i> is nowhere mentioned in the dialogue which makes the resulting turn <strong>easy</strong> to differentiate from the original one. So, you should try to replace words with related words (e.g. antonym etc.) or possibly other words from the dialogue that satisfies the conditions above.</li>
+              <li>You should <strong style="color: red">avoid</strong> simply negating the word in the turn unless that is the only way to achieve the goal. The goal in this task is <strong style="color: red">not</strong> to achieve the minimal difference, but to produce semantically very close turn that is however, implausible. So, if you can creatively change 2 or 3 dependent words to achieve this, then go for it rather than changing one word such as adding/removing <i>"not"</i>.</li>
+              <li>Your change should <strong>directly target</strong> the given commonsense knowledge such that, semantically, the resulting implausible final turn differs from the original one with respect to this knowledge.</li>
+            </ul>
+            <p><h3><strong>Important Notes</strong></h3></p>
+            <ol>
+              <li>
+                <strong>Please, note that given commonsense knowledge is typically contextual and violating it does not automatically make the turn implausible.</strong> So, simply replacing words/phrases with their antonyms or negating sentences, do <strong style="color: red">NOT</strong> necessarily make the turn <strong class="concept_b">implausible.</strong> For a turn to be clearly implausible, it should <strong class="concept_b">violate</strong> some commonsense knowledge about the full context of the dialogue. For instance, consider the following example:
+                <div class="ui yellow message">
+                  <div class="header">Dialogue</div><br>
+                  <div class="description">
+                    <strong>1. #Person1#:</strong> This bottle looks really good! What's the price?<br>
+                    <strong>2. #Person2#:</strong> <strong class="highlight">Ninety dollars.</strong><br>
+                  </div>
+                </div>
+                <div class="ui yellow message">
+                  <div class="header">Plausible Final Turn</div><br>
+                  <div class="description">
+                    <strong>3. #Person1#:</strong> Oh, that is <strong class="highlight">quite expensive</strong>.
+                  </div>
+                </div>
+                <p><strong>Commonsense Knowledge</strong>: <span class="kg-relation"><span class="kg-head">Ninety dollars.</span>&nbsp;xReact&nbsp;<span class="kg-tail">quite expensive</span></span><br><br></p>
+                <p>The immediate answer that comes to mind is to replace the word "expensive" with its antonym "cheap" or simply negate the sentence. Both cases do indeed <strong class="concept_b">violate</strong> the given commonsense knowledge. However, both of these sentences are quite <strong class="concept_a">plausible</strong> in the context of this dialogue. We do not have enough information on #Person1#, so they might as well be rich enough that $90 would be "cheap" for them. So, we should instead replace the sentence in a different way that makes it clearly <strong class="concept_b">implausible</strong>.</p>
+                <p>For example, we can play with the <strong>sentiment</strong> of the final turn along with replacing the word "expensive" to create a <strong>contradiction</strong>. Consider the following final turn:</p>
+                <div class="ui yellow message">
+                  <div class="header">Contextually Implausible Final Turn</div><br>
+                  <div class="description">
+                    <strong>3. #Person1#:</strong> Oh <strong class="highlight">no</strong>, that is <strong class="highlight">quite cheap</strong>.
+                  </div>
+                </div>
+                <p>Addition of "no" after "oh", now makes it clearly implausible, because our commonsense tells us that typically people would not be disappointed by a bottle that is cheap in addition to the fact that $90 is indeed high for a bottle.</p>
+              </li>
+              <li>
+                <strong>Please, avoid turns that are already implausible without considering the dialogue!</strong> We are looking for turns that are <strong class="concept_b">implausible</strong> only within the context of the given dialogue. Consider the following example:
+                <div class="ui yellow message">
+                  <div class="header">Dialogue</div><br>
+                  <div class="description">
+                    <strong>1. #Person1#:</strong> Where are you living now?<br>
+                    <strong>2. #Person2#:</strong> Out in the suburbs. It's a long trip to work every day.<br>
+                    <strong>3. #Person1#:</strong> How are you going to <strong class="highlight">find an apartment</strong>?<br>
+                  </div>
+                </div>
+                <div class="ui yellow message">
+                  <div class="header">Plausible Final Turn</div><br>
+                  <div class="description">
+                    <strong>4. #Person2#:</strong> I'm going to <strong class="highlight">buy a newspaper and check the classified ads</strong>.
+                  </div>
+                </div>
+                <p><strong>Commonsense Knowledge</strong>: <span class="kg-relation"><span class="kg-head">buy a newspaper and check the classified ads</span>&nbsp;MannerOf&nbsp;<span class="kg-tail">find apartment</span></span><br><br></p>
+                <p>One possible implausible turn could be the following (<strong style="color: red">but should be avoided</strong>):</p>
+                <div class="ui yellow message">
+                  <div class="header">Implausible Final Turn (independent of the dialogue!)</div><br>
+                  <div class="description">
+                    <strong>4. #Person2#:</strong> I'm going to buy a time machine and travel to the future to find an apartment.</strong>.
+                  </div>
+                </div>
+                <p>This final turn is clearly implausible and violates the given knowledge, however, it is <strong class="concept_b">even implausible</strong> when <strong>not considering the dialogue</strong> which makes it very <strong>easy</strong> to differentiate from the given plausible final turn. In this project, we are looking for final turns that are only contextually implausible. <strong style="color: red">Please, avoid such implausible turns!</strong></p>
+              </li>
+            </ol>
+            <h3>Knowledge Relations</h3>
+            <p>Below we list the available relations with a brief description and an example. Each relationship is represented as <span class="kg-relation"><span class="kg-head">A</span>&nbsp;Relation&nbsp;<span class="kg-tail">B</span></span> where <span class="kg-head">A</span> and <span class="kg-head">B</span> refer to phrases from the context.</p>
+            <strong>Attributional Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">HasProperty</span> - A has B as a property; A can be described as B. e.g. <span class="kg-relation"><span class="kg-head">trial</span>&nbsp;HasProperty&nbsp;<span class="kg-tail">free of charge</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">CapableOf</span> - Something that A can typically do is B. e.g. <span class="kg-relation"><span class="kg-head">knife</span>&nbsp;CapableOf&nbsp;<span class="kg-tail">cut</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasA</span> - B belongs to A, either as an inherent part or due to a social construct of possession. e.g. <span class="kg-relation"><span class="kg-head">bird</span>&nbsp;HasA&nbsp;<span class="kg-tail">wing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasSubEvent</span> - A and B are events, and B happens as a subevent of A. e.g. <span class="kg-relation"><span class="kg-head">eating</span>&nbsp;HasSubEvent&nbsp;<span class="kg-tail">chewing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsA</span> - A is a subtype or a specific instance of B; every A is a B. e.g. <span class="kg-relation"><span class="kg-head">car</span>&nbsp;IsA&nbsp;<span class="kg-tail">vehicle</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">MannerOf</span> - A is a specific way to do B. Similar to "Is A", but for verbs. e.g. <span class="kg-relation"><span class="kg-head">auction</span>&nbsp;MannerOf&nbsp;<span class="kg-tail">sale</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DependsOn</span> - A depends on B. e.g. <span class="kg-relation"><span class="kg-head">postage</span>&nbsp;DependsOn&nbsp;<span class="kg-tail">weight of the box</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">CreatedBy</span> - A is created by B. e.g. <span class="kg-relation"><span class="kg-head">space rockets</span>&nbsp;CreatedBy&nbsp;<span class="kg-tail">scientists and engineers</span></span>
+              </li>
+            </ul>
+            <strong>Physical/Spatial Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">UsedFor</span> - A is used for B. The purpose of A is B. e.g. <span class="kg-relation"><span class="kg-head">hammer</span>&nbsp;UsedFor&nbsp;<span class="kg-tail">put nails in the wall</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">PartOf</span> - A is part of B. e.g. <span class="kg-relation"><span class="kg-head">word</span>&nbsp;PartOf&nbsp;<span class="kg-tail">sentence</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">MadeOf</span> - A is made up of B. e.g. <span class="kg-relation"><span class="kg-head">crowd</span>&nbsp;MadeOf&nbsp;<span class="kg-tail">people</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">AtLocation</span> - A happens at location B, or B is a typical location for A. e.g. <span class="kg-relation"><span class="kg-head">try clothes</span>&nbsp;AtLocation&nbsp;<span class="kg-tail">changing rooms</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">LocatedNear</span> - A and B are typically found near each other. e.g. <span class="kg-relation"><span class="kg-head">salt shaker</span>&nbsp;LocatedNear&nbsp;<span class="kg-tail">pepper shaker</span></span>
+              </li>
+            </ul>
+            <strong>Temporal Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">IsAfter</span> - A happens after B. e.g. <span class="kg-relation"><span class="kg-head">PersonX lands on the ground</span>&nbsp;IsAfter&nbsp;<span class="kg-tail">PersonX jumps off of the swing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsBefore</span> - A happense before B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the bank</span>&nbsp;IsBefore&nbsp;<span class="kg-tail">PersonX asks for a car loan</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HappensIn</span> - A happens during B. e.g. <span class="kg-relation"><span class="kg-head">gift exchange</span>&nbsp;HappensIn&nbsp;<span class="kg-tail">Christmas party</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsSimultaneous</span> - A and B happens at the same time. e.g. <span class="kg-relation"><span class="kg-head">dancing</span>&nbsp;IsSimultaneous&nbsp;<span class="kg-tail">music playing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasPrerequisite</span> - In order for A to happen, B needs to happen. e.g. <span class="kg-relation"><span class="kg-head">dream</span>&nbsp;HasPrerequisite&nbsp;<span class="kg-tail">sleep</span></span>
+              </li>
+            </ul>
+            <strong>Causal Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Causes</span> - A causes B to happen. e.g. <span class="kg-relation"><span class="kg-head">been late for my meetings</span>&nbsp;Causes&nbsp;<span class="kg-tail">lost some important clients</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">CausesDesire</span> - A makes someone want B. e.g. <span class="kg-relation"><span class="kg-head">having no food</div>&nbsp;CausesDesire&nbsp;<span class="kg-tail">buy food</div></div>
+              </li> -->
+              <li>
+                <span class="kg-relation">Implies</span> - A implies B. e.g. <span class="kg-relation"><span class="kg-head">wet cloth</span>&nbsp;Implies&nbsp;<span class="kg-tail">caught in rain</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HinderedBy</span> - A is less likely to happen because of B. e.g. <span class="kg-relation"><span class="kg-head">PersonX gives PersonY a ride</span>&nbsp;HinderedBy&nbsp;<span class="kg-tail">PersonX does not have a car</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">xReason</span> - A happens because of B. This is the same relation as <span class="kg-relation">Causes</div>, but in the opposite direction. e.g. <span class="kg-relation"><span class="kg-head">stay up late</span>&nbsp;xReason&nbsp;<span class="kg-tail">cannot sleep</span></span>
+              </li> -->
+            </ul>
+            <strong>Social Relations</strong>
+            <ul>
+              <!-- <li>
+                <span class="kg-relation">xAttr</span> - Person in event A has the attribute B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xAttr&nbsp;<span class="kg-tail">lawful</span></span>
+              </li> -->
+              <li>
+                <span class="kg-relation">xIntent</span> - Person in event A intends to do B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xIntent&nbsp;<span class="kg-tail">report crime</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xReact</span> - Person in event A reacts as in B. e.g. <span class="kg-relation"><span class="kg-head">PersonX makes a compliment</span>&nbsp;xReact&nbsp;<span class="kg-tail">feels good</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xNeed</span> - Person in event A needs to do B before doing A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xNeed&nbsp;<span class="kg-tail">dial 911</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xWant</span> - Person in event A wants to do B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xWant&nbsp;<span class="kg-tail">explain everything to police</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xEffect</span> - Event A will have the effect B on the Person in event A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xEffect&nbsp;<span class="kg-tail">starts to panic</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oReact</span> - Others will react to event A as B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;oReact&nbsp;<span class="kg-tail">feel worried</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oWant</span> - Others will want to do B for A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;oWant&nbsp;<span class="kg-tail">dispatch some officers</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oEffect</span> - Event A will have effect B on others. e.g. <span class="kg-relation"><span class="kg-head">PersonX makes a compliment to PersonY</span>&nbsp;oEffect&nbsp;<span class="kg-tail">PersonY will smile</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">Desires</span> - Person in A typically wants B. e.g. <span class="kg-relation"><span class="kg-head">animal</span>&nbsp;Desires&nbsp;<span class="kg-tail">reproduction</span></span>
+              </li> -->
+              <li>
+                <span class="kg-relation">MotivatedByGoal</span> - Someone does A because they want result B. e.g. <span class="kg-relation"><span class="kg-head">PersonX competes</span>&nbsp;MotivatedByGoal&nbsp;<span class="kg-tail">PersonX wins</span></span>
+              </li>
+            </ul>
+            <strong>Comparative Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Antonym</span> - A and B are opposites in some relevant way. e.g. <span class="kg-relation"><span class="kg-head">a lot</span>&nbsp;Antonym&nbsp;<span class="kg-tail">occasionally</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">Synonym</span> - A and B have very similar meanings. e.g. <span class="kg-relation"><span class="kg-head">blackout</span>&nbsp;Synonym&nbsp;<span class="kg-tail">lights are out</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">SimilarTo</span> - A is similar to B. e.g. <span class="kg-relation"><span class="kg-head">mixer</span>&nbsp;SimilarTo&nbsp;<span class="kg-tail">food processor</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DistinctFrom</span> - Something that is A is not B. e.g. <span class="kg-relation"><span class="kg-head">stay home</span>&nbsp;DistinctFrom&nbsp;<span class="kg-tail">go dancing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">RelatedTo</span> - A is related to B. e.g. <span class="kg-relation"><span class="kg-head">refrigerator</span>&nbsp;RelatedTo&nbsp;<span class="kg-tail">freezing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DefinedAs</span> - A is defined as B. e.g. <span class="kg-relation"><span class="kg-head">gym</span>&nbsp;DefinedAs&nbsp;<span class="kg-tail">fine exercise facility</span></span>
+              </li>
+            </ul>
+            <strong>Other Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Other</span> - A and B have some other relationship that is not listed here. In this case, please provide a description of the relationship in the <i>"Other relation"</i> field.
+              </li>
+            </ul>
+            <p>In addition, there are negative relations which are the opposite of the relations above. For example, <span class="kg-relation"><span class="kg-head">A</span>&nbsp;Not xWant&nbsp;<span class="kg-tail">B</span></span> means that the person in event A does NOT want to do B.</p>
+          </div>
+          <!-- INSTRUCTIONS END -->
+
+          <!-- DOS/DONTS START -->
+          <div class="title">
+            <strong>Dos and Don'ts</strong> (click to expand/collpase)
+          </div>
+          <div class="content">
+            <p><b>Important notes to consider:</b></p> 
+            <p style="font-size: 12px;"><em>Note, there are many other considerations, but these are the most important.</em></p>
+            <ul>
+              <li><strong>Make sure the implausible final turn is minimally different from the original turn!</strong> This typically means changing very few words or switching the words in place in the sentence. Please see <i>Examples</i> section for some potential examples of minimal perturbation.</li>
+              <li><strong>Make sure the implausible final turn <span class="concept_b">violates</span> the given commonsense knowledge.</strong> This means that your change should directly result in violation of the given commonsense knowledge for the given context (dialogue).</li>
+              <li><strong>Make sure the implausible final turn does <span style="color: red">NOT</span> really make sense with respect to given dialogue</strong> This means that your minimal change should produce a "turn" that is no longer a plausible follow-up for the dialogue. Note that violating commonsense knowledge does not automatically make the final turn implausible for the given dialogue.</li>
+              <li><strong>Please, <span style="color: red">avoid</span> simple negations unless that is the only way to violate the given commonsense knowledge</strong> Most of the time, simply negating the verb in the turn might do the job, but what we are looking are more nuanced changes. Please try to be <strong>creative</strong>, but at the same time produce something that is related to the context (dialogue) such that your implausible final turn <i>almost looks like</i> a correct turn, but it is not!</li>
+              <li><strong>Please, <span style="color: red">avoid</span> turns that are already implausible without considering the dialogue!</strong> (In general, its plausibility can not be determined, but within the given dialogue, it is implausible).</li>
+            </ul>
+          </div>
+          <!-- DOS/DONTS END -->
+
+          <!-- EXAMPLES START -->
+          <div class="title">
+            <strong>Examples</strong> (click to expand/collapse)
+          </div>
+          <div class="content">
+            <div class="ui grid">
+              
+              <div class="row">
+                <div class="column">
+                  <p>Here we list some examples with different <strong>minimal</strong> perturbations that you can use, but feel free to use any other <strong>creative</strong> ways if you can.</p>
+                  <h3>Example 1</h3>
+                  <h4>Perturbation: Replacing a single word with contextually relevant but non-sensical words.</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>1. #Person1#:</strong> A table for two, please.<br>
+                      <strong>2. #Person2#:</strong> All right. How about this one by the window?<br>
+                      <strong>3. #Person1#:</strong> Thank you. It's fine.<br>
+                      <strong>4. #Person2#:</strong> May I take your order now, sir?<br>
+                      <strong>5. #Person1#:</strong> What do you recommend? We'd like some of your <strong class="highlight">local specialities</strong>.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Plausible Final Turn</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Our restaurant is famous for its <strong class="highlight">seafood</strong>.<br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">seafood</span>&nbsp;HasProperty&nbsp;<span class="kg-tail">local specialities</span></span></p>
+                  <p>Here we can simply replace the word "seafood" with a relevant word that is NOT considered a local speciality.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 1</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Our restaurant is famous for its <strong class="highlight">ratings</strong>.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 2</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Our restaurant is famous for its <strong class="highlight">ambiance</strong>.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 3</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Our restaurant is famous for its <strong class="highlight">location</strong>.<br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <div class="row">
+                <div class="column">
+                  <h3>Example 2</h3>
+                  <h4>Perturbation: Replacing a phrase with contextually relevant but non-sensical phrases.</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>1. #Person1#:</strong> Anna, that outfit looks wonderful on you! The color goes with your trousers perfectly.<br>
+                      <strong>2. #Person2#:</strong> Thanks, Carla. That's quite a compliment coming from you. You always dress so tastefully.<br>
+                      <strong>3. #Person1#:</strong> Well, that dress certainly shows your good taste. It must have <strong class="highlight">cost a lot</strong>.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Plausible Final Turn</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> No, not much. I got it <strong class="highlight">on sale</strong> at the mall - 60 % off.<br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">on sale</span>&nbsp;Not Causes&nbsp;<span class="kg-tail">costs a lot</span></span></p>
+                  <p>Here we should note that first part of the final turn ("No, not much.") means that it cost some amount (> 0), but it was not too much. So, in other words, the item couldn't be gotten for free. To create this contradiction, we can replace either parts of or the whole phrase "on sale at the mall - 60% off" with phrases that clearly indicate that it either cost a lot or nothing.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 1</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> No, not much. I got it <strong class="highlight">for free</strong> at the mall - 60 % off.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 2</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> No, not much. I got it on sale at the mall - <strong class="highlight">1 %</strong> off.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 3</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> No, not much. I got it <strong class="highlight">as a gift from my friend.</strong><br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <div class="row">
+                <div class="column">
+                  <h3>Example 3</h3>
+                  <h4>Perturbation: Flipping a sentiment to create a contradiction.</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>1. #Person1#:</strong> Ahahah! What is that thing on your couch! It just moved!<br>
+                      <strong>2. #Person2#:</strong> Did you think it wasn't real? That's my pet lizard.<br>
+                      <strong>3. #Person1#:</strong> Does it <strong class="highlight">bite</strong> or scratch?<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Plausible Final Turn</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> No, he's perfectly <strong class="highlight">harmless</strong>. And he's not afraid of strangers either. Here, hold him.<br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">harmless</span>&nbsp;Not CapableOf&nbsp;<span class="kg-tail">bite</span></span></p>
+                  <p>Here we should note that first part of the final turn ("No, he is perfectly harmless") means that #Person2#'s lizard doesn't bite and the #Person2# confirms this. However, this sentence only makes sense if the sentiment ("No") is aligned with the last adjective ("harmless"). If these are not aligned (e.g. "Yes, he is perfectly harmless"), then the sentence won't make sense.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 1</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> <strong class="highlight">Yes</strong>, he's perfectly <strong class="highlight">harmless</strong>. And he's not afraid of strangers either. Here, hold him.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 2</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> <strong class="highlight">Of course</strong>, he's perfectly <strong class="highlight">harmless</strong>. And he's not afraid of strangers either. Here, hold him.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 3</div><br>
+                    <div class="description">
+                      <strong>4. #Person2#:</strong> <strong class="highlight">No</strong>, he's perfectly <strong class="highlight">harmful</strong>. And he's not afraid of strangers either. Here, hold him.<br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ui divider"></div>
+              
+              <div class="row">
+                <div class="column">
+                  <h3>Example 4</h3>
+                  <h4>Perturbation: Swap the order of actions and/or negate the actions.</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>1. #Person1#:</strong> Hi, would you like some free candies?<br>
+                      <strong>2. #Person2#:</strong> Sure. What are you handing these out for?<br>
+                      <strong>3. #Person1#:</strong> Well, we're trying to gather some <strong class="highlight">volunteers</strong> for the day care center.<br>
+                      <strong>4. #Person2#:</strong> Uh...<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Plausible Final Turn</div><br>
+                    <div class="description">
+                      <strong>5. #Person1#:</strong> It's OK. You don't have to volunteer if you <strong class="highlight">eat the candies.</strong><br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">eat the candies</span>&nbsp;Not Causes&nbsp;<span class="kg-tail">volunteer</span></span></p>
+                  <p>Here the implication in this context is that to "eat the candies" one does not need to volunteer. So, we can swap and/or negate these actions "eat candies" and "volunteer" to create non-sensical or contradictory sentences.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 1</div><br>
+                    <div class="description">
+                      <strong>5. #Person1#:</strong> It's OK. You have to <strong class="highlight">eat the candies</strong> if you <strong class="highlight">don't volunteer</strong><br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 2</div><br>
+                    <div class="description">
+                      <strong>5. #Person1#:</strong> It's OK. You <strong class="highlight">don't have to eat the candies</strong> if you <strong class="highlight">volunteer</strong>.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 3</div><br>
+                    <div class="description">
+                      <strong>5. #Person1#:</strong> It's OK. You <strong class="highlight">have to volunteer</strong> if you eat the candies.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 4</div><br>
+                    <div class="description">
+                      <strong>5. #Person1#:</strong> It's OK. You <strong class="highlight">have to volunteer</strong> if you don't eat the candies.<br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+              
+              <div class="row">
+                <div class="column">
+                  <h3>Example 5</h3>
+                  <h4>Perturbation: Replace two dependent concepts to create a contradiction.</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>1. #Person1#:</strong> Andrei, hello, it's Laura. I'm at kuala lumpur airport.<br>
+                      <strong>2. #Person2#:</strong> Welcome to Malaysia. I sent my driver to pick you up, is he there?<br>
+                      <strong>3. #Person1#:</strong> No, he is n't.<br>
+                      <strong>4. #Person2#:</strong> I'm sorry about that. There's been a <strong class="highlight">mix-up.</strong><br>
+                      <strong>5. #Person1#:</strong> You got my email about the change in the arrival time, didn't you?<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Plausible Final Turn</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Yes, and I asked my workmate to tell my driver, but my driver got the wrong information and <strong class="highlight">went to the airport this morning</strong>.<br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">went to the airport this morning</span>&nbsp;Causes&nbsp;<span class="kg-tail">mix-up</span></span></p>
+                  <p>Here the implication is that the driver causes a mix-up by assuming a wrong information and going to the airport, so these two concepts ("wrong information" and "going to the airport") are dependent on each other which means we can perturb them at the same time to create a non-sensical or contradictory turn.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 1</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Yes, and I asked my workmate to tell my driver, but my driver got the <strong class="highlight">right</strong> information and <strong class="highlight">didn't go to the airport this morning</strong>.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 2</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Yes, and I asked my workmate to tell my driver, but my driver got the <strong class="highlight">right</strong> information and went to the airport this morning.<br>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Contextually Implausible Final Turn 3</div><br>
+                    <div class="description">
+                      <strong>6. #Person2#:</strong> Yes, and I asked my workmate to tell my driver, but my driver got the wrong information and <strong class="highlight">didn't go </strong>to the airport this morning.<br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- EXAMPLES END -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <!-- MTURK INPUT START -->
+        <form name='mturk_form' method='post' id='mturk_form' action="https://mturk.com/mturk/externalSubmit" class="ui form">
+          <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+          <input type='hidden' name='ee' id='ee'/>
+          <span hidden>${id}</span>
+          
+          <h3><strong>Task</strong></h3>
+          <p>Given the following <strong>short dialogue</strong> between two or more people, <strong class="concept_a">a plausible final turn</strong> for the dialogue, and a list of <strong>commonsense knowledge</strong> instances connecting the dialogue and the given turn, please select one or more commonsense knowledge instances and write a <strong class="concept_b">contextually implausible final turn</strong> that satisfies the following conditions:</p>
+          <ol>
+            <li><strong class="concept_a">minimally</strong> differs from the original (plausible) final turn</li>
+            <li><strong class="concept_b">violates</strong> the chosen commonsense knowledge</li>
+            <li>is <strong class="concept_b">contextually implausible</strong> final turn for the dialogue (something that wouldn't have followed the given dialogue, however, as a sentence on its own could be plausible!)</li>
+            <li>is still <strong class="concept_a">relevant</strong> for the given dialogue (something that is related to topics mentioned in the dialogue)</li>
+          </ol>
+          <p><strong>Please, follow the guidelines</strong> mentioned above closely to make sure your suggestion satisfies all the conditions.</p>
+          <p><strong>Please, note that</strong> simply replacing words/phrases with their antonyms or negating sentences do <strong style="color: red">NOT</strong> necessarily make them <strong class="concept_b">contextually implausible.</strong> Contextually implausible final turn is a turn that does not clearly make sense within the full context of the dialogue. Please, see the instructions for an example.</p>
+          <p><strong>Please, also avoid</strong> turns that are implausible even <strong class="concept_b">independent</strong> of the given dialogue.</p>
+          <p>There are typically multiple ways to generate this contextually implausible final turn, so feel free to add 2 more alternatives by using the <i>Add Another</i> button. Note that <strong>you will be paid a bonus for each additional contextual implausible final turn that satisfies our conditions for this task.</strong></p>
+          <p><i>Note that you are free to modify <strong class="concept_a">any</strong> part of the final turn, not only the highlighted parts as long as it satisfies our conditions for this task.</i></p>
+          <div class="ui yellow message">
+            <div class="header">Dialogue</div><br>
+            <div class="description">
+              ${dialogue}
+            </div>
+          </div>
+
+          <div class="ui yellow message">
+            <div class="header">Plausible Final Turn</div><br>
+            <div class="description">
+              ${final_turn}
+            </div>
+          </div>
+
+          <p><strong>Commonsense Knowledge</strong></p>
+          <p hidden id="ck-options">
+            ${knowledge}
+          </p>
+          <div id="ck-options-container"></div>
+          <br>
+
+          <p><i>For each annotation, choose one or more commonsense knowledge instances and write a new final turn that satisfies the conditions given above.</span></i></p>
+
+          <div class="ui divider"></div>
+
+          <div class="ui grid">
+            
+            <div class="row" id="alt-target1-container">
+              <div class="sixteen wide column">
+                <div class="required field">
+                  <label>Commonsense Knowledge</label>
+                  <div id="alt-target1-ck-container" class="ui fluid search multiple selection clearable dropdown">
+                    <input type="hidden" name="alt-target1-ck" id="alt-target1-ck">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Commonsense Knowledge</div>
+                    <div class="menu"></div>
+                  </div>
+                  <div id="alt-target1-ck-error" class="ui pointing red basic label">
+                    Please select a commonsense knowledge.
+                  </div>
+                </div>
+              </div>
+              <div class="three wide column" style="padding-top: 40px;text-align: center;">
+                <span><strong>${final_turn_prefix}</strong></span>
+              </div>
+              <div class="thirteen wide column mt-1">
+                <div class="required field">
+                  <label>Contextually Implausible Final Turn 1</label>
+                  <textarea rows="2" name="alt-target1" id="alt-target1" placeholder="Write a minimally different contextually implausible final turn that violates the chosen commonsense knowledge." required></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="row" id="alt-target2-container">
+              <div class="sixteen wide column">
+                <div class="field">
+                  <label>Commonsense Knowledge</label>
+                  <div id="alt-target2-ck-container" class="ui fluid search multiple selection clearable dropdown">
+                    <input type="hidden" name="alt-target2-ck" id="alt-target2-ck">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Commonsense Knowledge</div>
+                    <div class="menu"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="three wide column m-auto" style="padding-top: 40px;text-align: center;">
+                <span><strong>${final_turn_prefix}</strong></span>
+              </div>
+              <div class="thirteen wide column mt-1">
+                <div class="field">
+                  <label>Contextually Implausible Final Turn 2</label>
+                  <textarea rows="2" name="alt-target2" id="alt-target2" placeholder="Write a minimally different contextually implausible final turn that violates the chosen commonsense knowledge."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="row" id="alt-target3-container">
+              <div class="sixteen wide column">
+                <div class="field">
+                  <label>Commonsense Knowledge</label>
+                  <div id="alt-target3-ck-container" class="ui fluid search multiple selection clearable dropdown">
+                    <input type="hidden" name="alt-target3-ck" id="alt-target3-ck">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Commonsense Knowledge</div>
+                    <div class="menu"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="three wide column m-auto" style="padding-top: 40px;text-align: center;">
+                <span><strong>${final_turn_prefix}</strong></span>
+              </div>
+              <div class="thirteen wide column mt-1">
+                <div class="field">
+                  <label>Contextually Implausible Final Turn 3</label>
+                  <textarea rows="2" name="alt-target3" id="alt-target3" placeholder="Write a minimally different contextually implausible final turn that violates the chosen commonsense knowledge."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="thirteen wide column"></div>
+              <div class="three wide column add-btn-container">
+                <button class="ui secondary button" id="add-target-btn" type="button">
+                  <i class="plus icon"></i>
+                  Add Another
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="no-alt-target" id="no-alt-target" value="1">
+                    <label>If you think that something is wrong with the given commonsense knowledge or dialogue or it is somehow not possible to come up with a meaningful implausible final turn, then check the box on the left and provide us with the description of the problem below.</label>
+                  </div>
+                </div>
+                <div class="field" id="no-alt-target-feedback-container" hidden>
+                  <textarea id="no-alt-target-feedback" name="no-alt-target-feedback" rows=2 placeholder="Describe the issue with the given example"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui divider"></div>
+          <br>
+
+          <div class="ui grid">
+            <!-- OPTIONAL FEEDBACK --> 
+            <div class="centered row">
+              <div class="eight wide column">
+                <p>(Optional) Please let us know if anything was unclear, if you experienced any issues, or if you have any other feedback for us.</p>
+                <textarea id="feedback" name="feedback" rows=3></textarea>
+              </div>
+            </div>
+            <br>
+            <!-- SUBMIT BUTTON --> 
+            <div class="centered row">
+              <div class="eight wide column" style="text-align: center">
+                <input id="submitButton" onclick="getnext()" type="submit" class="ui primary button" value="Submit">
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- MTURK INPUT END -->
+        <script language='Javascript'>turkSetAssignmentID();</script>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- HIT END -->
+
+<!-- BOOSTRAP JS -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<!-- HITPUB JS -->
+<script id="hitpub_js">
+// TimeMe.js
+(function () { var e, t; e = this, t = function () { var r = { startStopTimes: {}, idleTimeoutMs: 3e4, currentIdleTimeMs: 0, checkStateRateMs: 250, active: !1, idle: !1, currentPageName: "default-page-name", timeElapsedCallbacks: [], userLeftCallbacks: [], userReturnCallbacks: [], trackTimeOnElement: function (e) { var t = document.getElementById(e); t && (t.addEventListener("mouseover", function () { r.startTimer(e) }), t.addEventListener("mousemove", function () { r.startTimer(e) }), t.addEventListener("mouseleave", function () { r.stopTimer(e) }), t.addEventListener("keypress", function () { r.startTimer(e) }), t.addEventListener("focus", function () { r.startTimer(e) })) }, getTimeOnElementInSeconds: function (e) { var t = r.getTimeOnPageInSeconds(e); return t || 0 }, startTimer: function (e, t) { if (e || (e = r.currentPageName), void 0 === r.startStopTimes[e]) r.startStopTimes[e] = []; else { var n = r.startStopTimes[e], i = n[n.length - 1]; if (void 0 !== i && void 0 === i.stopTime) return } r.startStopTimes[e].push({ startTime: t || new Date, stopTime: void 0 }), r.active = !0, r.idle = !1 }, stopAllTimers: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.stopTimer(e[t]) }, stopTimer: function (e, t) { e || (e = r.currentPageName); var n = r.startStopTimes[e]; void 0 !== n && 0 !== n.length && (void 0 === n[n.length - 1].stopTime && (n[n.length - 1].stopTime = t || new Date), r.active = !1) }, getTimeOnCurrentPageInSeconds: function () { return r.getTimeOnPageInSeconds(r.currentPageName) }, getTimeOnPageInSeconds: function (e) { var t = r.getTimeOnPageInMilliseconds(e); return void 0 === t ? void 0 : t / 1e3 }, getTimeOnCurrentPageInMilliseconds: function () { return r.getTimeOnPageInMilliseconds(r.currentPageName) }, getTimeOnPageInMilliseconds: function (e) { var t = r.startStopTimes[e]; if (void 0 !== t) { for (var n = 0, i = 0; i < t.length; i++) { var s = t[i].startTime, o = t[i].stopTime; void 0 === o && (o = new Date), n += o - s } return Number(n) } }, getTimeOnAllPagesInSeconds: function () { for (var e = [], t = Object.keys(r.startStopTimes), n = 0; n < t.length; n++) { var i = t[n], s = r.getTimeOnPageInSeconds(i); e.push({ pageName: i, timeOnPage: s }) } return e }, setIdleDurationInSeconds: function (e) { var t = parseFloat(e); if (!1 !== isNaN(t)) throw { name: "InvalidDurationException", message: "An invalid duration time (" + e + ") was provided." }; return r.idleTimeoutMs = 1e3 * e, this }, setCurrentPageName: function (e) { return r.currentPageName = e, this }, resetRecordedPageTime: function (e) { delete r.startStopTimes[e] }, resetAllRecordedPageTimes: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.resetRecordedPageTime(e[t]) }, resetIdleCountdown: function () { r.idle && r.triggerUserHasReturned(), r.idle = !1, r.currentIdleTimeMs = 0 }, callWhenUserLeaves: function (e, t) { this.userLeftCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, callWhenUserReturns: function (e, t) { this.userReturnCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, triggerUserHasReturned: function () { if (!r.active) for (var e = 0; e < this.userReturnCallbacks.length; e++) { var t = this.userReturnCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.startTimer() }, triggerUserHasLeftPage: function () { if (r.active) for (var e = 0; e < this.userLeftCallbacks.length; e++) { var t = this.userLeftCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.stopAllTimers() }, callAfterTimeElapsedInSeconds: function (e, t) { r.timeElapsedCallbacks.push({ timeInSeconds: e, callback: t, pending: !0 }) }, checkState: function () { for (var e = 0; e < r.timeElapsedCallbacks.length; e++)r.timeElapsedCallbacks[e].pending && r.getTimeOnCurrentPageInSeconds() > r.timeElapsedCallbacks[e].timeInSeconds && (r.timeElapsedCallbacks[e].callback(), r.timeElapsedCallbacks[e].pending = !1); !1 === r.idle && r.currentIdleTimeMs > r.idleTimeoutMs ? (r.idle = !0, r.triggerUserHasLeftPage()) : r.currentIdleTimeMs += r.checkStateRateMs }, visibilityChangeEventName: void 0, hiddenPropName: void 0, listenForVisibilityEvents: function () { void 0 !== document.hidden ? (r.hiddenPropName = "hidden", r.visibilityChangeEventName = "visibilitychange") : void 0 !== document.mozHidden ? (r.hiddenPropName = "mozHidden", r.visibilityChangeEventName = "mozvisibilitychange") : void 0 !== document.msHidden ? (r.hiddenPropName = "msHidden", r.visibilityChangeEventName = "msvisibilitychange") : void 0 !== document.webkitHidden && (r.hiddenPropName = "webkitHidden", r.visibilityChangeEventName = "webkitvisibilitychange"), document.addEventListener(r.visibilityChangeEventName, function () { document[r.hiddenPropName] ? r.triggerUserHasLeftPage() : r.triggerUserHasReturned() }, !1), window.addEventListener("blur", function () { r.triggerUserHasLeftPage() }), window.addEventListener("focus", function () { r.triggerUserHasReturned() }), document.addEventListener("mousemove", function () { r.resetIdleCountdown() }), document.addEventListener("keyup", function () { r.resetIdleCountdown() }), document.addEventListener("touchstart", function () { r.resetIdleCountdown() }), window.addEventListener("scroll", function () { r.resetIdleCountdown() }), setInterval(function () { r.checkState() }, r.checkStateRateMs) }, websocket: void 0, websocketHost: void 0, setUpWebsocket: function (e) { if (window.WebSocket && e) { var t = e.websocketHost; try { r.websocket = new WebSocket(t), window.onbeforeunload = function () { r.sendCurrentTime(e.appId) }, r.websocket.onopen = function () { r.sendInitWsRequest(e.appId) }, r.websocket.onerror = function (e) { console && console.log("Error occurred in websocket connection: " + e) }, r.websocket.onmessage = function (e) { console && console.log(e.data) } } catch (e) { console && console.error("Failed to connect to websocket host.  Error:" + e) } } return this }, websocketSend: function (e) { r.websocket.send(JSON.stringify(e)) }, sendCurrentTime: function (e) { var t = { type: "INSERT_TIME", appId: e, timeOnPageMs: r.getTimeOnCurrentPageInMilliseconds(), pageName: r.currentPageName }; r.websocketSend(t) }, sendInitWsRequest: function (e) { var t = { type: "INIT", appId: e }; r.websocketSend(t) }, initialize: function (e) { var t = r.idleTimeoutMs || 30, n = r.currentPageName || "default-page-name", i = void 0, s = void 0; e && (t = e.idleTimeoutInSeconds || t, n = e.currentPageName || n, i = e.websocketOptions, s = e.initialStartTime), r.setIdleDurationInSeconds(t).setCurrentPageName(n).setUpWebsocket(i).listenForVisibilityEvents(), r.startTimer(void 0, s) } }; return r }, "undefined" != typeof module && module.exports ? module.exports = t() : "function" == typeof define && define.amd ? define([], function () { return e.TimeMe = t() }) : e.TimeMe = t() }).call(this);
+function displayEmoji(){jQuery(this).text(function(r){for(var e=[],t=0,i=0;t<r.length;){var o=r[t++];if(o<128)e[i++]=String.fromCharCode(o);else if(o>191&&o<224){var a=r[t++];e[i++]=String.fromCharCode((31&o)<<6|63&a)}else if(o>239&&o<365){var n=((7&o)<<18|(63&(a=r[t++]))<<12|(63&(f=r[t++]))<<6|63&r[t++])-65536;e[i++]=String.fromCharCode(55296+(n>>10)),e[i++]=String.fromCharCode(56320+(1023&n))}else{a=r[t++];var f=r[t++];e[i++]=String.fromCharCode((15&o)<<12|(63&a)<<6|63&f)}}return e.join("")}(JSON.parse(jQuery(this).attr("data-emoji-bytes"))))}
+TimeMe.initialize({
+  currentPageName: "task",
+  idleTimeoutInSeconds: 30
+});
+
+$(document).ready(function() {
+  $('.ui.accordion').accordion();
+  $('.ui.dropdown').dropdown({
+    fullTextSearch: true
+  });
+  $('.ui.clearable.dropdown').dropdown({
+    fullTextSearch: true,
+    clearable: true
+  });
+
+  var ckOptions = [];
+  
+  try {
+    ckOptions = JSON.parse($('#ck-options').text().replaceAll('"', '').replaceAll("'", '"').replaceAll("#squote#", "'"));
+  } catch(e) {}
+
+  ckOptions.forEach(function(option, index) {
+    let head = $('<span>').addClass('kg-head').text(option["head"]);
+    let tail = $('<span>').addClass('kg-tail').text(option["tail"]);
+    let knowledge = $('<span>').addClass('kg-relation').append(head.clone()).append('&nbsp;'+option["relation"]+'&nbsp;').append(tail.clone());
+    $('#ck-options-container').append(knowledge.clone());
+    $('#ck-options-container').append($('<br>')).append($('<br>'));
+    let item = $('<div>').addClass('item').attr('data-value', option["id"]);
+    item.append(knowledge.clone());
+    for (let i=1; i<=3; i++) {
+      $('#alt-target'+i+'-ck-container .menu').append(item.clone());
+    }
+  });
+
+  for (let i=1; i<=1; i++) {
+    $('#alt-target'+i+'-ck-error').hide();
+    $('#alt-target'+i+'-ck').on('change', function() {
+      $('#alt-target'+i+'-ck-error').hide();
+    });
+  }
+
+  $('span.emoji-bytes').each(displayEmoji);
+  for (let i=2; i<=3; i++) {
+    $('#alt-target'+i+'-container').hide();
+  }
+
+  $('#add-target-btn').click(function() {
+    if ($('#alt-target2-container').is(':hidden')) {
+      $('#alt-target2-container').show();
+    } else if ($('#alt-target3-container').is(':hidden')) {
+      $('#alt-target3-container').show();
+      $('#add-target-btn').attr("disabled", true);
+    }
+  })
+
+  $('#no-alt-target').on('change', function() {
+    if ($(this).is(':checked')) {
+      $('#no-alt-target-feedback-container').show();
+      $('#no-alt-target-feedback').attr('required', true);
+    } else {
+      $('#no-alt-target-feedback-container').hide();
+      $('#no-alt-target-feedback').attr('required', false);
+    }
+  })
+
+  $('#submitButton').click(function () {
+    try {
+      if (!$('#no-alt-target').is(':checked')) {
+        if ($('#alt-target1-ck').val() == "") {
+          $('#alt-target1-ck-error').show();
+          return false;
+        }
+      }
+
+      $('input[name=ee]').attr('value', TimeMe.getTimeOnCurrentPageInSeconds());
+    } catch {
+    }
+    return true;
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+---
+layout: page
+permalink: /tasks/
+title: Tasks
+---
+
+<p>In this page, you can find more information about the tasks included in the benchmark and how to download the corresponding benchmark data for evaluation.</p>
+
+<div class="tasks-table-container">
+    <table class="ui striped unstackable table tasks">
+        <thead>
+            <tr>
+              <th>Task</th>
+              <th>#Contexts</th>
+              <th>#Examples</th>
+              <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Dialogue</td>
+                <td>1,169</td>
+                <td>3,548</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Dialogue Summarization</td>
+                <td>453</td>
+                <td>1,805</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Intent Detection</td>
+                <td>589</td>
+                <td>2,440</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Safety Detection</td>
+                <td>366</td>
+                <td>2,826</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Stance Classification</td>
+                <td>397</td>
+                <td>1,722</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Machine Translation (en-de)</td>
+                <td>500</td>
+                <td>1,000</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Machine Translation (en-fr)</td>
+                <td>500</td>
+                <td>1,000</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Machine Translation (en-ru)</td>
+                <td>500</td>
+                <td>1,000</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>Machine Translation (zh-en)</td>
+                <td>600</td>
+                <td>1,200</td>
+                <td>
+                    <button class="ui mini secondary labeled icon button">
+                        <i class="cloud download icon"></i>
+                        json
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</div>
+<br>
+
+<button class="ui mini primary labeled icon button">
+    <i class="cloud download icon"></i>
+    Download all data
+</button>
+
+<h2><span class="section-bar"></span>Overview</h2>
+<p>
+    Each task example in this benchmark comes with a <i>context</i> and a <i>target</i>. Definitions of <i>context</i> and the <i>target</i> depend on the corresponding task. See below for more details. Same context can be associated with multiple targets, hence, the number of unique contexts and the total number of examples are different.
+</p>
+
+<h2><span class="section-bar"></span>Open-domain Dialogue</h2>
+<p>
+    In this task, the goal is to generate a plausible response (<i>target</i>) to a given dialogue history (<i>context</i>). Here is an example:
+</p>
+<div class="ui yellow message">
+    <div class="header">Dialogue</div><br>
+    <div class="description">
+        <strong>1. #Person1#:</strong> Hi, Sam, can you help me this weekend? I need help moving a new sofa into my house.<br>
+        <strong>2. #Person2#:</strong> Hey, Jennifer, no problem. I'm free this weekend and my truck is great for moving stuff. Where did you get the sofa?<br>
+        <strong>3. #Person1#:</strong> My friend Jack is moving next week, but his new apartment is very small. So <strong class="highlight">he is giving me his sofa.</strong><br>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Response [plausible]</div><br>
+    <div class="description">
+        <strong>4. #Person2#:</strong> It's good that <strong class="highlight">your place is large enough to fit the sofa</strong>. Where will you put it?
+    </div>
+</div>
+<div class="ui red message">
+    <div class="header">Response [implausible]</div><br>
+    <div class="description">
+        <strong>4. #Person2#:</strong> It's good that <strong class="highlight">your place is small enough to fit the sofa</strong>. Where will you put it?
+    </div>
+</div>
+<p>
+    Data for this task benchmark is collected based on the conversational dataset <a href="https://github.com/declare-lab/CIDER" target="_blank">CIDER</a> which itself is constructed from other dialogue datasets <a href="https://aclanthology.org/I17-1099/">DailyDialog</a>, <a href="https://aclanthology.org/2020.acl-main.130/">MuTual</a> and <a href="https://dataset.org/dream/">DREAM</a>.
+</p>
+
+<h2><span class="section-bar"></span>Dialogue Summarization</h2>
+<p>
+    In this task, the goal is to generate a correct summary (<i>target</i>) of the given dialogue (<i>context</i>). Here is an example:
+</p>
+<div class="ui yellow message">
+    <div class="header">Dialogue</div><br>
+    <div class="description">
+        <strong>1. #Person1#:</strong> Kate, you never believe what's happened.<br>
+        <strong>2. #Person2#:</strong> What do you mean?<br>
+        <strong>3. #Person1#:</strong> Masha and Hero are getting divorced.<br>
+        <strong>4. #Person2#:</strong> You are kidding. What happened?<br>
+        <strong>5. #Person1#:</strong> Well, I don't really know, but I heard that they are having a separation for 2 months, and filed for divorce.<br>
+        <strong>6. #Person2#:</strong> That's really surprising. I always thought they are well matched. What about the kids? Who get custody?<br>
+        <strong>7. #Person1#:</strong> Masha, <strong class="highlight">it seems quiet and makable, no quarrelling about who get the house</strong> and stock and then contesting the divorce with other details worked out.<br>
+        <strong>8. #Person2#:</strong> That's the change from all the back stepping we usually hear about.<br>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Summary [correct]</div><br>
+    <div class="description">
+        #Person1# tells Kate that Masha and Hero are getting <strong class="highlight">a peaceful divorce</strong>. Kate feels surprised and asks about their kids.
+    </div>
+</div>
+<div class="ui red message">
+    <div class="header">Summary [incorrect]</div><br>
+    <div class="description">
+        #Person1# tells Kate that Masha and Hero are getting <strong class="highlight">a violent divorce</strong>. Kate feels surprised and asks about their kids.
+    </div>
+</div>
+<p>
+    Data for this task benchmark is collected based on the dialogue summarization dataset <a href="https://github.com/cylnlp/dialogsum" target="_blank">DialogSum</a> which itself is constructed from other dialogue datasets <a href="https://aclanthology.org/I17-1099/">DailyDialog</a>, <a href="https://aclanthology.org/2020.acl-main.130/">MuTual</a> and <a href="https://dataset.org/dream/">DREAM</a>.
+</p>
+
+<h2><span class="section-bar"></span>Intent Detection</h2>
+<p>
+    In this task, the goal is to identify the underlying intent (<i>target</i>) of the author of the text (e.g. news headline) (<i>context</i>). Here is an example:
+</p>
+<div class="ui yellow message">
+    <div class="header">Headline</div><br>
+    <div class="description">
+        <span>White House Ousts Top Climate Change Official</span>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Intent [true]</div><br>
+    <div class="description">
+        <span>The white house <strong class="highlight">lost</strong> confidence in their top climate change official</span>
+    </div>
+</div>
+<div class="ui red message">
+    <div class="header">Intent [false]</div><br>
+    <div class="description">
+        <span>The white house <strong class="highlight">gained</strong> confidence in their top climate change official</span>
+    </div>
+</div>
+<p>
+    Data for this task benchmark is collected based on the <a href="https://aclanthology.org/2022.acl-long.222/" target="_blank">Misinformation Reaction Frames (MRF)</a> dataset.
+</p>
+
+<h2><span class="section-bar"></span>Safety Detection</h2>
+<p>
+    In this task, the goal is to detect the safe actions (<i>target</i>) in a given scenario (<i>context</i>). Here is an example:
+</p>
+<div class="ui yellow message">
+    <div class="header">Scenario</div><br>
+    <div class="description">
+        <span>If you're being chased by a hungry animal</span>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Action [safe]</div><br>
+    <div class="description">
+        <span>throw some <strong class="highlight">food</strong> behind you as you run.</span>
+    </div>
+</div>
+<div class="ui red message">
+    <div class="header">Action [unsafe]</div><br>
+    <div class="description">
+        <span>lay on the ground for 5 minutes.</span>
+    </div>
+</div>
+<p>
+    Data for this task benchmark is collected based on the <a href="https://aclanthology.org/2022.emnlp-main.154/" target="_blank">SafeText</a> dataset.
+</p>
+
+<h2><span class="section-bar"></span>Stance Classification</h2>
+<p>
+    In this task, the goal is to infer the stance of an argument (<i>target</i>) given a belief (<i>context</i>). Here is an example:
+</p>
+<div class="ui yellow message">
+    <div class="header">Belief</div><br>
+    <div class="description">
+        <span>If whaling is outlawed a black market will start up and cause more harm.</span>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Argument [counter]</div><br>
+    <div class="description">
+        <span>Whaling is <strong class="highlight">damaging</strong> to whales and should therefore be outlawed.</span>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Argument [support]</div><br>
+    <div class="description">
+        <span>Whaling is <strong class="highlight">beneficial</strong> to whales and should therefore <strong class="highlight">not be</strong> outlawed.</span>
+    </div>
+</div>
+<p>
+    Data for this task benchmark is collected based on the <a href="https://aclanthology.org/2021.emnlp-main.609/" target="_blank">ExplaGraphs</a> dataset.
+</p>
+
+<h2><span class="section-bar"></span>Machine Translation</h2>
+<p>
+    In this task, the goal is to generate a correct translation (<i>target</i>) in some language of a given text (<i>context</i>) in another language . Here is an example:
+</p>
+<div class="ui yellow message">
+    <div class="header">Sentence (Chinese)</div><br>
+    <div class="description">
+        <span>主力部队已经对敌人的建筑展开了攻关.</span>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Translation (English) [correct]</div><br>
+    <div class="description">
+        <span>The main force has already launched an <strong class="highlight">attack</strong> on the enemy's building.</span>
+    </div>
+</div>
+<div class="ui green message">
+    <div class="header">Translation (English) [incorrect]</div><br>
+    <div class="description">
+        <span>The main force has already launched a <strong class="highlight">research</strong> on the enemy's building.</span>
+    </div>
+</div>
+<p>
+    Data for this task benchmark is collected based on the <a href="https://aclanthology.org/2020.findings-emnlp.327/" target="_blank">Chinese-English test suite</a> (for Chinese to English) and <a href="https://demelin.github.io/publication/winox/">Wino-X</a> multi-lingual Winograd Schema dataset (for English to Russian, French and German).
+</p>

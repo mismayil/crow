@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CK Annotation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+  <!-- SEMANTIC UI CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+  <!-- HITPUB CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style id="hitpub_css">
+    body {
+      font-family: "Open Sans", "Roboto", sans-serif;
+      line-height: 1.5;
+      font-size: 1.1rem;
+    }
+
+    li {
+      margin: 0.6em;
+    }
+
+    .mt-1 {
+      margin-top: 1rem!important;
+    }
+
+    .mt-2 {
+      margin-top: 2rem!important;
+    }
+
+    .mb-1 {
+      margin-bottom: 1rem!important;
+    }
+    
+    .ui.form {
+      font-size: 1.1rem;
+    }
+
+    .concept_a {
+      color: #0072B2;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    .concept_b {
+      color: #D55E00;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .concept_c {
+      border: 1px solid black;
+      background-color: #fff8db;
+      border-radius: 5px;
+      padding: 1px 3px;
+      font-weight: bold;
+    }
+
+    .concept_d {
+      border: 1px solid black;
+      background-color: #FF9800;
+      border-radius: 5px;
+      padding: 1px 3px;
+      font-weight: bold;
+    }
+    
+    .kg-relation {
+      border-radius: 5px;
+      font-family: Inconsolata;
+      font-size: 1.1rem;
+      background-color: #FF9800;
+      padding: 5px 5px;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .kg-head, .kg-tail {
+      border-radius: 5px;
+      font-family: Inconsolata;
+      font-size: 1.1rem;
+      background-color: #FFF3E0;
+      padding: 3px 5px;
+    }
+
+    .annotation-title {
+      text-align: center;
+      color: #06486F;
+      padding-top: 3rem;
+    }
+
+    .annotation-subtitle {
+      text-align: center;
+      color: #D55E00
+    }
+    
+    .ui.message .header {
+      font-size: 1.2rem;
+    }
+
+    .ui.message .description {
+      font-family: Inconsolata;
+      font-size: 1.2rem;
+      color: #06486F;
+    }
+  
+    .highlight {
+      background-color: yellow;
+    }
+    
+    .text-detail {
+      color: grey;
+    }
+  
+    .add-btn-container {
+      text-align: end;
+    }
+
+    .ui.styled.accordion .title {
+      padding: 2rem 1rem;
+      font-size: 1.5rem;
+      background-color: cornflowerblue;
+      color: white;
+    }
+
+    .ui.accordion .content {
+      background-color:#fbfbfb;
+    }
+
+    .ui.message .subheader {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+<!-- HIT START -->
+<div id="hit" class="ui container">
+
+  <div class="ui grid">
+    <div class="row">
+      <div class="column">
+        <h1 class="annotation-title">
+          <strong>Commonsense Knowledge Annotation</strong>
+        </h1>
+        <h2 class="annotation-subtitle">
+          <strong>Pronoun Resolution</strong>
+        </h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+
+        <!-- ACCORDION START -->
+        <div class="ui styled fluid accordion">
+
+          <!-- POLICY START -->
+          <div class="title">
+            <strong>Acceptance and Privacy Policies</strong> (click to expand/collapse)
+          </div>
+          <div class="content">
+            <h5>Acceptance Policy</h5>
+            <p>There is no obligation to participate in the task. We will not reject a job unless we observe the evidence of malicious behavior, such as random clicks or very short session times.</p>
+
+            <h5>Privacy Policy</h5>
+            <p>We may incidentally collect some personal data for the purpose of our research project, according to art. 36c and seq. of the ETH Act. Our target is to process and publish only anonymized data. Raw data will be kept confidential and secure. Only anonymized or aggregated personal data may be shared with other research partners.</p>
+            <p>Having established this, however, we should not collect any personal data in this task.</p>
+            <p>We are using the services of Amazon Mechanical Turk, Inc. and its affiliates, c/o Amazon.com, Inc., P.O. Box 81226, Seattle, WA 98108-1226, USA. Hence, the privacy policy of Amazon will apply for the processing of your personal information by Amazon.</p>
+            <p>If you wish to raise a complaint on how we have handled your personal data, or if you want to know if we hold personal data about you, you can contact our Data Protection Officer (dpo@epfl.ch) who will investigate the matter.</p>
+          </div>
+          <!-- POLICY END -->
+
+          <!-- INSTRUCTIONS START -->
+          <div class="active title">
+            <strong>Instructions</strong> (click to expand/collapse)
+          </div>
+          <div class="active content">
+            <p style="font-size: 12px; margin:0 0 0.5em 0;"><em>(WARNING: This HIT may contain adult content. Worker discretion is advised.)</em></p>
+
+            <p>Thanks for participating in this HIT!</p>
+
+            <div class="ui divider"></div>
+            <p>Given a <strong>sentence</strong> in English with a pronoun <strong class="concept_b">"it"</strong> in it that refers to one of the <strong>nouns</strong> in the sentence, you are asked to identify the <strong>implicit commonsense knowledge</strong> that allows us to <strong>resolve</strong> which noun it refers to.</p>
+            <p><strong>Commonsense knowledge</strong> consists of <span class="concept_a">implicit</span> and <span class="concept_b">commonly known</span> facts about the everyday life such as <i>"Lemons are sour"</i> or <i>"If someone is hungry, then they would like to eat."</i>. It is a type of knowledge that nearly <strong>everyone knows</strong> intuitively and considers obvious, but is typically <span class="concept_a">implicit</span> which means it is rarely stated explicitly in text. For example, encyclopedic facts such as <i>"Ottawa is the capital of Canada"</i> are <span style="color: red">not</span> considered commonsense knowledge because this information can be explicitly found online (e.g. Wikipedia) and not necessarily everyone knows it.</p>
+            <p>An example of a sentence could be the following:</p>
+            <div class="ui yellow message">
+              <div class="header">Sentence</div><br>
+              <div class="description">
+                <span>It took longer to clean the fish <strong class="concept_a">tank</strong> than the dog <strong class="concept_b">cage</strong> because <strong class="highlight">it</strong> was dirtier.</span>
+              </div>
+            </div>
+            <p>Given a sentence such as the one above, your task is to identify the <strong>implicit commonsense</strong> knowledge that we can use to infer which noun the highlighted <strong class="highlight">it</strong> refers to in this sentence.</p>
+            <p>For example, in the above sentence, we can infer from sentence that the pronoun <strong class="highlight">it</strong> refers to fish <strong class="concept_a">tank</strong>, not the dog <strong class="concept_b">cage</strong> because our commonsense tells us that for something to take longer to clean, it has to be dirtier and according to the sentence, fish <strong class="concept_a">tank</strong> is the one which took longer to clean, so it must be dirtier, not the dog <strong class="concept_b">cage</strong>.</p>
+            <p>We can represent this commonsense knowledge as below:</p>
+            <p><span class="kg-relation"><span class="kg-head">longer cleaning</span>&nbsp;HasPrerequisite&nbsp;<span class="kg-tail">dirtier</span></span></p>
+            <p><span class="kg-relation"><span class="kg-head">fish tank</span>&nbsp;Causes&nbsp;<span class="kg-tail">longer cleaning</span></span></p>
+            <p>Since there could be many types of relationships in the context, to make the task easier, you will be provided with a list of knowledge relations and your task is to <strong>identify 2 phrases</strong> from the context that can be implicitly connected with one of the relations provided. If none of the relations provided describes the commonsense knowledge you have found, then you will be given an option to specify a <strong>custom relationship</strong>.</p> 
+            <h3>Knowledge Relations</h3>
+            <p>Below we list the available commonsense relations with a brief description and an example. Each relationship is represented as <span class="kg-relation"><span class="kg-head">A</span>&nbsp;Relation&nbsp;<span class="kg-tail">B</span></span> where <span class="kg-head">A</span> and <span class="kg-head">B</span> refer to phrases from the context.</p>
+            <strong>Attributional Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">HasProperty</span> - A has B as a property; A can be described as B. e.g. <span class="kg-relation"><span class="kg-head">trial</span>&nbsp;HasProperty&nbsp;<span class="kg-tail">free of charge</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">CapableOf</span> - Something that A can typically do is B. e.g. <span class="kg-relation"><span class="kg-head">knife</span>&nbsp;CapableOf&nbsp;<span class="kg-tail">cut</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasA</span> - B belongs to A, either as an inherent part or due to a social construct of possession. e.g. <span class="kg-relation"><span class="kg-head">bird</span>&nbsp;HasA&nbsp;<span class="kg-tail">wing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasSubEvent</span> - A and B are events, and B happens as a subevent of A. e.g. <span class="kg-relation"><span class="kg-head">eating</span>&nbsp;HasSubEvent&nbsp;<span class="kg-tail">chewing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsA</span> - A is a subtype or a specific instance of B; every A is a B. e.g. <span class="kg-relation"><span class="kg-head">car</span>&nbsp;IsA&nbsp;<span class="kg-tail">vehicle</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">MannerOf</span> - A is a specific way to do B. Similar to "Is A", but for verbs. e.g. <span class="kg-relation"><span class="kg-head">auction</span>&nbsp;MannerOf&nbsp;<span class="kg-tail">sale</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DependsOn</span> - A depends on B. e.g. <span class="kg-relation"><span class="kg-head">postage</span>&nbsp;DependsOn&nbsp;<span class="kg-tail">weight of the box</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">CreatedBy</span> - A is created by B. e.g. <span class="kg-relation"><span class="kg-head">space rockets</span>&nbsp;CreatedBy&nbsp;<span class="kg-tail">scientists and engineers</span></span>
+              </li>
+            </ul>
+            <strong>Physical/Spatial Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">UsedFor</span> - A is used for B. The purpose of A is B. e.g. <span class="kg-relation"><span class="kg-head">hammer</span>&nbsp;UsedFor&nbsp;<span class="kg-tail">put nails in the wall</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">PartOf</span> - A is part of B. e.g. <span class="kg-relation"><span class="kg-head">word</span>&nbsp;PartOf&nbsp;<span class="kg-tail">sentence</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">MadeOf</span> - A is made up of B. e.g. <span class="kg-relation"><span class="kg-head">crowd</span>&nbsp;MadeOf&nbsp;<span class="kg-tail">people</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">AtLocation</span> - A happens at location B, or B is a typical location for A. e.g. <span class="kg-relation"><span class="kg-head">try clothes</span>&nbsp;AtLocation&nbsp;<span class="kg-tail">changing rooms</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">LocatedNear</span> - A and B are typically found near each other. e.g. <span class="kg-relation"><span class="kg-head">salt shaker</span>&nbsp;LocatedNear&nbsp;<span class="kg-tail">pepper shaker</span></span>
+              </li>
+            </ul>
+            <strong>Temporal Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">IsAfter</span> - A happens after B. e.g. <span class="kg-relation"><span class="kg-head">PersonX lands on the ground</span>&nbsp;IsAfter&nbsp;<span class="kg-tail">PersonX jumps off of the swing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsBefore</span> - A happense before B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the bank</span>&nbsp;IsBefore&nbsp;<span class="kg-tail">PersonX asks for a car loan</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HappensIn</span> - A happens during B. e.g. <span class="kg-relation"><span class="kg-head">gift exchange</span>&nbsp;HappensIn&nbsp;<span class="kg-tail">Christmas party</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsSimultaneous</span> - A and B happens at the same time. e.g. <span class="kg-relation"><span class="kg-head">dancing</span>&nbsp;IsSimultaneous&nbsp;<span class="kg-tail">music playing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasPrerequisite</span> - In order for A to happen, B needs to happen. e.g. <span class="kg-relation"><span class="kg-head">dream</span>&nbsp;HasPrerequisite&nbsp;<span class="kg-tail">sleep</span></span>
+              </li>
+            </ul>
+            <strong>Causal Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Causes</span> - A causes B to happen. e.g. <span class="kg-relation"><span class="kg-head">been late for my meetings</span>&nbsp;Causes&nbsp;<span class="kg-tail">lost some important clients</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">CausesDesire</span> - A makes someone want B. e.g. <span class="kg-relation"><span class="kg-head">having no food</div>&nbsp;CausesDesire&nbsp;<span class="kg-tail">buy food</div></div>
+              </li> -->
+              <li>
+                <span class="kg-relation">Implies</span> - A implies B. e.g. <span class="kg-relation"><span class="kg-head">wet cloth</span>&nbsp;Implies&nbsp;<span class="kg-tail">caught in rain</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HinderedBy</span> - A is less likely to happen because of B. e.g. <span class="kg-relation"><span class="kg-head">PersonX gives PersonY a ride</span>&nbsp;HinderedBy&nbsp;<span class="kg-tail">PersonX does not have a car</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">xReason</span> - A happens because of B. This is the same relation as <span class="kg-relation">Causes</div>, but in the opposite direction. e.g. <span class="kg-relation"><span class="kg-head">stay up late</span>&nbsp;xReason&nbsp;<span class="kg-tail">cannot sleep</span></span>
+              </li> -->
+            </ul>
+            <strong>Social Relations</strong>
+            <ul>
+              <!-- <li>
+                <span class="kg-relation">xAttr</span> - Person in event A has the attribute B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xAttr&nbsp;<span class="kg-tail">lawful</span></span>
+              </li> -->
+              <li>
+                <span class="kg-relation">xIntent</span> - Person in event A intends to do B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xIntent&nbsp;<span class="kg-tail">report crime</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xReact</span> - Person in event A reacts as in B. e.g. <span class="kg-relation"><span class="kg-head">PersonX makes a compliment</span>&nbsp;xReact&nbsp;<span class="kg-tail">feels good</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xNeed</span> - Person in event A needs to do B before doing A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xNeed&nbsp;<span class="kg-tail">dial 911</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xWant</span> - Person in event A wants to do B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xWant&nbsp;<span class="kg-tail">explain everything to police</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xEffect</span> - Event A will have the effect B on the Person in event A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xEffect&nbsp;<span class="kg-tail">starts to panic</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oReact</span> - Others will react to event A as B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;oReact&nbsp;<span class="kg-tail">feel worried</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oWant</span> - Others will want to do B for A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;oWant&nbsp;<span class="kg-tail">dispatch some officers</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oEffect</span> - Event A will have effect B on others. e.g. <span class="kg-relation"><span class="kg-head">PersonX makes a compliment to PersonY</span>&nbsp;oEffect&nbsp;<span class="kg-tail">PersonY will smile</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">Desires</span> - Person in A typically wants B. e.g. <span class="kg-relation"><span class="kg-head">animal</span>&nbsp;Desires&nbsp;<span class="kg-tail">reproduction</span></span>
+              </li> -->
+              <li>
+                <span class="kg-relation">MotivatedByGoal</span> - Someone does A because they want result B. e.g. <span class="kg-relation"><span class="kg-head">PersonX competes</span>&nbsp;MotivatedByGoal&nbsp;<span class="kg-tail">PersonX wins</span></span>
+              </li>
+            </ul>
+            <strong>Comparative Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Antonym</span> - A and B are opposites in some relevant way. e.g. <span class="kg-relation"><span class="kg-head">a lot</span>&nbsp;Antonym&nbsp;<span class="kg-tail">occasionally</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">Synonym</span> - A and B have very similar meanings. e.g. <span class="kg-relation"><span class="kg-head">blackout</span>&nbsp;Synonym&nbsp;<span class="kg-tail">lights are out</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">SimilarTo</span> - A is similar to B. e.g. <span class="kg-relation"><span class="kg-head">mixer</span>&nbsp;SimilarTo&nbsp;<span class="kg-tail">food processor</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DistinctFrom</span> - Something that is A is not B. e.g. <span class="kg-relation"><span class="kg-head">stay home</span>&nbsp;DistinctFrom&nbsp;<span class="kg-tail">go dancing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">RelatedTo</span> - A is related to B. e.g. <span class="kg-relation"><span class="kg-head">refrigerator</span>&nbsp;RelatedTo&nbsp;<span class="kg-tail">freezing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DefinedAs</span> - A is defined as B. e.g. <span class="kg-relation"><span class="kg-head">gym</span>&nbsp;DefinedAs&nbsp;<span class="kg-tail">fine exercise facility</span></span>
+              </li>
+            </ul>
+            <strong>Other Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Other</span> - A and B have some other relationship that is not listed here. In this case, please provide a description of the relationship in the <i>"Other relation"</i> field.
+              </li>
+            </ul>
+            <p>In addition, you can also specify the opposite of these relations where relevant by selecting the "not" prefix. For example, if you want to express the relationship <i>"A does not cause B"</i>, then choose <span class="kg-relation">Not</span> from the <i>Prefix</i> dropdown and <span class="kg-relation">Causes</span> from the <i>Relation</i> dropdown.</p>
+          </div>
+          <!-- INSTRUCTIONS END -->
+
+          <!-- DOS/DONTS START -->
+          <div class="title">
+            <strong>Dos and Don'ts</strong> (click to expand/collpase)
+          </div>
+          <div class="content">
+            <p class="mb-2"><b>Important notes to consider:</b></p> 
+            <p style="font-size: 12px;"><em>Note, there are many other considerations, but these are the most important.</em></p>
+            <ul>
+              <li><strong>Focus on first identifying the underlying commonsense knowledge and then link it to one of the nouns in the sentence.</strong>.</li>
+            </ul>
+          </div>
+          <!-- DOS/DONTS END -->
+
+          <!-- EXAMPLES START -->
+          <div class="title">
+            <strong>Examples</strong> (click to expand/collapse)
+          </div>
+          <div class="content">
+            <div class="ui grid">
+              
+              <div class="row">
+                <div class="column">
+                  <h4>Example 1</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Sentence</div><br>
+                    <div class="description">
+                      <span>The baker tried to store the <strong class="concept_b">shortbread</strong> in the <strong class="concept_a">basket</strong> but <strong class="highlight">it</strong> was too small.</span><br><br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <span class="kg-relation"><span class="kg-head">small shortbread</span>&nbsp;Not Causes&nbsp;<span class="kg-tail">tried to store</span></span><br><br>
+                  <span class="kg-relation"><span class="kg-head">store shortbread</span>&nbsp;HinderedBy&nbsp;<span class="kg-tail">small basket</span></span>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <div class="row">
+                <div class="column">
+                  <h4>Example 2</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Sentence</div><br>
+                    <div class="description">
+                      <span>The florist took the long-stemmed roses from the <strong class="concept_a">refrigerator</strong> and put them in the <strong class="concept_b">vase</strong> until <strong class="highlight">it</strong> was empty.</span><br><br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <span class="kg-relation"><span class="kg-head">putting roses in vase</span>&nbsp;IsAfter&nbsp;<span class="kg-tail">vase is empty</span></span><br><br>
+                  <span class="kg-relation"><span class="kg-head">taking roses from refrigerator</span>&nbsp;isBefore&nbsp;<span class="kg-tail">refrigerator is empty</span></span>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <div class="row">
+                <div class="column">
+                  <h4>Example 3</h4>
+                  <div class="ui yellow message">
+                    <div class="header">Sentence</div><br>
+                    <div class="description">
+                      <span>Sergey appreciated intricate designs and decided to keep the <strong class="concept_a">painting</strong> instead of the <strong class="concept_b">sculpture</strong> because <strong class="highlight">it</strong> was interesting.</span><br><br>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <span class="kg-relation"><span class="kg-head">something is interesting</span>&nbsp;oEffect&nbsp;<span class="kg-tail">keep it</span></span><br><br>
+                  <span class="kg-relation"><span class="kg-head">keep painting</span>&nbsp;Implies&nbsp;<span class="kg-tail">painting is interesting</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- EXAMPLES END -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <!-- MTURK INPUT START -->
+        <form name='mturk_form' method='post' id='mturk_form' action="https://www.mturk.com/mturk/externalSubmit" class="ui form">
+          <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+          <input type='hidden' name='ee' id='ee'/>
+          <span hidden>${id}</span>
+  
+          <!-- QUESTION MACRO START -->          
+          <h2><strong>Task</strong></h2>
+          <p>Given the following sentence, please identify the <strong>implicit commonsense knowledge</strong> that helps <strong>resolving</strong> the highlighted pronoun <strong class="highlight">"it"</strong>.</p>
+          <p>For knowledge relation, please <strong>choose</strong> one of the available relations or choose <span class="kg-relation">Other</span> (if you choose <i>Other</i>, you need to input a description for this relation). If you would like to specify a negative relationship, select <span class="kg-relation">Not</span> from the <i>Prefix</i> dropdown. (<i>Note that Relation dropdown is <strong>searchable</strong></i>)</p>
+          <p>For the right and left phrases that are connected by the chosen relation, either copy&paste it from the sentence or write your own short phrases about the sentence.</p>
+          <p>You have an option to add up to 3 commonsense knowledge instances and we will <strong>reward</strong> with bonus these extra annotations that are <strong class="concept_a">correct</strong>!</p>
+          <div class="ui yellow message">
+            <div class="header">Sentence</div><br>
+            <div class="description">
+              ${sentence}
+            </div>
+          </div>
+          <div class="ui grid">
+            <div class="row">
+              <div class="column">
+                <h3><strong>Commonsense Knowledge</strong></h3>
+                <p>Enter the commonsense knowledge that explains why the highlighted <strong class="highlight">"it"</strong> refers to the <strong class="concept_a">${true_referent}</strong>, not the <strong class="concept_b">${false_referent}</strong>.</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="eight wide column">
+                <div class="required field">
+                  <label>Phrase A</label>
+                  <input type="text" name="ck1-head" id="ck1-head" placeholder="Enter the left phrase of the relation" required/>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <div class="required field">
+                  <label>Phrase B</label>
+                  <input type="text" name="ck1-tail" id="ck1-tail" placeholder="Enter the right phrase of the relation" required/>
+                </div>
+              </div>
+              <div class="two wide column mt-1">
+                <div class="required field">
+                  <label>Prefix</label>
+                  <div id="ck1-relation-prefix-container" class="ui fluid search selection dropdown">
+                    <input type="hidden" name="ck1-relation-prefix" id="ck1-relation-prefix" required/>
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Prefix</div>
+                    <div class="menu">
+                      <div class="item" data-value="empty"></div>
+                      <div class="item" data-value="Not"><span class="kg-relation">Not</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="eight wide column mt-1">
+                <div class="required field">
+                  <label>Relation</label>
+                  <div id="ck1-relation-container" class="ui fluid search selection clearable dropdown">
+                    <input type="hidden" name="ck1-relation" id="ck1-relation" required/>
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Relation</div>
+                    <div class="menu"></div>
+                  </div>
+                  <div id="ck1-relation-error" class="ui pointing red basic label">
+                    Please enter a relation
+                  </div>
+                </div>
+              </div>
+              <div class="six wide column mt-1" id="ck1-relation-other-container">
+                <div class="required field">
+                  <label>Other relation</label>
+                  <input type="text" name="ck1-relation-other" id="ck1-relation-other"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-2" id="ck2-container">
+              <div class="eight wide column">
+                <div class="field">
+                  <label>Phrase A</label>
+                  <input type="text" name="ck2-head" id="ck2-head" placeholder="Enter the left phrase of the relation"/>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <div class="field">
+                  <label>Phrase B</label>
+                  <input type="text" name="ck2-tail" id="ck2-tail" placeholder="Enter the right phrase of the relation"/>
+                </div>
+              </div>
+              <div class="two wide column mt-1">
+                <div class="field">
+                  <label>Prefix</label>
+                  <div id="ck2-relation-prefix-container" class="ui fluid search selection dropdown">
+                    <input type="hidden" name="ck2-relation-prefix" id="ck2-relation-prefix">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Prefix</div>
+                    <div class="menu">
+                      <div class="item" data-value="empty"></div>
+                      <div class="item" data-value="Not"><span class="kg-relation">Not</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="eight wide column mt-1">
+                <div class="field">
+                  <label>Relation</label>
+                  <div id="ck2-relation-container" class="ui fluid search selection clearable dropdown">
+                    <input type="hidden" name="ck2-relation" id="ck2-relation">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Relation</div>
+                    <div class="menu"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="six wide column mt-1" id="ck2-relation-other-container">
+                <div class="field">
+                  <label>Other relation</label>
+                  <input type="text" name="ck2-relation-other" id="ck2-relation-other"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-2" id="ck3-container">
+              <div class="eight wide column">
+                <div class="field">
+                  <label>Phrase A</label>
+                  <input type="text" name="ck3-head" id="ck3-head" placeholder="Enter the left phrase of the relation"/>
+                </div>
+              </div>
+              <div class="eight wide column">
+                <div class="field">
+                  <label>Phrase B</label>
+                  <input type="text" name="ck3-tail" id="ck3-tail" placeholder="Enter the right phrase of the relation"/>
+                </div>
+              </div>
+              <div class="two wide column mt-1">
+                <div class="field">
+                  <label>Prefix</label>
+                  <div id="ck3-relation-prefix-container" class="ui fluid search selection dropdown">
+                    <input type="hidden" name="ck3-relation-prefix" id="ck3-relation-prefix">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Prefix</div>
+                    <div class="menu">
+                      <div class="item" data-value="empty"></div>
+                      <div class="item" data-value="Not"><span class="kg-relation">Not</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="eight wide column mt-1">
+                <div class="field">
+                  <label>Relation</label>
+                  <div id="ck3-relation-container" class="ui fluid search selection clearable dropdown">
+                    <input type="hidden" name="ck3-relation" id="ck3-relation">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Relation</div>
+                    <div class="menu"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="six wide column mt-1" id="ck3-relation-other-container">
+                <div class="field">
+                  <label>Other relation</label>
+                  <input type="text" name="ck3-relation-other" id="ck3-relation-other"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="thirteen wide column"></div>
+              <div class="three wide column add-btn-container">
+                <button class="ui secondary button" id="add-ck-btn" type="button">
+                  <i class="plus icon"></i>
+                  Add Another
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <br>
+          <div class="ui divider"></div>
+          <br>
+
+          <div class="ui grid">
+            <!-- OPTIONAL FEEDBACK --> 
+            <div class="centered row">
+              <div class="eight wide column">
+                <p>(Optional) Please let us know if anything was unclear, if you experienced any issues, or if you have any other feedback for us.</p>
+                <textarea id="feedback" name="feedback" rows=3></textarea>
+              </div>
+            </div>
+            <br>
+            <!-- SUBMIT BUTTON --> 
+            <div class="centered row">
+              <div class="eight wide column" style="text-align: center">
+                <input id="submitButton" onclick="getnext()" type="submit" class="ui primary button" value="Submit">
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- MTURK INPUT END -->
+        <script language='Javascript'>turkSetAssignmentID();</script>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- HIT END -->
+
+<!-- BOOSTRAP JS -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<!-- HITPUB JS -->
+<script id="hitpub_js">
+// TimeMe.js
+(function () { var e, t; e = this, t = function () { var r = { startStopTimes: {}, idleTimeoutMs: 3e4, currentIdleTimeMs: 0, checkStateRateMs: 250, active: !1, idle: !1, currentPageName: "default-page-name", timeElapsedCallbacks: [], userLeftCallbacks: [], userReturnCallbacks: [], trackTimeOnElement: function (e) { var t = document.getElementById(e); t && (t.addEventListener("mouseover", function () { r.startTimer(e) }), t.addEventListener("mousemove", function () { r.startTimer(e) }), t.addEventListener("mouseleave", function () { r.stopTimer(e) }), t.addEventListener("keypress", function () { r.startTimer(e) }), t.addEventListener("focus", function () { r.startTimer(e) })) }, getTimeOnElementInSeconds: function (e) { var t = r.getTimeOnPageInSeconds(e); return t || 0 }, startTimer: function (e, t) { if (e || (e = r.currentPageName), void 0 === r.startStopTimes[e]) r.startStopTimes[e] = []; else { var n = r.startStopTimes[e], i = n[n.length - 1]; if (void 0 !== i && void 0 === i.stopTime) return } r.startStopTimes[e].push({ startTime: t || new Date, stopTime: void 0 }), r.active = !0, r.idle = !1 }, stopAllTimers: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.stopTimer(e[t]) }, stopTimer: function (e, t) { e || (e = r.currentPageName); var n = r.startStopTimes[e]; void 0 !== n && 0 !== n.length && (void 0 === n[n.length - 1].stopTime && (n[n.length - 1].stopTime = t || new Date), r.active = !1) }, getTimeOnCurrentPageInSeconds: function () { return r.getTimeOnPageInSeconds(r.currentPageName) }, getTimeOnPageInSeconds: function (e) { var t = r.getTimeOnPageInMilliseconds(e); return void 0 === t ? void 0 : t / 1e3 }, getTimeOnCurrentPageInMilliseconds: function () { return r.getTimeOnPageInMilliseconds(r.currentPageName) }, getTimeOnPageInMilliseconds: function (e) { var t = r.startStopTimes[e]; if (void 0 !== t) { for (var n = 0, i = 0; i < t.length; i++) { var s = t[i].startTime, o = t[i].stopTime; void 0 === o && (o = new Date), n += o - s } return Number(n) } }, getTimeOnAllPagesInSeconds: function () { for (var e = [], t = Object.keys(r.startStopTimes), n = 0; n < t.length; n++) { var i = t[n], s = r.getTimeOnPageInSeconds(i); e.push({ pageName: i, timeOnPage: s }) } return e }, setIdleDurationInSeconds: function (e) { var t = parseFloat(e); if (!1 !== isNaN(t)) throw { name: "InvalidDurationException", message: "An invalid duration time (" + e + ") was provided." }; return r.idleTimeoutMs = 1e3 * e, this }, setCurrentPageName: function (e) { return r.currentPageName = e, this }, resetRecordedPageTime: function (e) { delete r.startStopTimes[e] }, resetAllRecordedPageTimes: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.resetRecordedPageTime(e[t]) }, resetIdleCountdown: function () { r.idle && r.triggerUserHasReturned(), r.idle = !1, r.currentIdleTimeMs = 0 }, callWhenUserLeaves: function (e, t) { this.userLeftCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, callWhenUserReturns: function (e, t) { this.userReturnCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, triggerUserHasReturned: function () { if (!r.active) for (var e = 0; e < this.userReturnCallbacks.length; e++) { var t = this.userReturnCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.startTimer() }, triggerUserHasLeftPage: function () { if (r.active) for (var e = 0; e < this.userLeftCallbacks.length; e++) { var t = this.userLeftCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.stopAllTimers() }, callAfterTimeElapsedInSeconds: function (e, t) { r.timeElapsedCallbacks.push({ timeInSeconds: e, callback: t, pending: !0 }) }, checkState: function () { for (var e = 0; e < r.timeElapsedCallbacks.length; e++)r.timeElapsedCallbacks[e].pending && r.getTimeOnCurrentPageInSeconds() > r.timeElapsedCallbacks[e].timeInSeconds && (r.timeElapsedCallbacks[e].callback(), r.timeElapsedCallbacks[e].pending = !1); !1 === r.idle && r.currentIdleTimeMs > r.idleTimeoutMs ? (r.idle = !0, r.triggerUserHasLeftPage()) : r.currentIdleTimeMs += r.checkStateRateMs }, visibilityChangeEventName: void 0, hiddenPropName: void 0, listenForVisibilityEvents: function () { void 0 !== document.hidden ? (r.hiddenPropName = "hidden", r.visibilityChangeEventName = "visibilitychange") : void 0 !== document.mozHidden ? (r.hiddenPropName = "mozHidden", r.visibilityChangeEventName = "mozvisibilitychange") : void 0 !== document.msHidden ? (r.hiddenPropName = "msHidden", r.visibilityChangeEventName = "msvisibilitychange") : void 0 !== document.webkitHidden && (r.hiddenPropName = "webkitHidden", r.visibilityChangeEventName = "webkitvisibilitychange"), document.addEventListener(r.visibilityChangeEventName, function () { document[r.hiddenPropName] ? r.triggerUserHasLeftPage() : r.triggerUserHasReturned() }, !1), window.addEventListener("blur", function () { r.triggerUserHasLeftPage() }), window.addEventListener("focus", function () { r.triggerUserHasReturned() }), document.addEventListener("mousemove", function () { r.resetIdleCountdown() }), document.addEventListener("keyup", function () { r.resetIdleCountdown() }), document.addEventListener("touchstart", function () { r.resetIdleCountdown() }), window.addEventListener("scroll", function () { r.resetIdleCountdown() }), setInterval(function () { r.checkState() }, r.checkStateRateMs) }, websocket: void 0, websocketHost: void 0, setUpWebsocket: function (e) { if (window.WebSocket && e) { var t = e.websocketHost; try { r.websocket = new WebSocket(t), window.onbeforeunload = function () { r.sendCurrentTime(e.appId) }, r.websocket.onopen = function () { r.sendInitWsRequest(e.appId) }, r.websocket.onerror = function (e) { console && console.log("Error occurred in websocket connection: " + e) }, r.websocket.onmessage = function (e) { console && console.log(e.data) } } catch (e) { console && console.error("Failed to connect to websocket host.  Error:" + e) } } return this }, websocketSend: function (e) { r.websocket.send(JSON.stringify(e)) }, sendCurrentTime: function (e) { var t = { type: "INSERT_TIME", appId: e, timeOnPageMs: r.getTimeOnCurrentPageInMilliseconds(), pageName: r.currentPageName }; r.websocketSend(t) }, sendInitWsRequest: function (e) { var t = { type: "INIT", appId: e }; r.websocketSend(t) }, initialize: function (e) { var t = r.idleTimeoutMs || 30, n = r.currentPageName || "default-page-name", i = void 0, s = void 0; e && (t = e.idleTimeoutInSeconds || t, n = e.currentPageName || n, i = e.websocketOptions, s = e.initialStartTime), r.setIdleDurationInSeconds(t).setCurrentPageName(n).setUpWebsocket(i).listenForVisibilityEvents(), r.startTimer(void 0, s) } }; return r }, "undefined" != typeof module && module.exports ? module.exports = t() : "function" == typeof define && define.amd ? define([], function () { return e.TimeMe = t() }) : e.TimeMe = t() }).call(this);
+function displayEmoji(){jQuery(this).text(function(r){for(var e=[],t=0,i=0;t<r.length;){var o=r[t++];if(o<128)e[i++]=String.fromCharCode(o);else if(o>191&&o<224){var a=r[t++];e[i++]=String.fromCharCode((31&o)<<6|63&a)}else if(o>239&&o<365){var n=((7&o)<<18|(63&(a=r[t++]))<<12|(63&(f=r[t++]))<<6|63&r[t++])-65536;e[i++]=String.fromCharCode(55296+(n>>10)),e[i++]=String.fromCharCode(56320+(1023&n))}else{a=r[t++];var f=r[t++];e[i++]=String.fromCharCode((15&o)<<12|(63&a)<<6|63&f)}}return e.join("")}(JSON.parse(jQuery(this).attr("data-emoji-bytes"))))}
+TimeMe.initialize({
+  currentPageName: "task",
+  idleTimeoutInSeconds: 30
+});
+
+$(document).ready(function() {
+  $('.ui.accordion').accordion();
+  $('.ui.dropdown').dropdown({
+    fullTextSearch: true
+  });
+  $('.ui.clearable.dropdown').dropdown({
+    fullTextSearch: true,
+    clearable: true
+  });
+
+  $('span.emoji-bytes').each(displayEmoji);
+  var relations = [
+    {
+      "optgroup": "Attributional",
+      "options": [
+        {"value": "HasProperty", "desc": "A has B as a property"},
+        {"value": "CapableOf", "desc": "Something that A can typically do is B"},
+        {"value": "HasA", "desc": "B belongs to A"},
+        {"value": "HasSubEvent" ,"desc": "B happens as a subevent of A"},
+        {"value": "IsA", "desc": "A is a subtype or a specific instance of B"},
+        {"value": "MannerOf", "desc": "A is a specific way to do B"},
+        {"value": "DependsOn", "desc": "A depends on B"},
+        {"value": "CreatedBy", "desc": "A is created by B"}
+      ]
+    },
+    {
+      "optgroup": "Physical",
+      "options": [
+        {"value": "UsedFor", "desc": "A is used for B"},
+        {"value": "PartOf", "desc": "A is part of B"},
+        {"value": "MadeOf", "desc": "A is made up of B"},
+        {"value": "AtLocation", "desc": "A happens at location B"},
+        {"value": "LocatedNear", "desc": "A and B can be found near each other"}
+      ]
+    },
+    {
+      "optgroup": "Temporal",
+      "options": [
+        {"value": "IsAfter", "desc": "A happens after B"},
+        {"value": "IsBefore", "desc": "A happense before B"},
+        {"value": "HappensIn", "desc": "A happens during B"},
+        {"value": "IsSimultaneous", "desc": "A and B happens at the same time"},
+        {"value": "HasPrerequisite", "desc": "For A to happen, B needs to happen"}
+      ]
+    },
+    {
+      "optgroup": "Causal",
+      "options": [
+        {"value": "Causes", "desc": "A causes B to happen"},
+        // {"value": "CausesDesire"},
+        {"value": "Implies", "desc": "A implies B"},
+        {"value": "HinderedBy", "desc": "A is less likely to happen because of B"},
+        // {"value": "xReason"}
+      ]
+    },
+    {
+      "optgroup": "Social",
+      "options": [
+        // {"value": "xAttr"},
+        {"value": "xIntent", "desc": "Person in A intends to do B"},
+        {"value": "xReact", "desc": "Person in A reacts as in B"},
+        {"value": "xNeed", "desc": "Person in A needs to do B before doing A"},
+        {"value": "xWant", "desc": "Person in A wants to do B"},
+        {"value": "xEffect", "desc": "A will have the effect B on the Person in A"},
+        {"value": "oReact", "desc": "Others will react to event A as B"},
+        {"value": "oWant", "desc": "Others will want to do B for A"},
+        {"value": "oEffect", "desc": "A will have effect B on others"},
+        // {"value": "Desires"},
+        {"value": "MotivatedByGoal", "desc": "Someone does A because they want result B"}
+      ]
+    },
+    {
+      "optgroup": "Comparative",
+      "options": [
+        {"value": "Antonym", "desc": "A and B are opposites"},
+        {"value": "Synonym", "desc": "A and B have similar meanings"},
+        {"value": "SimilarTo", "desc": "A is similar to B"},
+        {"value": "DistinctFrom", "desc": "Something that is A is not B"},
+        {"value": "RelatedTo", "desc": "A is related to B"},
+        {"value": "DefinedAs", "desc": "A is defined as B"}
+      ]
+    },
+    {
+      "optgroup": "Other",
+      "options": [
+        {"value": "Other", "desc": "A and B have some other relationship"}
+      ]
+    }
+  ]
+
+  function getDesc(value) {
+    for (let relation of relations) {
+      for (let option of relation.options) {
+        if (option.value == value) {
+          return option.desc;
+        }
+      }
+    }
+  }
+
+  for (let relation of relations) {
+    let header = $('<div>').addClass('header').text(relation.optgroup);
+    for (let i=1; i<=3; i++) {
+      $('#ck'+i+'-relation-container .menu').append(header.clone());
+    }
+
+    for (let option of relation.options) {
+      let item = $('<div>').addClass('item').attr('data-value', option.value);
+      item.append($('<span>').addClass('kg-relation').text(option.value));
+      item.append($('<span>').addClass('description').text(option.desc));
+      for (let i=1; i<=3; i++) {
+        $('#ck'+i+'-relation-container .menu').append(item.clone());
+      }
+    }
+  }
+
+  $('#ck1-relation-error').hide();
+  $('#ck1-relation').on('change', function() {
+    $('#ck1-relation-error').hide();
+  });
+
+  for (let i=1; i<=3; i++) {
+    $('#ck'+i+'-relation-other-container').hide();
+    $('#ck'+i+'-relation-other').attr("required", false);
+    $('#ck'+i+'-relation').on("change", function() {
+      if (this.value == "Other") {
+        $('#ck'+i+'-relation-other-container').show();
+        $('#ck'+i+'-relation-other').attr("required", true);
+      } else {
+        $('#ck'+i+'-relation-other-container').hide();
+        $('#ck'+i+'-relation-other').attr("required", false);
+      }
+    })
+  }
+
+  for (let i=2; i<=3; i++) {
+    $('#ck'+i+'-container').hide();
+  }
+
+  $('#add-ck-btn').click(function() {
+    if ($('#ck2-container').is(':hidden')) {
+      $('#ck2-container').show();
+    } else if ($('#ck3-container').is(':hidden')) {
+      $('#ck3-container').show();
+      $('#add-ck-btn').attr("disabled", true);
+    }
+  })
+
+  $('#submitButton').click(function () {
+    try {
+      if ($('#ck1-relation').val() == "") {
+        $('#ck1-relation-error').show();
+        return false;
+      }
+      $('input[name=ee]').attr('value', TimeMe.getTimeOnCurrentPageInSeconds());
+    } catch {
+    }
+    return true;
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+---
+layout: page
+permalink: /leaderboard/
+title: Leaderboard
+---
+
+<div class="ui info message">
+  <div class="header">
+    Want to evaluate on CRoW? 
+  </div>
+  <p>Please check the <a href="/crow/getting-started">Getting Started</a> page for instructions on how to make a submission to this leaderboard.</p>
+</div>
+
+<br>
+<div class="leaderboard-container">
+  <h2><span class="section-bar"></span>Global</h2>
+  <p style="font-size: 0.8rem;"><i>Only submissions evaluated on at least 5 core tasks (Dialogue, Summarization, Intent Detection, Stance Classification and Safety Detection) are shown in the Global Leaderboard.</i></p>
+  <p style="font-size: 0.8rem;"><i><b>CRoW Score [-MT]</b> = Average Score across all except Machine Translation tasks</i></p>
+  <p style="font-size: 0.8rem;"><i><b>SA</b> = Situational Accuracy</i></p>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="one wide">Model Size</th>
+          <!-- <th class="two wide">Date</th> -->
+          <th class="one wide">CRoW Score [-MT]<br>(macro-F1)</th>
+          <th class="one wide">CRoW Score [-MT]<br>(SA)</th>
+          <th class="one wide">CRoW Score<br>(macro-F1)</th>
+          <th class="one wide">CRoW Score<br>(SA)</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<h2><span class="section-bar"></span>By Task</h2>
+<div class="leaderboard-container">
+  <h3><span class="section-bar"></span>Open-domain Dialogue</h3>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="dg-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h3><span class="section-bar"></span>Dialogue Summarization</h3>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="ds-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h3><span class="section-bar"></span>Intent Detection</h3>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="id-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h3><span class="section-bar"></span>Safety Detection</h3>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="sd-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h3><span class="section-bar"></span>Stance Classification</h3>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="sc-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h3><span class="section-bar"></span>Machine Translation</h3>
+  <p style="font-size: 0.8rem;"><i>Only submissions evaluated on all MT tasks (zh-en, en-de, en-fr, en-ru) are shown in this leaderboard.</i></p>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <!-- <th class="two wide">Date</th> -->
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="mt-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h4><span class="section-bar"></span>Machine Translation (zh-en)</h4>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="mt-zh-en-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h4><span class="section-bar"></span>Machine Translation (en-de)</h4>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="mt-en-de-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h4><span class="section-bar"></span>Machine Translation (en-fr)</h4>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="mt-en-fr-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<br><br>
+
+<div class="leaderboard-container">
+  <h4><span class="section-bar"></span>Machine Translation (en-ru)</h4>
+  <div class="leaderboard-table-container">
+    <table class="ui small compact sortable striped celled unstackable table leaderboard">
+      <thead>
+        <tr>
+          <th class="three wide">Contributor</th>
+          <th class="three wide">Model</th>
+          <th class="two wide">Model Size</th>
+          <th class="two wide">Date</th>
+          <th class="two wide">Macro-F1</th>
+          <th class="two wide">SA</th>
+        </tr>
+      </thead>
+      <tbody id="mt-en-ru-leaderboard-body"></tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
+
+<script>
+  let leaderboard = {{ site.data.leaderboard | jsonify }};
+  let task_leaderboard = {{ site.data.task_leaderboard | jsonify }};
+  
+  function num2word(num) {
+    if (typeof num !== 'number') {
+      return num;
+    }
+
+    let quotient = num / 1e12;
+    if (quotient >= 1) {
+      return quotient.toFixed(0) + 'T';
+    }
+
+    quotient = num / 1e9;
+    if (quotient >= 1) {
+      return quotient.toFixed(0) + 'B';
+    }
+
+    quotient = num / 1e6;
+    if (quotient >= 1) {
+      return quotient.toFixed(0) + 'M';
+    }
+
+    quotient = num / 1e3;
+    if (quotient >= 1) {
+      return quotient.toFixed(0) + 'K';
+    }
+  }
+
+  function areEqual(array1, array2) {
+    if (array1.length === array2.length) {
+      return array1.every(element => {
+        if (array2.includes(element)) {
+          return true;
+        }
+
+        return false;
+      });
+    }
+
+    return false;
+  }
+
+  let task_label_map = {
+      dialogue: ["DG", "blue"],
+      summarization: ["DS", "green"],
+      intent: ["ID", "orange"],
+      safety: ["SD", "red"],
+      stance: ["SC", "purple"],
+      mt_en_de: ["en-de", "teal"],
+      mt_en_fr: ["en-fr", "teal"],
+      mt_en_ru: ["en-ru", "teal"],
+      mt_zh_en: ["zh-en", "teal"]
+  }
+
+  leaderboard.forEach(function(row, index) {
+    let timestamp = new Date(Date.parse(row.timestamp));
+    let contributor = $('<td>').addClass('three wide').text(row.contributor);
+    let diff = _.difference(['dialogue', 'summarization', 'intent', 'safety', 'stance'], row.tasks)
+
+    if (_.isEmpty(diff)) {
+      // let task_elems = [];
+
+      // let tasks = null;
+
+      // if (areEqual(row.tasks, Object.keys(task_label_map))) {
+      //   let task_elem = $('<div>').addClass('ui mini black label').text("All");
+      //   tasks = $('<td>').addClass('six wide').append(task_elem);
+      // } else {
+      //   row.tasks.forEach(function(task, index) {
+      //     let task_elem = $('<div>').addClass(`ui mini ${task_label_map[task][1]} label`).text(task_label_map[task][0]);
+      //     task_elems.push(task_elem);
+      //   });
+      //   let task_group_elem = $('<div>').append(task_elems);
+      //   tasks = $('<td>').addClass('six wide').append(task_group_elem);
+      // }
+
+      let model = $('<td>').addClass('three wide').text(row.model_name);
+
+      if (row.model_link && row.model_link !== "") {
+        model_with_link = $('<a>').attr('href', row.model_link).attr('target', '_blank').text(row.model_name);
+        model = $('<td>').addClass('three wide').append(model_with_link);
+      }
+      let model_size = $('<td>').addClass('one wide').attr('data-sort-value', typeof row.model_size === 'number' ? row.model_size : 0).text(num2word(row.model_size));
+      let date = $('<td>').addClass('two wide').attr('data-sort-value', timestamp.getTime()).text(timestamp.toLocaleDateString());
+      let macro_f1 = $('<td>').addClass('one wide').attr('data-sort-value', row.metrics.macro_f1).text((row.metrics.macro_f1*100).toFixed(1));
+      let sa = $('<td>').addClass('one wide').attr('data-sort-value', row.metrics.exact_match).text((row.metrics.exact_match*100).toFixed(1));
+      let non_mt_macro_f1 = $('<td>').addClass('one wide').attr('data-sort-value', row.non_mt_metrics.macro_f1).text((row.non_mt_metrics.macro_f1*100).toFixed(1));
+      let non_mt_sa = $('<td>').addClass('one wide').attr('data-sort-value', row.non_mt_metrics.exact_match).text((row.non_mt_metrics.exact_match*100).toFixed(1));
+      let mt_macro_f1 = $('<td>').addClass('one wide').attr('data-sort-value', row.mt_metrics.macro_f1).text((row.mt_metrics.macro_f1*100).toFixed(1));
+      let mt_sa = $('<td>').addClass('one wide').attr('data-sort-value', row.mt_metrics.exact_match).text((row.mt_metrics.exact_match*100).toFixed(1));
+      let row_element = $('<tr>').append(contributor, model, model_size, non_mt_macro_f1, non_mt_sa, macro_f1, sa);
+      $('#leaderboard-body').append(row_element.clone());
+
+      let mt_diff = _.difference(['mt_zh_en', 'mt_en_de', 'mt_en_ru', 'mt_en_fr'], row.tasks)
+
+      if (_.isEmpty(mt_diff)) {
+        let mt_row_element = $('<tr>').append(contributor, model, model_size, mt_macro_f1, mt_sa);
+        $('#mt-leaderboard-body').append(mt_row_element.clone());
+      }
+    }
+  })
+
+  task_leaderboard.forEach(function(row, index) {
+    let timestamp = new Date(Date.parse(row.timestamp));
+    let contributor = $('<td>').addClass('three wide').text(row.contributor);
+
+    let task_name_map = {
+      dialogue: "dg",
+      summarization: "ds",
+      intent: "id",
+      safety: "sd",
+      stance: "sc",
+      mt_en_de: "mt-en-de",
+      mt_en_fr: "mt-en-fr",
+      mt_en_ru: "mt-en-ru",
+      mt_zh_en: "mt-zh-en"
+    }
+
+    // let mt_tasks = ["mt_en_de", "mt_en_fr", "mt_en_ru", "mt_zh_en"];
+    // let languages = null;
+
+    // if (mt_tasks.findIndex(task => task === row.task) !== -1) {
+    //   let task_elem = $('<div>').addClass(`ui mini ${task_label_map[row.task][1]} label`).text(task_label_map[row.task][0]);
+    //   languages = $('<td>').addClass('three wide').append(task_elem);
+    // }
+        
+    let model = $('<td>').addClass('three wide').text(row.model_name);
+
+    if (row.model_link && row.model_link !== "") {
+      model_with_link = $('<a>').attr('href', row.model_link).attr('target', '_blank').text(row.model_name);
+      model = $('<td>').addClass('three wide').append(model_with_link);
+    }
+    let model_size = $('<td>').addClass('two wide').attr('data-sort-value', typeof row.model_size === 'number' ? row.model_size : 0).text(num2word(row.model_size));
+    let date = $('<td>').addClass('two wide').attr('data-sort-value', timestamp.getTime()).text(timestamp.toLocaleDateString());
+    let macro_f1 = $('<td>').addClass('two wide').attr('data-sort-value', row.metrics.macro_f1).text((row.metrics.macro_f1*100).toFixed(1));
+    let sa = $('<td>').addClass('two wide').attr('data-sort-value', row.metrics.exact_match).text((row.metrics.exact_match*100).toFixed(1));
+
+    let row_element = $('<tr>').append(contributor, model, model_size, date, macro_f1, sa);
+
+    // if (languages) {
+    //   row_element = $('<tr>').append(contributor, languages, model, model_size, date, macro_f1, sa);
+    // }
+
+    $(`#${task_name_map[row.task]}-leaderboard-body`).append(row_element.clone());
+  })
+</script>

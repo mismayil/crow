@@ -1,0 +1,3119 @@
+[
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883052",
+        "metrics": {
+            "macro_f1": 0.989,
+            "exact_match": 0.964
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.7533333333333333,
+            "macro_f1": 0.8959716830814968,
+            "accuracy": 0.9151785714285714,
+            "macro_precision": 0.8740972142611487,
+            "macro_recall": 0.9322901142573274,
+            "dimensions": {
+                "attribution": 0.9139774634380244,
+                "physical": 0.9353177308187532,
+                "temporal": 0.873793103448276,
+                "causal": 0.9105777866067399,
+                "social": 0.9416583912611718,
+                "comparison": 0.9002439852991135,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.7064017660044151,
+            "macro_f1": 0.8860889655532904,
+            "accuracy": 0.9162971175166297,
+            "macro_precision": 0.8959866530407885,
+            "macro_recall": 0.877352725395137,
+            "dimensions": {
+                "attribution": 0.8971861471861472,
+                "physical": 0.904342544791983,
+                "temporal": 0.8925425719318849,
+                "causal": 0.8780263912794033,
+                "social": 0.9164889836531628,
+                "comparison": 0.9181333068178051,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.3185840707964602,
+            "macro_f1": 0.6867465686031708,
+            "accuracy": 0.7111111111111111,
+            "macro_precision": 0.6968865694277175,
+            "macro_recall": 0.7607993487565978,
+            "dimensions": {
+                "attribution": 0.6993809084466551,
+                "physical": 0.7290675702091614,
+                "temporal": 0.681890012642225,
+                "causal": 0.6933798041407004,
+                "social": 0.7459459459459459,
+                "comparison": 0.7087827872408109,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-T5",
+        "model_size": 11000000000,
+        "model_link": "https://huggingface.co/google/flan-t5-xxl",
+        "submission_id": "c1671d8dd7d7",
+        "timestamp": "2023-10-16T22:31:37.254512",
+        "metrics": {
+            "exact_match": 0.33111111111111113,
+            "macro_f1": 0.6690917212021954,
+            "accuracy": 0.6802455357142857,
+            "macro_precision": 0.716435377322028,
+            "macro_recall": 0.7828200033118067,
+            "dimensions": {
+                "attribution": 0.6890441569886382,
+                "physical": 0.7115449571032898,
+                "temporal": 0.6622185911401598,
+                "causal": 0.6899240954124686,
+                "social": 0.7388888888888888,
+                "comparison": 0.721093044263776,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://lmsys.org/blog/2023-03-30-vicuna",
+        "submission_id": "f5e4f3b4b6dc",
+        "timestamp": "2023-10-16T22:31:44.271901",
+        "metrics": {
+            "exact_match": 0.2222222222222222,
+            "macro_f1": 0.6437238140735697,
+            "accuracy": 0.7271205357142857,
+            "macro_precision": 0.6413947168604883,
+            "macro_recall": 0.6464696141745322,
+            "dimensions": {
+                "attribution": 0.6460081983212961,
+                "physical": 0.6537015726889144,
+                "temporal": 0.672517514468474,
+                "causal": 0.6430477114445099,
+                "social": 0.6200607902735562,
+                "comparison": 0.6455223880597014,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.20222222222222222,
+            "macro_f1": 0.6117830440411085,
+            "accuracy": 0.6339285714285714,
+            "macro_precision": 0.6389845630859872,
+            "macro_recall": 0.6846895181321411,
+            "dimensions": {
+                "attribution": 0.6291406260410697,
+                "physical": 0.564138860802157,
+                "temporal": 0.5892255892255892,
+                "causal": 0.627122641509434,
+                "social": 0.675837569206931,
+                "comparison": 0.6545454545454545,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 7000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "6196e262f148",
+        "timestamp": "2023-10-16T22:31:03.120753",
+        "metrics": {
+            "exact_match": 0.04888888888888889,
+            "macro_f1": 0.53125,
+            "accuracy": 0.6484375,
+            "macro_precision": 0.5313468240060235,
+            "macro_recall": 0.5311607882099685,
+            "dimensions": {
+                "attribution": 0.5144815743933032,
+                "physical": 0.5922459893048129,
+                "temporal": 0.5192278403898872,
+                "causal": 0.5213312462326614,
+                "social": 0.5364891518737672,
+                "comparison": 0.5528819064664745,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-Alpaca",
+        "model_size": 3000000000,
+        "model_link": "https://huggingface.co/declare-lab/flan-alpaca-gpt4-xl",
+        "submission_id": "cb6178df569a",
+        "timestamp": "2023-10-16T22:31:30.500856",
+        "metrics": {
+            "exact_match": 0.18666666666666668,
+            "macro_f1": 0.523199936192698,
+            "accuracy": 0.5234375,
+            "macro_precision": 0.6714066271669958,
+            "macro_recall": 0.6810796489485014,
+            "dimensions": {
+                "attribution": 0.5891358024691358,
+                "physical": 0.6228494623655914,
+                "temporal": 0.5072550486163051,
+                "causal": 0.5241758400508509,
+                "social": 0.5425603521985118,
+                "comparison": 0.6052522230532702,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Alpaca",
+        "model_size": 7000000000,
+        "model_link": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+        "submission_id": "328b17632bd9",
+        "timestamp": "2023-10-16T22:31:23.891867",
+        "metrics": {
+            "exact_match": 0.09555555555555556,
+            "macro_f1": 0.4847822876276593,
+            "accuracy": 0.49051339285714285,
+            "macro_precision": 0.5674500893769672,
+            "macro_recall": 0.5822901142573274,
+            "dimensions": {
+                "attribution": 0.5128981896008022,
+                "physical": 0.5408602150537634,
+                "temporal": 0.5127299925205685,
+                "causal": 0.4689897764716844,
+                "social": 0.5294524537643803,
+                "comparison": 0.4731588287488908,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 33000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "01be7b115577",
+        "timestamp": "2023-10-16T22:31:17.046207",
+        "metrics": {
+            "exact_match": 0.07777777777777778,
+            "macro_f1": 0.4818793627062803,
+            "accuracy": 0.48716517857142855,
+            "macro_precision": 0.5666005997889683,
+            "macro_recall": 0.5807931776784235,
+            "dimensions": {
+                "attribution": 0.4804276315789473,
+                "physical": 0.4819009100101112,
+                "temporal": 0.5470297029702971,
+                "causal": 0.5129702724087262,
+                "social": 0.47971109175377474,
+                "comparison": 0.4736258865248226,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.03777777777777778,
+            "macro_f1": 0.4784752674037232,
+            "accuracy": 0.7516741071428571,
+            "macro_precision": 0.6561406856197927,
+            "macro_recall": 0.5203262129491637,
+            "dimensions": {
+                "attribution": 0.451781627983001,
+                "physical": 0.42126576420224454,
+                "temporal": 0.45048761683191085,
+                "causal": 0.46827555646453284,
+                "social": 0.4796933346551667,
+                "comparison": 0.4710622710622711,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.09555555555555556,
+            "macro_f1": 0.45511145006413145,
+            "accuracy": 0.48604910714285715,
+            "macro_precision": 0.4913228779183879,
+            "macro_recall": 0.4884699453551913,
+            "dimensions": {
+                "attribution": 0.48203125,
+                "physical": 0.4793741109530583,
+                "temporal": 0.41578849491693526,
+                "causal": 0.4447514847921291,
+                "social": 0.5011544763890958,
+                "comparison": 0.454085737271578,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.4282067645181876,
+            "accuracy": 0.7488839285714286,
+            "macro_precision": 0.3744419642857143,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.42007434944237915,
+                "physical": 0.4048780487804878,
+                "temporal": 0.41904761904761906,
+                "causal": 0.41509433962264153,
+                "social": 0.40954773869346733,
+                "comparison": 0.4099378881987578,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.06666666666666667,
+            "macro_f1": 0.41439714595367844,
+            "accuracy": 0.4146205357142857,
+            "macro_precision": 0.56775511632587,
+            "macro_recall": 0.5641149196886902,
+            "dimensions": {
+                "attribution": 0.41682993705186455,
+                "physical": 0.4912563895614743,
+                "temporal": 0.41484834155238803,
+                "causal": 0.42874998534571923,
+                "social": 0.49742641728287657,
+                "comparison": 0.42073170731707316,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 13000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "9a6c2cdfb7d2",
+        "timestamp": "2023-10-16T22:31:09.996801",
+        "metrics": {
+            "exact_match": 0.02,
+            "macro_f1": 0.40480697928026177,
+            "accuracy": 0.40513392857142855,
+            "macro_precision": 0.5217823639774859,
+            "macro_recall": 0.523070044709389,
+            "dimensions": {
+                "attribution": 0.4081050859221367,
+                "physical": 0.49057112068965525,
+                "temporal": 0.4506187129873718,
+                "causal": 0.44021964173192907,
+                "social": 0.45705761429169167,
+                "comparison": 0.40518783542039355,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "summarization",
+        "contributor": "EPFL NLP",
+        "model_name": "Stable-Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/CarperAI/stable-vicuna-13b-delta",
+        "submission_id": "61519ce2c183",
+        "timestamp": "2023-10-16T22:31:51.138012",
+        "metrics": {
+            "exact_match": 0.07111111111111111,
+            "macro_f1": 0.38564448257164863,
+            "accuracy": 0.38783482142857145,
+            "macro_precision": 0.5669427191166321,
+            "macro_recall": 0.5550935585361815,
+            "dimensions": {
+                "attribution": 0.35884879747546977,
+                "physical": 0.43021978021978025,
+                "temporal": 0.3906020447370998,
+                "causal": 0.4185249709639953,
+                "social": 0.42903856341681734,
+                "comparison": 0.3846590909090909,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883089",
+        "metrics": {
+            "macro_f1": 0.881,
+            "exact_match": 0.696
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.6070528967254408,
+            "macro_f1": 0.8425935150224151,
+            "accuracy": 0.8436955258570599,
+            "macro_precision": 0.8507774127173768,
+            "macro_recall": 0.8426578810866887,
+            "dimensions": {
+                "attribution": 0.8568828626986045,
+                "physical": 0.8571244695309157,
+                "temporal": 0,
+                "causal": 0.887888198757764,
+                "social": 0.8374155405405406,
+                "comparison": 0.8450199752031959,
+                "other": 0.8465845464725644
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.5468354430379747,
+            "macro_f1": 0.79617128965628,
+            "accuracy": 0.7990654205607477,
+            "macro_precision": 0.8135565438318761,
+            "macro_recall": 0.797665895456686,
+            "dimensions": {
+                "attribution": 0.8168653502542722,
+                "physical": 0.8383577793428667,
+                "temporal": 0,
+                "causal": 0.8616466909848879,
+                "social": 0.767695331173315,
+                "comparison": 0.8016142380963228,
+                "other": 0.8173625553244814
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-T5",
+        "model_size": 11000000000,
+        "model_link": "https://huggingface.co/google/flan-t5-xxl",
+        "submission_id": "c1671d8dd7d7",
+        "timestamp": "2023-10-16T22:31:37.254512",
+        "metrics": {
+            "exact_match": 0.5164556962025316,
+            "macro_f1": 0.7645253602604534,
+            "accuracy": 0.7716121495327103,
+            "macro_precision": 0.8033259593818171,
+            "macro_recall": 0.7695099062945749,
+            "dimensions": {
+                "attribution": 0.7981912527798369,
+                "physical": 0.8199750312109864,
+                "temporal": 0,
+                "causal": 0.831312235038943,
+                "social": 0.7235218411689,
+                "comparison": 0.8169336384439361,
+                "other": 0.7736743938182787
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-Alpaca",
+        "model_size": 3000000000,
+        "model_link": "https://huggingface.co/declare-lab/flan-alpaca-gpt4-xl",
+        "submission_id": "cb6178df569a",
+        "timestamp": "2023-10-16T22:31:30.500856",
+        "metrics": {
+            "exact_match": 0.4379746835443038,
+            "macro_f1": 0.7219112586192303,
+            "accuracy": 0.7365654205607477,
+            "macro_precision": 0.791812369208537,
+            "macro_recall": 0.733736682978099,
+            "dimensions": {
+                "attribution": 0.752761044176707,
+                "physical": 0.7369345209590397,
+                "temporal": 0,
+                "causal": 0.8072654476618057,
+                "social": 0.7283507006827163,
+                "comparison": 0.7668608971100075,
+                "other": 0.7488136324417601
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.3602015113350126,
+            "macro_f1": 0.6772139751959174,
+            "accuracy": 0.7001743172574085,
+            "macro_precision": 0.7679274525360247,
+            "macro_recall": 0.6961614420528505,
+            "dimensions": {
+                "attribution": 0.72258416693865,
+                "physical": 0.6855243811557131,
+                "temporal": 0,
+                "causal": 0.7544358517081831,
+                "social": 0.6154189816140672,
+                "comparison": 0.7356516822165677,
+                "other": 0.669517543859649
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://lmsys.org/blog/2023-03-30-vicuna",
+        "submission_id": "f5e4f3b4b6dc",
+        "timestamp": "2023-10-16T22:31:44.271901",
+        "metrics": {
+            "exact_match": 0.2430379746835443,
+            "macro_f1": 0.6445059287439563,
+            "accuracy": 0.6507009345794392,
+            "macro_precision": 0.6591256367341529,
+            "macro_recall": 0.6491117435487943,
+            "dimensions": {
+                "attribution": 0.656853403946821,
+                "physical": 0.6513553139059424,
+                "temporal": 0,
+                "causal": 0.6561339352037027,
+                "social": 0.5674157303370786,
+                "comparison": 0.7136615292533294,
+                "other": 0.6759139784946238
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Stable-Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/CarperAI/stable-vicuna-13b-delta",
+        "submission_id": "61519ce2c183",
+        "timestamp": "2023-10-16T22:31:51.138012",
+        "metrics": {
+            "exact_match": 0.08860759493670886,
+            "macro_f1": 0.5963673498215372,
+            "accuracy": 0.5963785046728972,
+            "macro_precision": 0.5965813506368661,
+            "macro_recall": 0.5965445697945033,
+            "dimensions": {
+                "attribution": 0.5764714421811913,
+                "physical": 0.5907451555718565,
+                "temporal": 0,
+                "causal": 0.586726371341756,
+                "social": 0.5422029663830998,
+                "comparison": 0.6140278311224039,
+                "other": 0.6118150227211975
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.1518987341772152,
+            "macro_f1": 0.5876078174473196,
+            "accuracy": 0.5876168224299065,
+            "macro_precision": 0.5878026967059224,
+            "macro_recall": 0.5877739331026528,
+            "dimensions": {
+                "attribution": 0.6003086896125945,
+                "physical": 0.6151145937131988,
+                "temporal": 0,
+                "causal": 0.6183974128638161,
+                "social": 0.5713562753036437,
+                "comparison": 0.5812124974136148,
+                "other": 0.6199317114810072
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 7000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "6196e262f148",
+        "timestamp": "2023-10-16T22:31:03.120753",
+        "metrics": {
+            "exact_match": 0.007594936708860759,
+            "macro_f1": 0.5762988137937062,
+            "accuracy": 0.576518691588785,
+            "macro_precision": 0.576390255098695,
+            "macro_recall": 0.576321123646117,
+            "dimensions": {
+                "attribution": 0.5541771407576088,
+                "physical": 0.5442760890489645,
+                "temporal": 0,
+                "causal": 0.5508624289339287,
+                "social": 0.5289774824658545,
+                "comparison": 0.5784276771394574,
+                "other": 0.5620204603580563
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 13000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "9a6c2cdfb7d2",
+        "timestamp": "2023-10-16T22:31:09.996801",
+        "metrics": {
+            "exact_match": 0.017721518987341773,
+            "macro_f1": 0.5757029560201874,
+            "accuracy": 0.5759345794392523,
+            "macro_precision": 0.5758039062980345,
+            "macro_recall": 0.5757294076697856,
+            "dimensions": {
+                "attribution": 0.5524273255813953,
+                "physical": 0.5368992248062016,
+                "temporal": 0,
+                "causal": 0.5613876999324172,
+                "social": 0.5321518987341772,
+                "comparison": 0.5810762862211709,
+                "other": 0.5547445255474452
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 33000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "01be7b115577",
+        "timestamp": "2023-10-16T22:31:17.046207",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.5711299898568076,
+            "accuracy": 0.5712616822429907,
+            "macro_precision": 0.5711541218637992,
+            "macro_recall": 0.5711308122274319,
+            "dimensions": {
+                "attribution": 0.544815828917869,
+                "physical": 0.5375015483711136,
+                "temporal": 0,
+                "causal": 0.5508624289339287,
+                "social": 0.5226014614240977,
+                "comparison": 0.5757736986787265,
+                "other": 0.5547445255474452
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Alpaca",
+        "model_size": 7000000000,
+        "model_link": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+        "submission_id": "328b17632bd9",
+        "timestamp": "2023-10-16T22:31:23.891867",
+        "metrics": {
+            "exact_match": 0.14430379746835442,
+            "macro_f1": 0.5592633794488295,
+            "accuracy": 0.6144859813084113,
+            "macro_precision": 0.712868123714389,
+            "macro_recall": 0.6100380145096674,
+            "dimensions": {
+                "attribution": 0.5829246919717957,
+                "physical": 0.5510265807920862,
+                "temporal": 0,
+                "causal": 0.5403116531165312,
+                "social": 0.5909127657854313,
+                "comparison": 0.591323963213604,
+                "other": 0.6001259085446117
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.06582278481012659,
+            "macro_f1": 0.5133746425199354,
+            "accuracy": 0.5134345794392523,
+            "macro_precision": 0.5133756988120195,
+            "macro_recall": 0.5133767394879984,
+            "dimensions": {
+                "attribution": 0.5252950031282162,
+                "physical": 0.5056311413454271,
+                "temporal": 0,
+                "causal": 0.4918157685799296,
+                "social": 0.46101623445076956,
+                "comparison": 0.5732508697332818,
+                "other": 0.5092755947607592
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.19083969465648856,
+            "macro_f1": 0.5132688948410388,
+            "accuracy": 0.6028002947678703,
+            "macro_precision": 0.7746092697386149,
+            "macro_recall": 0.5886518344533612,
+            "dimensions": {
+                "attribution": 0.5376676411614345,
+                "physical": 0.5085774189293326,
+                "temporal": 0,
+                "causal": 0.5552350042072364,
+                "social": 0.47851851851851857,
+                "comparison": 0.5489741099915507,
+                "other": 0.5115131578947368
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.1291139240506329,
+            "macro_f1": 0.49219117411354646,
+            "accuracy": 0.5730140186915887,
+            "macro_precision": 0.6771426132483497,
+            "macro_recall": 0.5679811360673751,
+            "dimensions": {
+                "attribution": 0.5218794632650092,
+                "physical": 0.5332543223647519,
+                "temporal": 0,
+                "causal": 0.5736224028906957,
+                "social": 0.4444279713367927,
+                "comparison": 0.5252837977296182,
+                "other": 0.44362159579550886
+            }
+        }
+    },
+    {
+        "task": "stance",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.3361768127181078,
+            "accuracy": 0.5064252336448598,
+            "macro_precision": 0.2532126168224299,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3375897845171588,
+                "physical": 0.3405889884763124,
+                "temporal": 0,
+                "causal": 0.3432282003710575,
+                "social": 0.3200883002207506,
+                "comparison": 0.35438596491228075,
+                "other": 0.3115577889447236
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883119",
+        "metrics": {
+            "macro_f1": 0.978,
+            "exact_match": 0.939
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.5192307692307693,
+            "macro_f1": 0.8965556180631473,
+            "accuracy": 0.8979374110953058,
+            "macro_precision": 0.8944906233128584,
+            "macro_recall": 0.9006585090176421,
+            "dimensions": {
+                "attribution": 0.8820424784413925,
+                "physical": 0.9167358114835712,
+                "temporal": 0.9049885422175217,
+                "causal": 0.8564233479737579,
+                "social": 0.8412698412698412,
+                "comparison": 0.9519450800915332,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.4726775956284153,
+            "macro_f1": 0.8784437059309932,
+            "accuracy": 0.8792920353982301,
+            "macro_precision": 0.8780337876932734,
+            "macro_recall": 0.8864009314978071,
+            "dimensions": {
+                "attribution": 0.8610963617441539,
+                "physical": 0.9071761571761572,
+                "temporal": 0.9038358608385371,
+                "causal": 0.8346069353481018,
+                "social": 0.9112388250319285,
+                "comparison": 0.9519450800915332,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.4,
+            "macro_f1": 0.8556434874446448,
+            "accuracy": 0.8573456352022711,
+            "macro_precision": 0.8539171565769442,
+            "macro_recall": 0.860164297486609,
+            "dimensions": {
+                "attribution": 0.8438018014419524,
+                "physical": 0.8801075268817204,
+                "temporal": 0.8282724309487047,
+                "causal": 0.8004990958011093,
+                "social": 0.8752031880866237,
+                "comparison": 0.9519450800915332,
+                "other": 1.0
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-T5",
+        "model_size": 11000000000,
+        "model_link": "https://huggingface.co/google/flan-t5-xxl",
+        "submission_id": "c1671d8dd7d7",
+        "timestamp": "2023-10-16T22:31:37.254512",
+        "metrics": {
+            "exact_match": 0.3489010989010989,
+            "macro_f1": 0.8380307674303515,
+            "accuracy": 0.8431721194879089,
+            "macro_precision": 0.8425092991437809,
+            "macro_recall": 0.835141776008649,
+            "dimensions": {
+                "attribution": 0.8273217181190984,
+                "physical": 0.8502838077024801,
+                "temporal": 0.8824028508399797,
+                "causal": 0.7758638853771598,
+                "social": 0.8908467176048651,
+                "comparison": 0.9045454545454545,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-Alpaca",
+        "model_size": 3000000000,
+        "model_link": "https://huggingface.co/declare-lab/flan-alpaca-gpt4-xl",
+        "submission_id": "cb6178df569a",
+        "timestamp": "2023-10-16T22:31:30.500856",
+        "metrics": {
+            "exact_match": 0.21153846153846154,
+            "macro_f1": 0.7491628576399323,
+            "accuracy": 0.7492887624466572,
+            "macro_precision": 0.7739188334142645,
+            "macro_recall": 0.7696250429996561,
+            "dimensions": {
+                "attribution": 0.7337357978071483,
+                "physical": 0.807126794672202,
+                "temporal": 0.8035714285714286,
+                "causal": 0.7045578534940237,
+                "social": 0.8260493760466749,
+                "comparison": 0.8444444444444446,
+                "other": 0.42857142857142855
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Stable-Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/CarperAI/stable-vicuna-13b-delta",
+        "submission_id": "61519ce2c183",
+        "timestamp": "2023-10-16T22:31:51.138012",
+        "metrics": {
+            "exact_match": 0.2087912087912088,
+            "macro_f1": 0.7276667612167175,
+            "accuracy": 0.7300853485064012,
+            "macro_precision": 0.7878584147566432,
+            "macro_recall": 0.7609071698854981,
+            "dimensions": {
+                "attribution": 0.7247676061839124,
+                "physical": 0.8047592322370636,
+                "temporal": 0.8387588044926708,
+                "causal": 0.644192790805252,
+                "social": 0.8317307692307692,
+                "comparison": 0.65,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.08516483516483517,
+            "macro_f1": 0.6764581611095801,
+            "accuracy": 0.7037695590327169,
+            "macro_precision": 0.7111055941741146,
+            "macro_recall": 0.6755073959408324,
+            "dimensions": {
+                "attribution": 0.660934987037105,
+                "physical": 0.6679945276034123,
+                "temporal": 0.7270886075949368,
+                "causal": 0.6301159393921015,
+                "social": 0.6334514092099184,
+                "comparison": 0.7136363636363637,
+                "other": 0.42857142857142855
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://lmsys.org/blog/2023-03-30-vicuna",
+        "submission_id": "f5e4f3b4b6dc",
+        "timestamp": "2023-10-16T22:31:44.271901",
+        "metrics": {
+            "exact_match": 0.1401098901098901,
+            "macro_f1": 0.6544086520735755,
+            "accuracy": 0.6639402560455192,
+            "macro_precision": 0.7597114207887568,
+            "macro_recall": 0.704186937933068,
+            "dimensions": {
+                "attribution": 0.6411519795393088,
+                "physical": 0.7208088252663407,
+                "temporal": 0.7331294597349642,
+                "causal": 0.5959459459459459,
+                "social": 0.7108843537414966,
+                "comparison": 0.5689149560117301,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Alpaca",
+        "model_size": 7000000000,
+        "model_link": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+        "submission_id": "328b17632bd9",
+        "timestamp": "2023-10-16T22:31:23.891867",
+        "metrics": {
+            "exact_match": 0.06593406593406594,
+            "macro_f1": 0.5561818482493521,
+            "accuracy": 0.5832147937411095,
+            "macro_precision": 0.7228857259216463,
+            "macro_recall": 0.6339083001621701,
+            "dimensions": {
+                "attribution": 0.5647746243739565,
+                "physical": 0.6648968142656783,
+                "temporal": 0.5807622504537205,
+                "causal": 0.517391304347826,
+                "social": 0.5809523809523809,
+                "comparison": 0.36363636363636365,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.07713498622589532,
+            "macro_f1": 0.5208265394702394,
+            "accuracy": 0.5423917067752684,
+            "macro_precision": 0.7229025820156891,
+            "macro_recall": 0.631349442695482,
+            "dimensions": {
+                "attribution": 0.556155663789362,
+                "physical": 0.6346977704118327,
+                "temporal": 0.7371980676328502,
+                "causal": 0.4956126646878092,
+                "social": 0.7747111681643133,
+                "comparison": 0.4666666666666667,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.008241758241758242,
+            "macro_f1": 0.5064418111427937,
+            "accuracy": 0.5096017069701281,
+            "macro_precision": 0.5087570449969139,
+            "macro_recall": 0.508953756941373,
+            "dimensions": {
+                "attribution": 0.5291844669196786,
+                "physical": 0.4875423318819545,
+                "temporal": 0.4319780408303311,
+                "causal": 0.4769008695411944,
+                "social": 0.5405128205128205,
+                "comparison": 0.5552941176470588,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.024725274725274724,
+            "macro_f1": 0.45199869481244104,
+            "accuracy": 0.5064011379800853,
+            "macro_precision": 0.6633835211895949,
+            "macro_recall": 0.5657378740970073,
+            "dimensions": {
+                "attribution": 0.4849494753206374,
+                "physical": 0.5633566433566434,
+                "temporal": 0.5707915273132664,
+                "causal": 0.4584193778816807,
+                "social": 0.48006446640039246,
+                "comparison": 0.4749999999999999,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 33000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "01be7b115577",
+        "timestamp": "2023-10-16T22:31:17.046207",
+        "metrics": {
+            "exact_match": 0.04120879120879121,
+            "macro_f1": 0.4411633296951559,
+            "accuracy": 0.5071123755334281,
+            "macro_precision": 0.7295286400284463,
+            "macro_recall": 0.5707897193965306,
+            "dimensions": {
+                "attribution": 0.45976376321060997,
+                "physical": 0.48439306358381506,
+                "temporal": 0.5553245553245553,
+                "causal": 0.43106564536719744,
+                "social": 0.5672779723882135,
+                "comparison": 0.36363636363636365,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.3648068669527897,
+            "accuracy": 0.5743243243243243,
+            "macro_precision": 0.28716216216216217,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.32426127527216175,
+                "physical": 0.28753993610223644,
+                "temporal": 0.28703703703703703,
+                "causal": 0.34336419753086417,
+                "social": 0.2893401015228427,
+                "comparison": 0.3,
+                "other": 0.42857142857142855
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 13000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "9a6c2cdfb7d2",
+        "timestamp": "2023-10-16T22:31:09.996801",
+        "metrics": {
+            "exact_match": 0.005494505494505495,
+            "macro_f1": 0.3268950129173974,
+            "accuracy": 0.4402560455192034,
+            "macro_precision": 0.7043345343378098,
+            "macro_recall": 0.5125853850312054,
+            "dimensions": {
+                "attribution": 0.3630733390081089,
+                "physical": 0.39544305339791036,
+                "temporal": 0.37398373983739835,
+                "causal": 0.3451443013667683,
+                "social": 0.3721973094170403,
+                "comparison": 0.36363636363636365,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "safety",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 7000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "6196e262f148",
+        "timestamp": "2023-10-16T22:31:03.120753",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.2985781990521327,
+            "accuracy": 0.42567567567567566,
+            "macro_precision": 0.21283783783783783,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3421650264950795,
+                "physical": 0.3735955056179775,
+                "temporal": 0.37398373983739835,
+                "causal": 0.3229912490055688,
+                "social": 0.3721973094170403,
+                "comparison": 0.36363636363636365,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883006",
+        "metrics": {
+            "macro_f1": 0.879,
+            "exact_match": 0.78
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.5788590604026845,
+            "macro_f1": 0.7591385130972622,
+            "accuracy": 0.7592281879194631,
+            "macro_precision": 0.7596148153160391,
+            "macro_recall": 0.7592281879194631,
+            "dimensions": {
+                "attribution": 0.7882959849690019,
+                "physical": 0.7258215962441316,
+                "temporal": 0.7207792207792207,
+                "causal": 0.6952441344324667,
+                "social": 0.7732497387669801,
+                "comparison": 0.7438425891620449,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.5216666666666666,
+            "macro_f1": 0.7156922552995074,
+            "accuracy": 0.718932443703086,
+            "macro_precision": 0.7295691304449267,
+            "macro_recall": 0.719021981079577,
+            "dimensions": {
+                "attribution": 0.7419193038528384,
+                "physical": 0.697209653092006,
+                "temporal": 0.6558033161806747,
+                "causal": 0.659438775510204,
+                "social": 0.7199043316502791,
+                "comparison": 0.7108803868581994,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.38666666666666666,
+            "macro_f1": 0.6656102631712388,
+            "accuracy": 0.6697247706422018,
+            "macro_precision": 0.6783445080212027,
+            "macro_recall": 0.6696327212020033,
+            "dimensions": {
+                "attribution": 0.701738389834051,
+                "physical": 0.6368329656920261,
+                "temporal": 0.6856640043319345,
+                "causal": 0.6155995934959348,
+                "social": 0.6391534391534391,
+                "comparison": 0.6270430991515374,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://lmsys.org/blog/2023-03-30-vicuna",
+        "submission_id": "f5e4f3b4b6dc",
+        "timestamp": "2023-10-16T22:31:44.271901",
+        "metrics": {
+            "exact_match": 0.2684563758389262,
+            "macro_f1": 0.6126003991644478,
+            "accuracy": 0.613255033557047,
+            "macro_precision": 0.6140257642107053,
+            "macro_recall": 0.613255033557047,
+            "dimensions": {
+                "attribution": 0.6482277488701471,
+                "physical": 0.5471804511278195,
+                "temporal": 0.5811688311688311,
+                "causal": 0.5449294574377426,
+                "social": 0.6129032258064516,
+                "comparison": 0.5966105740541832,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-Alpaca",
+        "model_size": 3000000000,
+        "model_link": "https://huggingface.co/declare-lab/flan-alpaca-gpt4-xl",
+        "submission_id": "cb6178df569a",
+        "timestamp": "2023-10-16T22:31:30.500856",
+        "metrics": {
+            "exact_match": 0.2550335570469799,
+            "macro_f1": 0.6054202394045852,
+            "accuracy": 0.6098993288590604,
+            "macro_precision": 0.6151267963678938,
+            "macro_recall": 0.6098993288590604,
+            "dimensions": {
+                "attribution": 0.6346091594749913,
+                "physical": 0.5749940348365544,
+                "temporal": 0.5476901208244491,
+                "causal": 0.5422399382795423,
+                "social": 0.6119727891156463,
+                "comparison": 0.563914096825853,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Alpaca",
+        "model_size": 7000000000,
+        "model_link": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+        "submission_id": "328b17632bd9",
+        "timestamp": "2023-10-16T22:31:23.891867",
+        "metrics": {
+            "exact_match": 0.1342281879194631,
+            "macro_f1": 0.5595609685717402,
+            "accuracy": 0.5595637583892618,
+            "macro_precision": 0.5595652675763709,
+            "macro_recall": 0.5595637583892618,
+            "dimensions": {
+                "attribution": 0.5820378879293968,
+                "physical": 0.5547736335913676,
+                "temporal": 0.5459591173683498,
+                "causal": 0.5278514588859416,
+                "social": 0.5308108108108108,
+                "comparison": 0.5330686330119115,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.11241610738255034,
+            "macro_f1": 0.5377014159157267,
+            "accuracy": 0.5427852348993288,
+            "macro_precision": 0.5447538362324089,
+            "macro_recall": 0.5427852348993288,
+            "dimensions": {
+                "attribution": 0.5527938258462283,
+                "physical": 0.5246992215145081,
+                "temporal": 0.5226749695410857,
+                "causal": 0.5729797979797979,
+                "social": 0.5170561375235025,
+                "comparison": 0.5360331632653061,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Stable-Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/CarperAI/stable-vicuna-13b-delta",
+        "submission_id": "61519ce2c183",
+        "timestamp": "2023-10-16T22:31:51.138012",
+        "metrics": {
+            "exact_match": 0.08892617449664429,
+            "macro_f1": 0.5354016415596239,
+            "accuracy": 0.540268456375839,
+            "macro_precision": 0.5420295476182082,
+            "macro_recall": 0.540268456375839,
+            "dimensions": {
+                "attribution": 0.5450526135457643,
+                "physical": 0.5109223873555083,
+                "temporal": 0.5692432651956139,
+                "causal": 0.5043369714816118,
+                "social": 0.4837783519954062,
+                "comparison": 0.5338672768878718,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.05704697986577181,
+            "macro_f1": 0.5271604101730135,
+            "accuracy": 0.5285234899328859,
+            "macro_precision": 0.5288562314878105,
+            "macro_recall": 0.5285234899328859,
+            "dimensions": {
+                "attribution": 0.5297961996130708,
+                "physical": 0.5053642010163749,
+                "temporal": 0.5073649754500817,
+                "causal": 0.5093622279251021,
+                "social": 0.5032051282051282,
+                "comparison": 0.5280470363896392,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 13000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "9a6c2cdfb7d2",
+        "timestamp": "2023-10-16T22:31:09.996801",
+        "metrics": {
+            "exact_match": 0.016778523489932886,
+            "macro_f1": 0.5070556520020889,
+            "accuracy": 0.5083892617449665,
+            "macro_precision": 0.5084810400373394,
+            "macro_recall": 0.5083892617449665,
+            "dimensions": {
+                "attribution": 0.5133929916538611,
+                "physical": 0.5060150375939849,
+                "temporal": 0.49830416497083163,
+                "causal": 0.5033608116677235,
+                "social": 0.45935302390998595,
+                "comparison": 0.5056603988150407,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 33000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "01be7b115577",
+        "timestamp": "2023-10-16T22:31:17.046207",
+        "metrics": {
+            "exact_match": 0.01174496644295302,
+            "macro_f1": 0.5050360848326675,
+            "accuracy": 0.5058724832214765,
+            "macro_precision": 0.5059124470331476,
+            "macro_recall": 0.5058724832214765,
+            "dimensions": {
+                "attribution": 0.5136987825777303,
+                "physical": 0.4994128974684139,
+                "temporal": 0.49830416497083163,
+                "causal": 0.49808319868200107,
+                "social": 0.45935302390998595,
+                "comparison": 0.5036363636363637,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.2651006711409396,
+            "macro_f1": 0.5031368159572419,
+            "accuracy": 0.5041946308724832,
+            "macro_precision": 0.5042306589322271,
+            "macro_recall": 0.5041946308724832,
+            "dimensions": {
+                "attribution": 0.5067590623933643,
+                "physical": 0.563889810819781,
+                "temporal": 0.49830416497083163,
+                "causal": 0.4879721827090248,
+                "social": 0.49986989331251624,
+                "comparison": 0.48307692307692307,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 7000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "6196e262f148",
+        "timestamp": "2023-10-16T22:31:03.120753",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.4988940050559769,
+            "accuracy": 0.5,
+            "macro_precision": 0.5,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.4997635933806146,
+                "physical": 0.4994128974684139,
+                "temporal": 0.49830416497083163,
+                "causal": 0.49808319868200107,
+                "social": 0.45935302390998595,
+                "comparison": 0.49862434343664025,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-T5",
+        "model_size": 11000000000,
+        "model_link": "https://huggingface.co/google/flan-t5-xxl",
+        "submission_id": "c1671d8dd7d7",
+        "timestamp": "2023-10-16T22:31:37.254512",
+        "metrics": {
+            "exact_match": 0.10067114093959731,
+            "macro_f1": 0.4552042544743367,
+            "accuracy": 0.5461409395973155,
+            "macro_precision": 0.6388430032105856,
+            "macro_recall": 0.5461409395973155,
+            "dimensions": {
+                "attribution": 0.4498097997148977,
+                "physical": 0.4317765567765568,
+                "temporal": 0.5136904761904763,
+                "causal": 0.44307081807081805,
+                "social": 0.3682065217391305,
+                "comparison": 0.4774721746575343,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.08221476510067115,
+            "macro_f1": 0.45372470841639745,
+            "accuracy": 0.5302013422818792,
+            "macro_precision": 0.5686372360844529,
+            "macro_recall": 0.5302013422818792,
+            "dimensions": {
+                "attribution": 0.4728715200470495,
+                "physical": 0.4317765567765568,
+                "temporal": 0.44396551724137934,
+                "causal": 0.4223396226415095,
+                "social": 0.39215686274509803,
+                "comparison": 0.4121703272320118,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_zh_en",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.3333333333333333,
+            "accuracy": 0.5,
+            "macro_precision": 0.25,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3333333333333333,
+                "physical": 0.3333333333333333,
+                "temporal": 0.3333333333333333,
+                "causal": 0.3333333333333333,
+                "social": 0.3333333333333333,
+                "comparison": 0.3333333333333333,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883036",
+        "metrics": {
+            "macro_f1": 0.899,
+            "exact_match": 0.86
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.3,
+            "macro_f1": 0.5725571538079993,
+            "accuracy": 0.5725725725725725,
+            "macro_precision": 0.5725913781077376,
+            "macro_recall": 0.5725791583166333,
+            "dimensions": {
+                "attribution": 0.5849801203612808,
+                "physical": 0.6737588652482269,
+                "temporal": 0.5609022556390978,
+                "causal": 0.5823073497240571,
+                "social": 0.4991304347826087,
+                "comparison": 0.6113360323886641,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.19678714859437751,
+            "macro_f1": 0.5413845109641852,
+            "accuracy": 0.5552208835341366,
+            "macro_precision": 0.5627994955863809,
+            "macro_recall": 0.5552208835341366,
+            "dimensions": {
+                "attribution": 0.5780948294357435,
+                "physical": 0.5771649733913884,
+                "temporal": 0.5146067415730338,
+                "causal": 0.5206128963609279,
+                "social": 0.5911131575918038,
+                "comparison": 0.5625,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.2710843373493976,
+            "macro_f1": 0.523088042725505,
+            "accuracy": 0.5230923694779116,
+            "macro_precision": 0.5230932075243453,
+            "macro_recall": 0.5230923694779117,
+            "dimensions": {
+                "attribution": 0.49627100840336136,
+                "physical": 0.5432624113475177,
+                "temporal": 0.6386100386100386,
+                "causal": 0.5024037987254276,
+                "social": 0.52997497551953,
+                "comparison": 0.4682306940371457,
+                "other": 1.0
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.4999274099883856,
+            "accuracy": 0.5,
+            "macro_precision": 0.5,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.499940919295758,
+                "physical": 0.46967418546365913,
+                "temporal": 0.4984520123839009,
+                "causal": 0.49904815856558493,
+                "social": 0.4980392156862745,
+                "comparison": 0.4980392156862745,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.024096385542168676,
+            "macro_f1": 0.4985487158581329,
+            "accuracy": 0.5040160642570282,
+            "macro_precision": 0.5041992006340962,
+            "macro_recall": 0.5040160642570282,
+            "dimensions": {
+                "attribution": 0.5042048115818608,
+                "physical": 0.4940219990435199,
+                "temporal": 0.4476466929297118,
+                "causal": 0.5021892393320964,
+                "social": 0.4904573687182383,
+                "comparison": 0.5195195195195195,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.132,
+            "macro_f1": 0.48874321535050835,
+            "accuracy": 0.5175175175175175,
+            "macro_precision": 0.5229421939573472,
+            "macro_recall": 0.5177555110220441,
+            "dimensions": {
+                "attribution": 0.5132959835871538,
+                "physical": 0.46967418546365913,
+                "temporal": 0.4206349206349206,
+                "causal": 0.47586245519713255,
+                "social": 0.5248071831472315,
+                "comparison": 0.6235294117647059,
+                "other": 0.0
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.01606425702811245,
+            "macro_f1": 0.442357497631485,
+            "accuracy": 0.501004016064257,
+            "macro_precision": 0.5017330781277188,
+            "macro_recall": 0.501004016064257,
+            "dimensions": {
+                "attribution": 0.42619542619542616,
+                "physical": 0.5038520801232665,
+                "temporal": 0.4581939799331104,
+                "causal": 0.45519351935193514,
+                "social": 0.40710241893978383,
+                "comparison": 0.3816425120772947,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_ru",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.3333333333333333,
+            "accuracy": 0.5,
+            "macro_precision": 0.25,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3333333333333333,
+                "physical": 0.3333333333333333,
+                "temporal": 0.3333333333333333,
+                "causal": 0.3333333333333333,
+                "social": 0.3333333333333333,
+                "comparison": 0.3333333333333333,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883019",
+        "metrics": {
+            "macro_f1": 0.83,
+            "exact_match": 0.829
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.426,
+            "macro_f1": 0.6468071099407505,
+            "accuracy": 0.6516516516516516,
+            "macro_precision": 0.6606595840369293,
+            "macro_recall": 0.6517695390781564,
+            "dimensions": {
+                "attribution": 0.7031264658973637,
+                "physical": 0.4375,
+                "temporal": 0.6131479140328698,
+                "causal": 0.6481782316082618,
+                "social": 0.7069327731092436,
+                "comparison": 0.5392857142857143,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.21485943775100402,
+            "macro_f1": 0.5453540378913513,
+            "accuracy": 0.5622489959839357,
+            "macro_precision": 0.5731173628871838,
+            "macro_recall": 0.5622489959839357,
+            "dimensions": {
+                "attribution": 0.585119644122895,
+                "physical": 0.48035284683239776,
+                "temporal": 0.49541756770672435,
+                "causal": 0.5435551034447429,
+                "social": 0.4901315789473684,
+                "comparison": 0.4905263157894737,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.004016064257028112,
+            "macro_f1": 0.5020060241206761,
+            "accuracy": 0.5020080321285141,
+            "macro_precision": 0.5020080645161291,
+            "macro_recall": 0.5020080321285141,
+            "dimensions": {
+                "attribution": 0.4987101868912872,
+                "physical": 0.5,
+                "temporal": 0.5039983804028748,
+                "causal": 0.5026420217940553,
+                "social": 0.49986989331251624,
+                "comparison": 0.48290598290598297,
+                "other": 0.5
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.182,
+            "macro_f1": 0.5008313808480085,
+            "accuracy": 0.5235235235235235,
+            "macro_precision": 0.5290435371080533,
+            "macro_recall": 0.5237374749498998,
+            "dimensions": {
+                "attribution": 0.49646912844343616,
+                "physical": 0.4975074775672981,
+                "temporal": 0.5226525938464602,
+                "causal": 0.49329910556667067,
+                "social": 0.4901315789473684,
+                "comparison": 0.5416666666666667,
+                "other": 0.7333333333333334
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.23694779116465864,
+            "macro_f1": 0.49195967741935487,
+            "accuracy": 0.4919678714859438,
+            "macro_precision": 0.49196735325902863,
+            "macro_recall": 0.4919678714859438,
+            "dimensions": {
+                "attribution": 0.4596850181720285,
+                "physical": 0.5274131274131274,
+                "temporal": 0.468671679197995,
+                "causal": 0.49193548387096775,
+                "social": 0.35214211076280044,
+                "comparison": 0.5569687334393216,
+                "other": 0.2
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.03413654618473896,
+            "macro_f1": 0.44995983642471155,
+            "accuracy": 0.5140562248995983,
+            "macro_precision": 0.5263285097126975,
+            "macro_recall": 0.5140562248995983,
+            "dimensions": {
+                "attribution": 0.4513191139314884,
+                "physical": 0.44851063829787235,
+                "temporal": 0.43227899432278993,
+                "causal": 0.4663864228126863,
+                "social": 0.4202111613876319,
+                "comparison": 0.3321190042501518,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.018072289156626505,
+            "macro_f1": 0.39483183816433753,
+            "accuracy": 0.5050200803212851,
+            "macro_precision": 0.5184775671945265,
+            "macro_recall": 0.5050200803212852,
+            "dimensions": {
+                "attribution": 0.4128476084538376,
+                "physical": 0.4032678190859579,
+                "temporal": 0.34043632673769664,
+                "causal": 0.39210956345809667,
+                "social": 0.3682065217391305,
+                "comparison": 0.3697916666666667,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_fr",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.3333333333333333,
+            "accuracy": 0.5,
+            "macro_precision": 0.25,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3333333333333333,
+                "physical": 0.3333333333333333,
+                "temporal": 0.3333333333333333,
+                "causal": 0.3333333333333333,
+                "social": 0.3333333333333333,
+                "comparison": 0.3333333333333333,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883028",
+        "metrics": {
+            "macro_f1": 0.899,
+            "exact_match": 0.82
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.342,
+            "macro_f1": 0.57054303027145,
+            "accuracy": 0.5705705705705706,
+            "macro_precision": 0.5705789676239958,
+            "macro_recall": 0.570563126252505,
+            "dimensions": {
+                "attribution": 0.5491803278688525,
+                "physical": 0.5849519525659375,
+                "temporal": 0.5310075074127815,
+                "causal": 0.5712134289978601,
+                "social": 0.5851190476190475,
+                "comparison": 0.6571428571428571,
+                "other": 0.8285714285714285
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.20481927710843373,
+            "macro_f1": 0.5439849100553213,
+            "accuracy": 0.5642570281124498,
+            "macro_precision": 0.5781544256120528,
+            "macro_recall": 0.5642570281124498,
+            "dimensions": {
+                "attribution": 0.5387953410981697,
+                "physical": 0.590110605074821,
+                "temporal": 0.5692030741535692,
+                "causal": 0.5469476510442522,
+                "social": 0.5072738772928527,
+                "comparison": 0.520851818988465,
+                "other": 0.8285714285714285
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.18,
+            "macro_f1": 0.506328242937806,
+            "accuracy": 0.5255255255255256,
+            "macro_precision": 0.5304901802426673,
+            "macro_recall": 0.5257234468937876,
+            "dimensions": {
+                "attribution": 0.47548290581417285,
+                "physical": 0.4642857142857143,
+                "temporal": 0.5075679037943189,
+                "causal": 0.5186372030408983,
+                "social": 0.5432786391690502,
+                "comparison": 0.6,
+                "other": 0.6666666666666666
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.49954596636518833,
+            "accuracy": 0.5,
+            "macro_precision": 0.5,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.4987877155172414,
+                "physical": 0.4949494949494949,
+                "temporal": 0.49834850016852034,
+                "causal": 0.4988499550763702,
+                "social": 0.4993298585256888,
+                "comparison": 0.48571428571428577,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.2248995983935743,
+            "macro_f1": 0.4828686504115859,
+            "accuracy": 0.48293172690763053,
+            "macro_precision": 0.48292339531149775,
+            "macro_recall": 0.48293172690763053,
+            "dimensions": {
+                "attribution": 0.501946701946702,
+                "physical": 0.4112820512820513,
+                "temporal": 0.4537313432835821,
+                "causal": 0.5013617931284927,
+                "social": 0.4142857142857143,
+                "comparison": 0.3888888888888889,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.012048192771084338,
+            "macro_f1": 0.4624816509800535,
+            "accuracy": 0.4979919678714859,
+            "macro_precision": 0.4972707543240459,
+            "macro_recall": 0.4979919678714859,
+            "dimensions": {
+                "attribution": 0.4592257525387396,
+                "physical": 0.46023353161489317,
+                "temporal": 0.40382920772250264,
+                "causal": 0.4765900556853718,
+                "social": 0.4166232864827347,
+                "comparison": 0.4581939799331104,
+                "other": 0.48571428571428577
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.018072289156626505,
+            "macro_f1": 0.44705065926439974,
+            "accuracy": 0.5020080321285141,
+            "macro_precision": 0.5033331548511459,
+            "macro_recall": 0.5020080321285141,
+            "dimensions": {
+                "attribution": 0.4552935517165688,
+                "physical": 0.4505494505494506,
+                "temporal": 0.4233757910758632,
+                "causal": 0.4625040231734793,
+                "social": 0.36551215917464996,
+                "comparison": 0.3769230769230769,
+                "other": 0.48571428571428577
+            }
+        }
+    },
+    {
+        "task": "mt_en_de",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.3333333333333333,
+            "accuracy": 0.5,
+            "macro_precision": 0.25,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3333333333333333,
+                "physical": 0.3333333333333333,
+                "temporal": 0.3333333333333333,
+                "causal": 0.3333333333333333,
+                "social": 0.3333333333333333,
+                "comparison": 0.3333333333333333,
+                "other": 0.3333333333333333
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883128",
+        "metrics": {
+            "macro_f1": 0.939,
+            "exact_match": 0.807
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-T5",
+        "model_size": 11000000000,
+        "model_link": "https://huggingface.co/google/flan-t5-xxl",
+        "submission_id": "c1671d8dd7d7",
+        "timestamp": "2023-10-16T22:31:37.254512",
+        "metrics": {
+            "exact_match": 0.5767918088737202,
+            "macro_f1": 0.84259941365359,
+            "accuracy": 0.8714462299134734,
+            "macro_precision": 0.8495853683353684,
+            "macro_recall": 0.8365399371141056,
+            "dimensions": {
+                "attribution": 0.813516903507607,
+                "physical": 0.8058562459406798,
+                "temporal": 0.8621540631059403,
+                "causal": 0.8684773784043103,
+                "social": 0.865211810012837,
+                "comparison": 0.8787118223121626,
+                "other": 0.7777777777777778
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.5704584040747029,
+            "macro_f1": 0.8396477447706707,
+            "accuracy": 0.8753587535875359,
+            "macro_precision": 0.871642246929128,
+            "macro_recall": 0.8197581427693502,
+            "dimensions": {
+                "attribution": 0.8284490076397593,
+                "physical": 0.7741153932837503,
+                "temporal": 0.7804161566707466,
+                "causal": 0.8483020605502474,
+                "social": 0.7983193277310923,
+                "comparison": 0.8645731508634735,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.5716723549488054,
+            "macro_f1": 0.8395514894913378,
+            "accuracy": 0.8685620107128141,
+            "macro_precision": 0.8452555076620283,
+            "macro_recall": 0.8344943497383019,
+            "dimensions": {
+                "attribution": 0.8243198407431984,
+                "physical": 0.781301824212272,
+                "temporal": 0.8206521739130435,
+                "causal": 0.8622164948453608,
+                "social": 0.8827743406056658,
+                "comparison": 0.8642717750607352,
+                "other": 0.7777777777777778
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-Alpaca",
+        "model_size": 3000000000,
+        "model_link": "https://huggingface.co/declare-lab/flan-alpaca-gpt4-xl",
+        "submission_id": "cb6178df569a",
+        "timestamp": "2023-10-16T22:31:30.500856",
+        "metrics": {
+            "exact_match": 0.45733788395904434,
+            "macro_f1": 0.7820601386094345,
+            "accuracy": 0.8014009064688916,
+            "macro_precision": 0.772726857101057,
+            "macro_recall": 0.8165064861282076,
+            "dimensions": {
+                "attribution": 0.7833198156682027,
+                "physical": 0.7966069018700597,
+                "temporal": 0.7769396551724137,
+                "causal": 0.8198901703755761,
+                "social": 0.8589894242068155,
+                "comparison": 0.8033513363800027,
+                "other": 1.0
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.4166666666666667,
+            "macro_f1": 0.7638673375483662,
+            "accuracy": 0.8294286888614879,
+            "macro_precision": 0.8374422632794457,
+            "macro_recall": 0.7373169721529679,
+            "dimensions": {
+                "attribution": 0.7489493262250577,
+                "physical": 0.6682389937106918,
+                "temporal": 0.7466286799620132,
+                "causal": 0.7609233392353597,
+                "social": 0.782589940471055,
+                "comparison": 0.7998595505617978,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://lmsys.org/blog/2023-03-30-vicuna",
+        "submission_id": "f5e4f3b4b6dc",
+        "timestamp": "2023-10-16T22:31:44.271901",
+        "metrics": {
+            "exact_match": 0.2883959044368601,
+            "macro_f1": 0.6851249979208596,
+            "accuracy": 0.7911001236093943,
+            "macro_precision": 0.8141559918703735,
+            "macro_recall": 0.6650362916259889,
+            "dimensions": {
+                "attribution": 0.6751173763684188,
+                "physical": 0.6400128762272654,
+                "temporal": 0.6805555555555556,
+                "causal": 0.6624222409953152,
+                "social": 0.6966008053188502,
+                "comparison": 0.6278825995807128,
+                "other": 0.7777777777777778
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.3213675213675214,
+            "macro_f1": 0.6733746635658104,
+            "accuracy": 0.7807677087455481,
+            "macro_precision": 0.7562142598901127,
+            "macro_recall": 0.6553470260423903,
+            "dimensions": {
+                "attribution": 0.6597388358632058,
+                "physical": 0.6119600075457461,
+                "temporal": 0.6620199146514936,
+                "causal": 0.6457379426129426,
+                "social": 0.6742833402575821,
+                "comparison": 0.7039131846720068,
+                "other": 0.37499999999999994
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.21160409556313994,
+            "macro_f1": 0.6468783735248063,
+            "accuracy": 0.7053976102183765,
+            "macro_precision": 0.6464725420294937,
+            "macro_recall": 0.6472994328515129,
+            "dimensions": {
+                "attribution": 0.661805407707047,
+                "physical": 0.6391480099502487,
+                "temporal": 0.7401129943502824,
+                "causal": 0.6385173258964831,
+                "social": 0.6653653095370887,
+                "comparison": 0.6154473229706391,
+                "other": 0.7777777777777778
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.2098976109215017,
+            "macro_f1": 0.6329635215518927,
+            "accuracy": 0.757725587144623,
+            "macro_precision": 0.7398537674229837,
+            "macro_recall": 0.6234976442277866,
+            "dimensions": {
+                "attribution": 0.624878795215497,
+                "physical": 0.5931300454292905,
+                "temporal": 0.6292420814479638,
+                "causal": 0.5961317463474276,
+                "social": 0.6307692307692307,
+                "comparison": 0.6286831564308892,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Alpaca",
+        "model_size": 7000000000,
+        "model_link": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+        "submission_id": "328b17632bd9",
+        "timestamp": "2023-10-16T22:31:23.891867",
+        "metrics": {
+            "exact_match": 0.17747440273037543,
+            "macro_f1": 0.6006292450838687,
+            "accuracy": 0.7523691800576844,
+            "macro_precision": 0.7591730097985618,
+            "macro_recall": 0.6006121252885536,
+            "dimensions": {
+                "attribution": 0.6084799190535493,
+                "physical": 0.5969038208168643,
+                "temporal": 0.6171983356449376,
+                "causal": 0.554998188671655,
+                "social": 0.5826513911620295,
+                "comparison": 0.5897877732024074,
+                "other": 0.7777777777777778
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Stable-Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/CarperAI/stable-vicuna-13b-delta",
+        "submission_id": "61519ce2c183",
+        "timestamp": "2023-10-16T22:31:51.138012",
+        "metrics": {
+            "exact_match": 0.17406143344709898,
+            "macro_f1": 0.5989236210491884,
+            "accuracy": 0.7601977750309024,
+            "macro_precision": 0.8199337389779817,
+            "macro_recall": 0.6012912668275274,
+            "dimensions": {
+                "attribution": 0.6005534692156562,
+                "physical": 0.5506720195496596,
+                "temporal": 0.5423575520048236,
+                "causal": 0.5643325633546341,
+                "social": 0.6176821983273597,
+                "comparison": 0.5890388406299418,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.10580204778156997,
+            "macro_f1": 0.48828999428277237,
+            "accuracy": 0.511330861145447,
+            "macro_precision": 0.5083764864740036,
+            "macro_recall": 0.5100667223911006,
+            "dimensions": {
+                "attribution": 0.5161302654094003,
+                "physical": 0.5377608670586879,
+                "temporal": 0.5642421602787456,
+                "causal": 0.4768031189083821,
+                "social": 0.5221996844714898,
+                "comparison": 0.47397932252997155,
+                "other": 0.48571428571428577
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 33000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "01be7b115577",
+        "timestamp": "2023-10-16T22:31:17.046207",
+        "metrics": {
+            "exact_match": 0.011945392491467578,
+            "macro_f1": 0.42386730830849834,
+            "accuracy": 0.707869798104656,
+            "macro_precision": 0.8535123966942149,
+            "macro_recall": 0.5048882681564246,
+            "dimensions": {
+                "attribution": 0.4075763740142876,
+                "physical": 0.39886039886039887,
+                "temporal": 0.38116591928251115,
+                "causal": 0.39869312402847873,
+                "social": 0.3908629441624366,
+                "comparison": 0.40195016251354276,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 13000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "9a6c2cdfb7d2",
+        "timestamp": "2023-10-16T22:31:09.996801",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.4149794233688633,
+            "accuracy": 0.7053976102183765,
+            "macro_precision": 0.8526380873866447,
+            "macro_recall": 0.5006983240223464,
+            "dimensions": {
+                "attribution": 0.3906789413118527,
+                "physical": 0.39886039886039887,
+                "temporal": 0.38116591928251115,
+                "causal": 0.39362946912242686,
+                "social": 0.3908629441624366,
+                "comparison": 0.3866090712742981,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.4134847752537458,
+            "accuracy": 0.7049855789039967,
+            "macro_precision": 0.35249278945199836,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3906789413118527,
+                "physical": 0.39886039886039887,
+                "temporal": 0.38116591928251115,
+                "causal": 0.3910814966683752,
+                "social": 0.3908629441624366,
+                "comparison": 0.3866090712742981,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "intent",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 7000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "6196e262f148",
+        "timestamp": "2023-10-16T22:31:03.120753",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.4134847752537458,
+            "accuracy": 0.7049855789039967,
+            "macro_precision": 0.35249278945199836,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3906789413118527,
+                "physical": 0.39886039886039887,
+                "temporal": 0.38116591928251115,
+                "causal": 0.3910814966683752,
+                "social": 0.3908629441624366,
+                "comparison": 0.3866090712742981,
+                "other": 0.4
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Human Baseline",
+        "model_size": "n/a",
+        "model_link": null,
+        "submission_id": "human",
+        "timestamp": "2023-10-16T22:37:30.883045",
+        "metrics": {
+            "macro_f1": 0.87,
+            "exact_match": 0.869
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "7ebd4a9fa3d7",
+        "timestamp": "2023-10-16T22:32:25.797530",
+        "metrics": {
+            "exact_match": 0.46535500427716,
+            "macro_f1": 0.7243277414271458,
+            "accuracy": 0.7262475331265859,
+            "macro_precision": 0.7638776052168268,
+            "macro_recall": 0.7895306347535614,
+            "dimensions": {
+                "attribution": 0.7405379784334637,
+                "physical": 0.7399890390938985,
+                "temporal": 0.7700636050323629,
+                "causal": 0.7352250272906908,
+                "social": 0.7223396911898274,
+                "comparison": 0.6967312862600821,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-T5",
+        "model_size": 11000000000,
+        "model_link": "https://huggingface.co/google/flan-t5-xxl",
+        "submission_id": "c1671d8dd7d7",
+        "timestamp": "2023-10-16T22:31:37.254512",
+        "metrics": {
+            "exact_match": 0.42001710863986313,
+            "macro_f1": 0.703623473025029,
+            "accuracy": 0.7098956864956301,
+            "macro_precision": 0.7189453604337253,
+            "macro_recall": 0.7471092298162296,
+            "dimensions": {
+                "attribution": 0.6995873779202659,
+                "physical": 0.717786517781017,
+                "temporal": 0.739991766716104,
+                "causal": 0.7202049520719088,
+                "social": 0.7262032632601914,
+                "comparison": 0.6728569390957068,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-3",
+        "model_size": 175000000000,
+        "model_link": "https://platform.openai.com/docs/models/gpt-3",
+        "submission_id": "d8a616273e6e",
+        "timestamp": "2023-10-16T22:32:18.772887",
+        "metrics": {
+            "exact_match": 0.3652694610778443,
+            "macro_f1": 0.6755829599156484,
+            "accuracy": 0.6797293487454187,
+            "macro_precision": 0.701943690014788,
+            "macro_recall": 0.7254811535165882,
+            "dimensions": {
+                "attribution": 0.6778757520758008,
+                "physical": 0.7352657271298161,
+                "temporal": 0.7033710512586043,
+                "causal": 0.67639724759189,
+                "social": 0.707566999474514,
+                "comparison": 0.7195639701663797,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Palm 1",
+        "model_size": 540000000000,
+        "model_link": "https://blog.research.google/2022/04/pathways-language-model-palm-scaling-to.html",
+        "submission_id": "1a802cfd2f83",
+        "timestamp": "2023-10-16T22:32:11.974948",
+        "metrics": {
+            "exact_match": 0.24721984602224123,
+            "macro_f1": 0.6336283836112868,
+            "accuracy": 0.6512545813363406,
+            "macro_precision": 0.635882447354905,
+            "macro_recall": 0.6522730101493517,
+            "dimensions": {
+                "attribution": 0.641560937958972,
+                "physical": 0.639473489883326,
+                "temporal": 0.6464992215404342,
+                "causal": 0.6356650973344821,
+                "social": 0.6433747412008282,
+                "comparison": 0.6288468238299849,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Flan-Alpaca",
+        "model_size": 3000000000,
+        "model_link": "https://huggingface.co/declare-lab/flan-alpaca-gpt4-xl",
+        "submission_id": "cb6178df569a",
+        "timestamp": "2023-10-16T22:31:30.500856",
+        "metrics": {
+            "exact_match": 0.2643284858853721,
+            "macro_f1": 0.6228316235140856,
+            "accuracy": 0.631801522413307,
+            "macro_precision": 0.6374715308358126,
+            "macro_recall": 0.6553788973776584,
+            "dimensions": {
+                "attribution": 0.6270222832722834,
+                "physical": 0.6427563304275633,
+                "temporal": 0.6096204925043893,
+                "causal": 0.6307031941298158,
+                "social": 0.6834657252132981,
+                "comparison": 0.621491026231017,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://lmsys.org/blog/2023-03-30-vicuna",
+        "submission_id": "f5e4f3b4b6dc",
+        "timestamp": "2023-10-16T22:31:44.271901",
+        "metrics": {
+            "exact_match": 0.17536355859709152,
+            "macro_f1": 0.5548493240942222,
+            "accuracy": 0.5669579926698619,
+            "macro_precision": 0.5688401810919317,
+            "macro_recall": 0.5778799243996687,
+            "dimensions": {
+                "attribution": 0.559897803445477,
+                "physical": 0.5839152176905078,
+                "temporal": 0.5621984808809308,
+                "causal": 0.5542394910385564,
+                "social": 0.5757389162561576,
+                "comparison": 0.597760778451889,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "GPT-4-CoT",
+        "model_size": "unknown",
+        "model_link": "https://openai.com/research/gpt-4",
+        "submission_id": "ed68a5541500",
+        "timestamp": "2023-10-18T11:31:16.669025",
+        "metrics": {
+            "exact_match": 0.22840034217279725,
+            "macro_f1": 0.5529446237336031,
+            "accuracy": 0.5573724274034395,
+            "macro_precision": 0.710840854100703,
+            "macro_recall": 0.6690208433307601,
+            "dimensions": {
+                "attribution": 0.578980659753503,
+                "physical": 0.6431908012935681,
+                "temporal": 0.5840077027119965,
+                "causal": 0.5402721209897864,
+                "social": 0.601110521974785,
+                "comparison": 0.5626023265833693,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Alpaca",
+        "model_size": 7000000000,
+        "model_link": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+        "submission_id": "328b17632bd9",
+        "timestamp": "2023-10-16T22:31:23.891867",
+        "metrics": {
+            "exact_match": 0.1420017108639863,
+            "macro_f1": 0.5352216405678041,
+            "accuracy": 0.5438398646743727,
+            "macro_precision": 0.555777278041488,
+            "macro_recall": 0.5628130978221377,
+            "dimensions": {
+                "attribution": 0.5508788933747155,
+                "physical": 0.5899894480891866,
+                "temporal": 0.5327748902457485,
+                "causal": 0.5353808693392987,
+                "social": 0.5363578237619159,
+                "comparison": 0.5217105451219164,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 33000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "01be7b115577",
+        "timestamp": "2023-10-16T22:31:17.046207",
+        "metrics": {
+            "exact_match": 0.02566295979469632,
+            "macro_f1": 0.5030889465534439,
+            "accuracy": 0.5215675218494502,
+            "macro_precision": 0.513955957695839,
+            "macro_recall": 0.5157587624222899,
+            "dimensions": {
+                "attribution": 0.5109115183881539,
+                "physical": 0.4936195161275547,
+                "temporal": 0.5134799411115201,
+                "causal": 0.5062071302196843,
+                "social": 0.5075802265219443,
+                "comparison": 0.5150566617395589,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "BloomZ",
+        "model_size": 7000000000,
+        "model_link": "https://huggingface.co/bigscience/bloomz-7b1",
+        "submission_id": "9d631f32005f",
+        "timestamp": "2023-10-16T22:32:05.034622",
+        "metrics": {
+            "exact_match": 0.07527801539777587,
+            "macro_f1": 0.498133318770572,
+            "accuracy": 0.6786016351846631,
+            "macro_precision": 0.6227861611805205,
+            "macro_recall": 0.5365412992350035,
+            "dimensions": {
+                "attribution": 0.49860481339379137,
+                "physical": 0.562297972377314,
+                "temporal": 0.5202693718567418,
+                "causal": 0.4857610216145481,
+                "social": 0.480431040933922,
+                "comparison": 0.5182209095252573,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 13000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "9a6c2cdfb7d2",
+        "timestamp": "2023-10-16T22:31:09.996801",
+        "metrics": {
+            "exact_match": 0.07271171941830624,
+            "macro_f1": 0.4882845104345094,
+            "accuracy": 0.4911192557090499,
+            "macro_precision": 0.5247522415610943,
+            "macro_recall": 0.5269736269381218,
+            "dimensions": {
+                "attribution": 0.48453900709219855,
+                "physical": 0.5006171992867919,
+                "temporal": 0.50207399103139,
+                "causal": 0.4991967633122632,
+                "social": 0.48724103817504655,
+                "comparison": 0.5092498013846328,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Llama 1",
+        "model_size": 7000000000,
+        "model_link": "https://github.com/facebookresearch/llama",
+        "submission_id": "6196e262f148",
+        "timestamp": "2023-10-16T22:31:03.120753",
+        "metrics": {
+            "exact_match": 0.005988023952095809,
+            "macro_f1": 0.48499678112221695,
+            "accuracy": 0.5009867493656611,
+            "macro_precision": 0.4990166562688203,
+            "macro_recall": 0.4988875427086473,
+            "dimensions": {
+                "attribution": 0.4942190420610151,
+                "physical": 0.4732384575985952,
+                "temporal": 0.49711934156378595,
+                "causal": 0.4896933651726839,
+                "social": 0.47291874157829983,
+                "comparison": 0.4886574074074074,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Random Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "49edc13fce04",
+        "timestamp": "2023-10-16T22:30:47.965606",
+        "metrics": {
+            "exact_match": 0.13905579399141632,
+            "macro_f1": 0.47324587031444454,
+            "accuracy": 0.485997171145686,
+            "macro_precision": 0.4910518053375197,
+            "macro_recall": 0.48988428315314825,
+            "dimensions": {
+                "attribution": 0.4680971517587087,
+                "physical": 0.44047619047619047,
+                "temporal": 0.4557527390621723,
+                "causal": 0.4927561485611869,
+                "social": 0.46018420040279695,
+                "comparison": 0.5104166666666667,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Stable-Vicuna",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/CarperAI/stable-vicuna-13b-delta",
+        "submission_id": "61519ce2c183",
+        "timestamp": "2023-10-16T22:31:51.138012",
+        "metrics": {
+            "exact_match": 0.0872540633019675,
+            "macro_f1": 0.4316160564057367,
+            "accuracy": 0.4316323653791937,
+            "macro_precision": 0.49035606101830187,
+            "macro_recall": 0.4904370041606082,
+            "dimensions": {
+                "attribution": 0.43874848668280875,
+                "physical": 0.4144089069200915,
+                "temporal": 0.43316344552656805,
+                "causal": 0.4466963600967494,
+                "social": 0.4197889821361704,
+                "comparison": 0.4839111362671572,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "mt0",
+        "model_size": 13000000000,
+        "model_link": "https://huggingface.co/bigscience/mt0-xxl",
+        "submission_id": "bdbd91e06213",
+        "timestamp": "2023-10-16T22:31:58.017955",
+        "metrics": {
+            "exact_match": 0.00427715996578272,
+            "macro_f1": 0.40836910978259,
+            "accuracy": 0.6718353538201297,
+            "macro_precision": 0.6994678116001645,
+            "macro_recall": 0.5027909458027355,
+            "dimensions": {
+                "attribution": 0.39979415030269627,
+                "physical": 0.385899814471243,
+                "temporal": 0.4007396231969385,
+                "causal": 0.4025024410021286,
+                "social": 0.38879736408566723,
+                "comparison": 0.41192570869990225,
+                "other": 0
+            }
+        }
+    },
+    {
+        "task": "dialogue",
+        "contributor": "EPFL NLP",
+        "model_name": "Majority Baseline",
+        "model_size": "n/a",
+        "model_link": "",
+        "submission_id": "9490d7648e94",
+        "timestamp": "2023-10-16T22:30:55.854270",
+        "metrics": {
+            "exact_match": 0.0,
+            "macro_f1": 0.40135478408128705,
+            "accuracy": 0.6704384724186704,
+            "macro_precision": 0.3352192362093352,
+            "macro_recall": 0.5,
+            "dimensions": {
+                "attribution": 0.3933774834437086,
+                "physical": 0.38619402985074625,
+                "temporal": 0.3878437047756874,
+                "causal": 0.39669669669669666,
+                "social": 0.3883333333333333,
+                "comparison": 0.3954983922829582,
+                "other": 0
+            }
+        }
+    }
+]

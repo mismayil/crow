@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WS Generation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+
+  <!-- SEMANTIC UI CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+  <!-- HITPUB CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style id="hitpub_css">
+    body {
+      font-family: "Open Sans", "Roboto", sans-serif;
+      line-height: 1.5;
+      font-size: 1.1rem;
+    }
+
+    li {
+      margin: 0.6em;
+    }
+
+    .mt-1 {
+      margin-top: 1rem!important;
+    }
+
+    .mt-2 {
+      margin-top: 2rem!important;
+    }
+
+    .mb-1 {
+      margin-bottom: 1rem!important;
+    }
+
+    .mb-2 {
+      margin-bottom: 2rem!important;
+    }
+
+    .m-auto {
+      margin: auto;
+    }
+    
+    .ui.form {
+      font-size: 1.1rem;
+    }
+
+    .concept_a {
+      color: #0072B2;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    .concept_b {
+      color: #D55E00;
+      font-weight: bold;
+      font-style: italic;
+    }
+
+    .concept_c {
+      border: 1px solid black;
+      background-color: #fff8db;
+      border-radius: 5px;
+      padding: 1px 3px;
+      font-weight: bold;
+    }
+
+    .concept_d {
+      border: 1px solid black;
+      background-color: #FF9800;
+      border-radius: 5px;
+      padding: 1px 3px;
+      font-weight: bold;
+    }
+    
+    .kg-relation {
+      border-radius: 5px;
+      font-family: Inconsolata;
+      font-size: 1.1rem;
+      background-color: #FF9800;
+      padding: 5px 5px;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .kg-head, .kg-tail {
+      border-radius: 5px;
+      font-family: Inconsolata;
+      font-size: 1.1rem;
+      background-color: #FFF3E0;
+      padding: 3px 5px;
+    }
+
+    .annotation-title {
+      text-align: center;
+      color: #06486F;
+      padding-top: 3rem;
+    }
+
+    .annotation-subtitle {
+      text-align: center;
+      color: #D55E00
+    }
+    
+    .ui.message .header {
+      font-size: 1.2rem;
+    }
+
+    .ui.message .description {
+      font-family: Inconsolata;
+      font-size: 1.2rem;
+      color: #06486F;
+    }
+  
+    .highlight {
+      background-color: yellow;
+    }
+    
+    .text-detail {
+      color: grey;
+    }
+  
+    .add-btn-container {
+      text-align: end;
+    }
+
+    .ui.styled.accordion .title {
+      padding: 2rem 1rem;
+      font-size: 1.5rem;
+      background-color: cornflowerblue;
+      color: white;
+    }
+
+    .ui.accordion .content {
+      background-color:#fbfbfb;
+    }
+
+    .ui.message .subheader {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
+<!-- HIT START -->
+<div id="hit" class="ui container">
+
+  <div class="ui grid">
+    <div class="row">
+      <div class="column">
+        <h1 class="annotation-title">
+          <strong>Implausible Summary Generation</strong>
+        </h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+
+        <!-- ACCORDION START -->
+        <div class="ui styled fluid accordion">
+
+          <!-- POLICY START -->
+          <div class="title">
+            <strong>Acceptance and Privacy Policies</strong> (click to expand/collapse)
+          </div>
+          <div class="content">
+            <h5>Acceptance Policy</h5>
+            <p>There is no obligation to participate in the task. We will not reject a job unless we observe the evidence of malicious behavior, such as random clicks or very short session times.</p>
+
+            <h5>Privacy Policy</h5>
+            <p>We may incidentally collect some personal data for the purpose of our research project, according to art. 36c and seq. of the ETH Act. Our target is to process and publish only anonymized data. Raw data will be kept confidential and secure. Only anonymized or aggregated personal data may be shared with other research partners.</p>
+            <p>Having established this, however, we should not collect any personal data in this task.</p>
+            <p>We are using the services of Amazon Mechanical Turk, Inc. and its affiliates, c/o Amazon.com, Inc., P.O. Box 81226, Seattle, WA 98108-1226, USA. Hence, the privacy policy of Amazon will apply for the processing of your personal information by Amazon.</p>
+            <p>If you wish to raise a complaint on how we have handled your personal data, or if you want to know if we hold personal data about you, you can contact our Data Protection Officer (dpo@epfl.ch) who will investigate the matter.</p>
+          </div>
+          <!-- POLICY END -->
+
+          <!-- INSTRUCTIONS START -->
+          <div class="active title">
+            <strong>Instructions</strong> (click to expand/collapse)
+          </div>
+          <div class="active content">
+            <p style="font-size: 12px; margin:0 0 0.5em 0;"><em>(WARNING: This HIT may contain adult content. Worker discretion is advised.)</em></p>
+
+            <p>Thanks for participating in this HIT!</p>
+
+            <div class="ui divider"></div>
+            <p>Given a <strong>short dialogue</strong> between two or more people, a <strong>plausible summary</strong> of this dialogue and a <strong>commonsense knowledge</strong> connecting the dialogue with the summary, you are asked to generate an <strong>implausible summary</strong> that satisfies the following conditions:
+              <ol>
+                <li><strong class="concept_a">minimally</strong> differs from the original plausible one</li>
+                <li><strong class="concept_b">violates</strong> the given commonsense knowledge</li>
+                <li>is an <strong class="concept_b">incorrect</strong> summary for the dialogue</li>
+                <li>is still <strong>relevant</strong> for the given dialogue (something that could have possibly happened within the context of the dialogue, but did not happen)
+              </ol>
+            </p>
+            <p><strong>Commonsense knowledge</strong> consists of <span class="concept_a">implicit</span> and <span class="concept_b">commonly known</span> facts about the everyday life such as <i>"Lemons are sour"</i> or <i>"If someone is hungry, then they would like to eat."</i>. It is a type of knowledge that nearly <strong>everyone knows</strong> intuitively and considers obvious, but is typically <span class="concept_a">implicit</span> which means it is rarely stated explicitly in text. For example, encyclopedic facts such as <i>"Ottawa is the capital of Canada"</i> are <span style="color: red">not</span> considered commonsense knowledge because this information can be explicitly found online (e.g. Wikipedia) and not necessarily everyone knows it.</p>
+            <p>An example of a dialogue could be:</p>
+            <div class="ui yellow message">
+              <div class="header">Dialogue</div><br>
+              <div class="description">
+                <strong>1. #Person1#:</strong> Kate, you never believe what's happened.<br>
+                <strong>2. #Person2#:</strong> What do you mean?<br>
+                <strong>3. #Person1#:</strong> Masha and Hero are getting divorced.<br>
+                <strong>4. #Person2#:</strong> You are kidding. What happened?<br>
+                <strong>5. #Person1#:</strong> Well, I don't really know, but I heard that they are having a separation for 2 months, and filed for divorce.<br>
+                <strong>6. #Person2#:</strong> That's really surprising. I always thought they are well matched. What about the kids? Who get custody?<br>
+                <strong>7. #Person1#:</strong> Masha, <strong class="highlight">it seems quiet and makable, no quarrelling about who get the house</strong> and stock and then contesting the divorce with other details worked out.<br>
+                <strong>8. #Person2#:</strong> That's the change from all the back stepping we usually hear about.<br>
+              </div>
+            </div>
+            <p>An example of a summary for this dialogue could be:</p>
+            <div class="ui yellow message">
+              <div class="header">Summary</div><br>
+              <div class="description">
+                #Person1# tells Kate that Masha and Hero are getting <strong class="highlight">a peaceful divorce</strong>. Kate feels surprised and asks about their kids.
+              </div>
+            </div>
+            <p>An example of a commonsense knowledge connecting this dialogue and the summary could be:</p>
+            <span class="kg-relation"><span class="kg-head">it seems quiet and makable, no quarrelling about who get the house</span>&nbsp;Implies&nbsp;<span class="kg-tail">peaceful divorce</span></span><br><br>
+            <p>For example, in the above summary, the highlighted phrase <strong class="highlight">"a peaceful divorce"</strong> <strong class="concept_b">is not explicitly stated </strong>in the dialogue, but rather can be <strong class="concept_a">implied</strong> from the highlighted phrase <strong class="highlight">"it seems quiet and makable, no quarrelling about who get the house and stock"</strong>  in Line 7 of the dialogue. Note that this knowledge is contextual (i.e. depends on the context given as a dialogue). Commonsense knowledge can be either general like "Lemons are sour", or contextual like in the previous example, but it is always something implicit.</p>
+            <p>Your task is to <strong class="concept_a">minimally</strong> modify the summary (i.e. change only few necessary words) so that the new summary <strong class="concept_b">violates</strong> the given commonsense knowledge and therefore is an <strong class="concept_b">incorrect</strong> summary for this dialogue.</p>
+            <p>For example, in the above summary, the given commonsense knowledge is about implying a peaceful divorce, so we can simply modify the adjective <strong><i>"peaceful"</i></strong> to <strong><i>"violent"</i></strong> and we will get the following summary that violates the given commonsense knowledge and also does not correctly summarize the dialogue.</p>
+            <div class="ui yellow message">
+              <div class="header">Implausible (Incorrect) Summary</div><br>
+              <div class="description">
+                #Person1# tells Kate that Masha and Hero are getting <strong class="highlight">a violent divorce</strong>. Kate feels surprised and asks about their kids.
+              </div>
+            </div>
+            <p><h3><strong>Minimal Change Rules</strong></h3></p>
+            <p>In this task, we are essentially looking for an implausible <i>"summary"</i> that is <strong>deceptively close</strong> (hard to differentiate from) to the original one, but nonetheless is <strong class="concept_b">incorrect</strong> and <strong class="concept_b">violates</strong> our everyday knowledge. So, please be creative, but also follow the rules below to achieve this goal:</p>
+            <ul>
+              <li>You are allowed to change <strong>up to 5 words</strong> in the summary. Note that you can also alternatively <strong>swap</strong> the existing words in place instead of replacing them as long as the resulting summary satisfies the conditions 1-4 above.</li>
+              <li>You should make sure that the implausible summary is still <strong class="concept_a">relevant</strong> to the given dialogue. So, you are not allowed to <strong>arbitrarily</strong> change the words such that it is completely out of context. For example, in the above summary, if you replaced the word <i>"divorce"</i> with <i>"dog"</i>, this can be said to satisfy the conditions, but it is now out of context because <i>"dog"</i> is nowhere mentioned in the dialogue which makes the resulting summary <strong>easy</strong> to differentiate from the original one. So, you should try to replace words with related words (e.g. antonyms etc.) or possibly other words from the dialogue that satisfies the conditions above.</li>
+              <li>You should <strong style="color: red">avoid</strong> simply negating the word in the summary unless that is the only way to achieve the goal. The goal in this task is <strong style="color: red">not</strong> to achieve the minimal difference, but to produce semantically very close summary that is however, incorrect. So, if you can creatively change 2 or 3 dependent words to achieve this, then go for it rather than changing one word such as adding/removing <i>"not"</i>.</li>
+              <li>Your change should <strong>directly target</strong> the given commonsense knowledge such that, semantically, the resulting implausible summary differs from the original one with respect to this knowledge.</li>
+            </ul>
+
+            <h3>Knowledge Relations</h3>
+            <p>Below we list the available relations with a brief description and an example. Each relationship is represented as <span class="kg-relation"><span class="kg-head">A</span>&nbsp;Relation&nbsp;<span class="kg-tail">B</span></span> where <span class="kg-head">A</span> and <span class="kg-head">B</span> refer to phrases from the context.</p>
+            <strong>Attributional Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">HasProperty</span> - A has B as a property; A can be described as B. e.g. <span class="kg-relation"><span class="kg-head">trial</span>&nbsp;HasProperty&nbsp;<span class="kg-tail">free of charge</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">CapableOf</span> - Something that A can typically do is B. e.g. <span class="kg-relation"><span class="kg-head">knife</span>&nbsp;CapableOf&nbsp;<span class="kg-tail">cut</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasA</span> - B belongs to A, either as an inherent part or due to a social construct of possession. e.g. <span class="kg-relation"><span class="kg-head">bird</span>&nbsp;HasA&nbsp;<span class="kg-tail">wing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasSubEvent</span> - A and B are events, and B happens as a subevent of A. e.g. <span class="kg-relation"><span class="kg-head">eating</span>&nbsp;HasSubEvent&nbsp;<span class="kg-tail">chewing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsA</span> - A is a subtype or a specific instance of B; every A is a B. e.g. <span class="kg-relation"><span class="kg-head">car</span>&nbsp;IsA&nbsp;<span class="kg-tail">vehicle</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">MannerOf</span> - A is a specific way to do B. Similar to "Is A", but for verbs. e.g. <span class="kg-relation"><span class="kg-head">auction</span>&nbsp;MannerOf&nbsp;<span class="kg-tail">sale</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DependsOn</span> - A depends on B. e.g. <span class="kg-relation"><span class="kg-head">postage</span>&nbsp;DependsOn&nbsp;<span class="kg-tail">weight of the box</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">CreatedBy</span> - A is created by B. e.g. <span class="kg-relation"><span class="kg-head">space rockets</span>&nbsp;CreatedBy&nbsp;<span class="kg-tail">scientists and engineers</span></span>
+              </li>
+            </ul>
+            <strong>Physical/Spatial Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">UsedFor</span> - A is used for B. The purpose of A is B. e.g. <span class="kg-relation"><span class="kg-head">hammer</span>&nbsp;UsedFor&nbsp;<span class="kg-tail">put nails in the wall</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">PartOf</span> - A is part of B. e.g. <span class="kg-relation"><span class="kg-head">word</span>&nbsp;PartOf&nbsp;<span class="kg-tail">sentence</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">MadeOf</span> - A is made up of B. e.g. <span class="kg-relation"><span class="kg-head">crowd</span>&nbsp;MadeOf&nbsp;<span class="kg-tail">people</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">AtLocation</span> - A happens at location B, or B is a typical location for A. e.g. <span class="kg-relation"><span class="kg-head">try clothes</span>&nbsp;AtLocation&nbsp;<span class="kg-tail">changing rooms</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">LocatedNear</span> - A and B are typically found near each other. e.g. <span class="kg-relation"><span class="kg-head">salt shaker</span>&nbsp;LocatedNear&nbsp;<span class="kg-tail">pepper shaker</span></span>
+              </li>
+            </ul>
+            <strong>Temporal Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">IsAfter</span> - A happens after B. e.g. <span class="kg-relation"><span class="kg-head">PersonX lands on the ground</span>&nbsp;IsAfter&nbsp;<span class="kg-tail">PersonX jumps off of the swing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsBefore</span> - A happense before B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the bank</span>&nbsp;IsBefore&nbsp;<span class="kg-tail">PersonX asks for a car loan</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HappensIn</span> - A happens during B. e.g. <span class="kg-relation"><span class="kg-head">gift exchange</span>&nbsp;HappensIn&nbsp;<span class="kg-tail">Christmas party</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">IsSimultaneous</span> - A and B happens at the same time. e.g. <span class="kg-relation"><span class="kg-head">dancing</span>&nbsp;IsSimultaneous&nbsp;<span class="kg-tail">music playing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HasPrerequisite</span> - In order for A to happen, B needs to happen. e.g. <span class="kg-relation"><span class="kg-head">dream</span>&nbsp;HasPrerequisite&nbsp;<span class="kg-tail">sleep</span></span>
+              </li>
+            </ul>
+            <strong>Causal Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Causes</span> - A causes B to happen. e.g. <span class="kg-relation"><span class="kg-head">been late for my meetings</span>&nbsp;Causes&nbsp;<span class="kg-tail">lost some important clients</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">CausesDesire</span> - A makes someone want B. e.g. <span class="kg-relation"><span class="kg-head">having no food</div>&nbsp;CausesDesire&nbsp;<span class="kg-tail">buy food</div></div>
+              </li> -->
+              <li>
+                <span class="kg-relation">Implies</span> - A implies B. e.g. <span class="kg-relation"><span class="kg-head">wet cloth</span>&nbsp;Implies&nbsp;<span class="kg-tail">caught in rain</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">HinderedBy</span> - A is less likely to happen because of B. e.g. <span class="kg-relation"><span class="kg-head">PersonX gives PersonY a ride</span>&nbsp;HinderedBy&nbsp;<span class="kg-tail">PersonX does not have a car</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">xReason</span> - A happens because of B. This is the same relation as <span class="kg-relation">Causes</div>, but in the opposite direction. e.g. <span class="kg-relation"><span class="kg-head">stay up late</span>&nbsp;xReason&nbsp;<span class="kg-tail">cannot sleep</span></span>
+              </li> -->
+            </ul>
+            <strong>Social Relations</strong>
+            <ul>
+              <!-- <li>
+                <span class="kg-relation">xAttr</span> - Person in event A has the attribute B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xAttr&nbsp;<span class="kg-tail">lawful</span></span>
+              </li> -->
+              <li>
+                <span class="kg-relation">xIntent</span> - Person in event A intends to do B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xIntent&nbsp;<span class="kg-tail">report crime</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xReact</span> - Person in event A reacts as in B. e.g. <span class="kg-relation"><span class="kg-head">PersonX makes a compliment</span>&nbsp;xReact&nbsp;<span class="kg-tail">feels good</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xNeed</span> - Person in event A needs to do B before doing A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xNeed&nbsp;<span class="kg-tail">dial 911</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xWant</span> - Person in event A wants to do B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xWant&nbsp;<span class="kg-tail">explain everything to police</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">xEffect</span> - Event A will have the effect B on the Person in event A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;xEffect&nbsp;<span class="kg-tail">starts to panic</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oReact</span> - Others will react to event A as B. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;oReact&nbsp;<span class="kg-tail">feel worried</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oWant</span> - Others will want to do B for A. e.g. <span class="kg-relation"><span class="kg-head">PersonX calls the police</span>&nbsp;oWant&nbsp;<span class="kg-tail">dispatch some officers</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">oEffect</span> - Event A will have effect B on others. e.g. <span class="kg-relation"><span class="kg-head">PersonX makes a compliment to PersonY</span>&nbsp;oEffect&nbsp;<span class="kg-tail">PersonY will smile</span></span>
+              </li>
+              <!-- <li>
+                <span class="kg-relation">Desires</span> - Person in A typically wants B. e.g. <span class="kg-relation"><span class="kg-head">animal</span>&nbsp;Desires&nbsp;<span class="kg-tail">reproduction</span></span>
+              </li> -->
+              <li>
+                <span class="kg-relation">MotivatedByGoal</span> - Someone does A because they want result B. e.g. <span class="kg-relation"><span class="kg-head">PersonX competes</span>&nbsp;MotivatedByGoal&nbsp;<span class="kg-tail">PersonX wins</span></span>
+              </li>
+            </ul>
+            <strong>Comparative Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Antonym</span> - A and B are opposites in some relevant way. e.g. <span class="kg-relation"><span class="kg-head">a lot</span>&nbsp;Antonym&nbsp;<span class="kg-tail">occasionally</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">Synonym</span> - A and B have very similar meanings. e.g. <span class="kg-relation"><span class="kg-head">blackout</span>&nbsp;Synonym&nbsp;<span class="kg-tail">lights are out</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">SimilarTo</span> - A is similar to B. e.g. <span class="kg-relation"><span class="kg-head">mixer</span>&nbsp;SimilarTo&nbsp;<span class="kg-tail">food processor</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DistinctFrom</span> - Something that is A is not B. e.g. <span class="kg-relation"><span class="kg-head">stay home</span>&nbsp;DistinctFrom&nbsp;<span class="kg-tail">go dancing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">RelatedTo</span> - A is related to B. e.g. <span class="kg-relation"><span class="kg-head">refrigerator</span>&nbsp;RelatedTo&nbsp;<span class="kg-tail">freezing</span></span>
+              </li>
+              <li>
+                <span class="kg-relation">DefinedAs</span> - A is defined as B. e.g. <span class="kg-relation"><span class="kg-head">gym</span>&nbsp;DefinedAs&nbsp;<span class="kg-tail">fine exercise facility</span></span>
+              </li>
+            </ul>
+            <strong>Other Relations</strong>
+            <ul>
+              <li>
+                <span class="kg-relation">Other</span> - A and B have some other relationship that is not listed here. In this case, please provide a description of the relationship in the <i>"Other relation"</i> field.
+              </li>
+            </ul>
+            <p>In addition, there are negative relations which are the opposite of the relations above. For example, <span class="kg-relation"><span class="kg-head">A</span>&nbsp;Not xWant&nbsp;<span class="kg-tail">B</span></span> means that the person in event A does NOT want to do B.</p>
+          </div>
+          <!-- INSTRUCTIONS END -->
+
+          <!-- DOS/DONTS START -->
+          <div class="title">
+            <strong>Dos and Don'ts</strong> (click to expand/collpase)
+          </div>
+          <div class="content">
+            <p><b>Important notes to consider:</b></p> 
+            <p style="font-size: 12px;"><em>Note, there are many other considerations, but these are the most important.</em></p>
+            <ul>
+              <li><strong>Make sure the implausible summary is <strong class="concept_a">minimally</strong> different from the original summary!</strong> This typically means changing very few words or switching the words in place in the sentence. Please see <i>Examples</i> section for some potential examples of minimal perturbation.</li>
+              <li><strong>Make sure the implausible summary <span class="concept_b">violates</span> the given commonsense knowledge.</strong> This means that your change should directly result in violation of the given commonsense knowledge for the given context (dialogue).</li>
+              <li><strong>Make sure the implausible summary does <span style="color: red">NOT</span> actually summarize the given dialogue.</strong> This means that your minimal change should produce a "summary" that is no longer a correct summary for the dialogue. If you have properly made a change that violates the given commonsense knowledge, this condition should be automatically satisfied.</li>
+              <li><strong>Make sure the implausible summary is still <span class="concept_a">relevant</span> for the given dialogue.</strong> This means that your change should not introduce any new concepts that are significantly different from the topics mentioned in the dialogue.</li>
+              <li><strong>Please, <span style="color: red">avoid</span> simple negations unless that is the only way to violate the given commonsense knowledge</strong> Most of the time, simply negating the verb in the summary might do the job, but what we are looking are more nuanced changes. Please try to be <strong>creative</strong>, but at the same time produce something that is related to the context (dialogue) such that your implausible summary <i>almost looks like</i> a correct summary, but it is not!</li>
+            </ul>
+          </div>
+          <!-- DOS/DONTS END -->
+
+          <!-- EXAMPLES START -->
+          <div class="title">
+            <strong>Examples</strong> (click to expand/collapse)
+          </div>
+          <div class="content">
+            <div class="ui grid">
+              
+              <div class="row">
+                <div class="column">
+                  <p>Here we list some examples with different <strong>minimal</strong> perturbations that you can use, but feel free to use any other <strong>creative</strong> ways if you can.</p>
+                  <h3>Example 1</h3>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>#Person1#:</strong> You're finally here! What took so long?<br>
+                      <strong>#Person2#:</strong> I got stuck in traffic again. There was a terrible traffic jam near the Carrefour intersection.<br>
+                      <strong>#Person1#:</strong> It's always rather congested down there during rush hour. Maybe you should try to find a different route to get home.<br>
+                      <strong>#Person2#:</strong> I don't think it can be avoided, to be honest.<br>
+                      <strong>#Person1#:</strong> perhaps it would be better if you started taking public transport system to work.<br>
+                      <strong>#Person2#:</strong> I think it's something that I'll have to consider. The public transport system is pretty good.<br>
+                      <strong>#Person1#:</strong> It would be better for the environment, too.<br>
+                      <strong>#Person2#:</strong> I know. I feel bad about how much my car is adding to the pollution problem in this city.<br>
+                      <strong>#Person1#:</strong> Taking the subway would be a lot less stressful than driving as well.<br>
+                      <strong>#Person2#:</strong> The only problem is that I'm going to really miss having the freedom that you have with a car.<br>
+                      <strong>#Person1#:</strong> Well, when it's nicer outside, you can start biking to work. That will give you just as much freedom as your car usually provides.<br>
+                      <strong>#Person2#:</strong> That's true. I could certainly use the exercise!<br>
+                      <strong>#Person1#:</strong> So, are you going to quit driving to work then?<br>
+                      <strong>#Person2#:</strong> <strong class="highlight">Yes, it's not good for me or for the environment.</strong>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Summary</div><br>
+                    <div class="description">
+                      #Person2# decides to follow #Person1#'s suggestions on <strong class="highlight">quitting driving to work and will try to use public transportations.</strong>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">Yes, it's not good for me or for the environment.</span>&nbsp;Implies&nbsp;<span class="kg-tail">quitting driving to work and will try to use public transportations</span></span></p>
+                  <p>Here we can simply swap the actions of quitting driving with using public transportation or replace verbs/nouns to create a contradiction.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Implausible Summary 1</div><br>
+                    <div class="description">
+                      #Person2# decides to follow #Person1#'s suggestions on <strong class="highlight">quitting using public transportations and will try to drive to work.</strong>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Implausible Summary 2</div><br>
+                    <div class="description">
+                      #Person2# decides to follow #Person1#'s suggestions on <strong class="highlight">starting</strong> driving to work and will try to use public transportations.
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Implausible Summary 3</div><br>
+                    <div class="description">
+                      #Person2# decides to follow #Person1#'s suggestions on quitting driving to work and will try to use <strong class="highlight">his car.</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui divider"></div>
+
+              <div class="row">
+                <div class="column">
+                  <h3>Example 2</h3>
+                  <div class="ui yellow message">
+                    <div class="header">Dialogue</div><br>
+                    <div class="description">
+                      <strong>#Person1#</strong>: Good coming. What can I do for you?<br>
+                      <strong>#Person2#</strong>: I'm in Room 309. I'm checking out today. Can I have my bill now?<br>
+                      <strong>#Person1#</strong>: Certainly. Please wait a moment. Here you are.<br>
+                      <strong>#Person2#</strong>: Thanks. Wait... What's this? The 30 dollar for?<br>
+                      <strong>#Person1#</strong>: Excuse me... The charge for your laundry service on Nov. 20th.<br>
+                      <strong>#Person2#</strong>: But I did't take any laundry service during my stay here. I think you have added someone else's.<br>
+                      <strong>#Person1#</strong>: Ummmm...Sorry, would you mind waiting a moment? We check it with the department concerned.<br>
+                      <strong>#Person2#</strong>: No. As long as we get this straightened out.<br>
+                      <strong>#Person1#</strong>: I'm very sorry. There has been a mistake. We'll correct the bill. Please take a look.<br>
+                      <strong>#Person2#</strong>: <strong class="highlight">Okay, here you are.</strong><br>
+                      <strong>#Person1#</strong>: Goodbye.
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Summary</div><br>
+                    <div class="description">
+                      #Person2# finds #Person2# being mischarged. #Person1# corrects the bill and <strong class="highlight">#Person2# pays for it.</strong>
+                    </div>
+                  </div>
+                  <p><strong>Commonsense Knowledge</strong></p>
+                  <p><span class="kg-relation"><span class="kg-head">Okay, here you are.</span>&nbsp;Implies&nbsp;<span class="kg-tail">#Person2# pays for it</span></span></p>
+                  <p>Here the implication is that #Person2# pays for the bill and leaves. So, we can simply change this part.</p>
+                  <div class="ui yellow message">
+                    <div class="header">Implausible Summary 1</div><br>
+                    <div class="description">
+                      #Person2# finds #Person2# being mischarged. #Person1# corrects the bill and <strong class="highlight">#Person2# leaves without paying.</strong>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Implausible Summary 2</div><br>
+                    <div class="description">
+                      #Person2# finds #Person2# being mischarged. #Person1# corrects the bill and <strong class="highlight">#Person2# pays without leaving.</strong>
+                    </div>
+                  </div>
+                  <div class="ui yellow message">
+                    <div class="header">Implausible Summary 3</div><br>
+                    <div class="description">
+                      #Person2# finds #Person2# being mischarged. #Person1# corrects the bill and <strong class="highlight">#Person2# makes #Person1# pay for it.</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- EXAMPLES END -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <!-- MTURK INPUT START -->
+        <form name='mturk_form' method='post' id='mturk_form' action="https://mturk.com/mturk/externalSubmit" class="ui form">
+          <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
+          <input type='hidden' name='ee' id='ee'/>
+          <span hidden>${id}</span>
+          
+          <h3><strong>Task</strong></h3>
+          <p>
+            Given the following <strong>short dialogue</strong> between two or more people, <strong>a plausible summary</strong> of the dialogue, and a list of <strong>commonsense knowledge</strong> instances connecting the dialogue and the given summary, 
+            please select one or more commonsense knowledge instances and write an <strong>implausible summary</strong> that satisfies the following conditions:
+            <ol>
+              <li><strong class="concept_a">minimally</strong> differs from the original plausible summary</li>
+              <li><strong class="concept_b">violates</strong> the chosen commonsense knowledge</li>
+              <li>is an <strong class="concept_b">incorrect</strong> summary for the dialogue</li>
+              <li>is still <strong>relevant</strong> for the given dialogue (something that could have possibly happened within the context of the dialogue, but did not happen)
+            </ol>
+          </p>
+          <p>Please, follow the guidelines mentioned above to write an implausible summary.</p>
+          <p>There are typically multiple ways to generate this implausible summary, so feel free to add 2 more alternatives by using the <i>Add Another</i> button. Note that <strong>you will be paid a bonus for each additional implausible summary that satisfies our conditions for this task.</strong></p>
+          <p><i>Note that you are free to modify <strong class="concept_a">any</strong> part of the summary, not only the highlighted parts as long as it satisfies our conditions for this task.</i></p>
+
+          <div class="ui yellow message">
+            <div class="header">Dialogue</div><br>
+            <div class="description">
+              ${dialogue}
+            </div>
+          </div>
+
+          <div class="ui yellow message">
+            <div class="header">Summary</div><br>
+            <div class="description">
+              ${summary}
+            </div>
+          </div>
+
+          <p><strong>Commonsense Knowledge</strong></p>
+          <p hidden id="ck-options">
+            ${knowledge}
+          </p>
+          <div id="ck-options-container"></div>
+          <br>
+
+          <p><i>For each annotation, choose one or more commonsense knowledge instances and write a new summary that satisfies the conditions given above.</span></i></p>
+
+          <div class="ui divider"></div>
+
+          <div class="ui grid">
+            
+            <div class="row">
+              <div class="sixteen wide column">
+                <div class="required field">
+                  <label>Commonsense Knowledge</label>
+                  <div id="alt-target1-ck-container" class="ui fluid search multiple selection clearable dropdown">
+                    <input type="hidden" name="alt-target1-ck" id="alt-target1-ck">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Commonsense Knowledge</div>
+                    <div class="menu"></div>
+                  </div>
+                  <div id="alt-target1-ck-error" class="ui pointing red basic label">
+                    Please select a commonsense knowledge.
+                  </div>
+                </div>
+              </div>
+              <div class="sixteen wide column mt-1">
+                <div class="field">
+                  <label>Implausible Summary 1*</label>
+                  <textarea rows="2" name="alt-target1" id="alt-target1" placeholder="Write a minimally different incorrect summary that violates the given commonsense knowledge." required></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="row" id="alt-target2-container">
+              <div class="sixteen wide column">
+                <div class="field">
+                  <label>Commonsense Knowledge</label>
+                  <div id="alt-target2-ck-container" class="ui fluid search multiple selection clearable dropdown">
+                    <input type="hidden" name="alt-target2-ck" id="alt-target2-ck">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Commonsense Knowledge</div>
+                    <div class="menu"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sixteen wide column mt-1">
+                <div class="field">
+                  <label>Implausible Summary 2</label>
+                  <textarea rows="2" name="alt-target2" id="alt-target2" placeholder="Write a minimally different incorrect summary that violates the given commonsense knowledge."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="row" id="alt-target3-container">
+              <div class="sixteen wide column">
+                <div class="field">
+                  <label>Commonsense Knowledge</label>
+                  <div id="alt-target3-ck-container" class="ui fluid search multiple selection clearable dropdown">
+                    <input type="hidden" name="alt-target3-ck" id="alt-target3-ck">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Commonsense Knowledge</div>
+                    <div class="menu"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sixteen wide column mt-1">
+                <div class="field">
+                  <label>Implausible Summary 3</label>
+                  <textarea rows="2" name="alt-target3" id="alt-target3" placeholder="Write a minimally different incorrect summary that violates the given commonsense knowledge."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="thirteen wide column"></div>
+              <div class="three wide column add-btn-container">
+                <button class="ui secondary button" id="add-target-btn" type="button">
+                  <i class="plus icon"></i>
+                  Add Another
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="column">
+                <div class="field">
+                  <div class="ui checkbox">
+                    <input type="checkbox" name="no-alt-target" id="no-alt-target" value="1">
+                    <label>If you think that something is wrong with the given commonsense knowledge or it is somehow not possible to come up with a meaningful implausible summary, then check the box on the left and provide us with the description of the problem below.</label>
+                  </div>
+                </div>
+                <div class="field" id="no-alt-target-feedback-container" hidden>
+                  <textarea id="no-alt-target-feedback" name="no-alt-target-feedback" rows=2 placeholder="Describe the issue with the given example"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ui divider"></div>
+          <br>
+
+          <div class="ui grid">
+            <!-- OPTIONAL FEEDBACK --> 
+            <div class="centered row">
+              <div class="eight wide column">
+                <p>(Optional) Please let us know if anything was unclear, if you experienced any issues, or if you have any other feedback for us.</p>
+                <textarea id="feedback" name="feedback" rows=3></textarea>
+              </div>
+            </div>
+            <br>
+            <!-- SUBMIT BUTTON --> 
+            <div class="centered row">
+              <div class="eight wide column" style="text-align: center">
+                <input id="submitButton" onclick="getnext()" type="submit" class="ui primary button" value="Submit">
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- MTURK INPUT END -->
+        <script language='Javascript'>turkSetAssignmentID();</script>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- HIT END -->
+
+<!-- BOOSTRAP JS -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<!-- HITPUB JS -->
+<script id="hitpub_js">
+// TimeMe.js
+(function () { var e, t; e = this, t = function () { var r = { startStopTimes: {}, idleTimeoutMs: 3e4, currentIdleTimeMs: 0, checkStateRateMs: 250, active: !1, idle: !1, currentPageName: "default-page-name", timeElapsedCallbacks: [], userLeftCallbacks: [], userReturnCallbacks: [], trackTimeOnElement: function (e) { var t = document.getElementById(e); t && (t.addEventListener("mouseover", function () { r.startTimer(e) }), t.addEventListener("mousemove", function () { r.startTimer(e) }), t.addEventListener("mouseleave", function () { r.stopTimer(e) }), t.addEventListener("keypress", function () { r.startTimer(e) }), t.addEventListener("focus", function () { r.startTimer(e) })) }, getTimeOnElementInSeconds: function (e) { var t = r.getTimeOnPageInSeconds(e); return t || 0 }, startTimer: function (e, t) { if (e || (e = r.currentPageName), void 0 === r.startStopTimes[e]) r.startStopTimes[e] = []; else { var n = r.startStopTimes[e], i = n[n.length - 1]; if (void 0 !== i && void 0 === i.stopTime) return } r.startStopTimes[e].push({ startTime: t || new Date, stopTime: void 0 }), r.active = !0, r.idle = !1 }, stopAllTimers: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.stopTimer(e[t]) }, stopTimer: function (e, t) { e || (e = r.currentPageName); var n = r.startStopTimes[e]; void 0 !== n && 0 !== n.length && (void 0 === n[n.length - 1].stopTime && (n[n.length - 1].stopTime = t || new Date), r.active = !1) }, getTimeOnCurrentPageInSeconds: function () { return r.getTimeOnPageInSeconds(r.currentPageName) }, getTimeOnPageInSeconds: function (e) { var t = r.getTimeOnPageInMilliseconds(e); return void 0 === t ? void 0 : t / 1e3 }, getTimeOnCurrentPageInMilliseconds: function () { return r.getTimeOnPageInMilliseconds(r.currentPageName) }, getTimeOnPageInMilliseconds: function (e) { var t = r.startStopTimes[e]; if (void 0 !== t) { for (var n = 0, i = 0; i < t.length; i++) { var s = t[i].startTime, o = t[i].stopTime; void 0 === o && (o = new Date), n += o - s } return Number(n) } }, getTimeOnAllPagesInSeconds: function () { for (var e = [], t = Object.keys(r.startStopTimes), n = 0; n < t.length; n++) { var i = t[n], s = r.getTimeOnPageInSeconds(i); e.push({ pageName: i, timeOnPage: s }) } return e }, setIdleDurationInSeconds: function (e) { var t = parseFloat(e); if (!1 !== isNaN(t)) throw { name: "InvalidDurationException", message: "An invalid duration time (" + e + ") was provided." }; return r.idleTimeoutMs = 1e3 * e, this }, setCurrentPageName: function (e) { return r.currentPageName = e, this }, resetRecordedPageTime: function (e) { delete r.startStopTimes[e] }, resetAllRecordedPageTimes: function () { for (var e = Object.keys(r.startStopTimes), t = 0; t < e.length; t++)r.resetRecordedPageTime(e[t]) }, resetIdleCountdown: function () { r.idle && r.triggerUserHasReturned(), r.idle = !1, r.currentIdleTimeMs = 0 }, callWhenUserLeaves: function (e, t) { this.userLeftCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, callWhenUserReturns: function (e, t) { this.userReturnCallbacks.push({ callback: e, numberOfTimesToInvoke: t }) }, triggerUserHasReturned: function () { if (!r.active) for (var e = 0; e < this.userReturnCallbacks.length; e++) { var t = this.userReturnCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.startTimer() }, triggerUserHasLeftPage: function () { if (r.active) for (var e = 0; e < this.userLeftCallbacks.length; e++) { var t = this.userLeftCallbacks[e], n = t.numberOfTimesToInvoke; (isNaN(n) || void 0 === n || 0 < n) && (t.numberOfTimesToInvoke -= 1, t.callback()) } r.stopAllTimers() }, callAfterTimeElapsedInSeconds: function (e, t) { r.timeElapsedCallbacks.push({ timeInSeconds: e, callback: t, pending: !0 }) }, checkState: function () { for (var e = 0; e < r.timeElapsedCallbacks.length; e++)r.timeElapsedCallbacks[e].pending && r.getTimeOnCurrentPageInSeconds() > r.timeElapsedCallbacks[e].timeInSeconds && (r.timeElapsedCallbacks[e].callback(), r.timeElapsedCallbacks[e].pending = !1); !1 === r.idle && r.currentIdleTimeMs > r.idleTimeoutMs ? (r.idle = !0, r.triggerUserHasLeftPage()) : r.currentIdleTimeMs += r.checkStateRateMs }, visibilityChangeEventName: void 0, hiddenPropName: void 0, listenForVisibilityEvents: function () { void 0 !== document.hidden ? (r.hiddenPropName = "hidden", r.visibilityChangeEventName = "visibilitychange") : void 0 !== document.mozHidden ? (r.hiddenPropName = "mozHidden", r.visibilityChangeEventName = "mozvisibilitychange") : void 0 !== document.msHidden ? (r.hiddenPropName = "msHidden", r.visibilityChangeEventName = "msvisibilitychange") : void 0 !== document.webkitHidden && (r.hiddenPropName = "webkitHidden", r.visibilityChangeEventName = "webkitvisibilitychange"), document.addEventListener(r.visibilityChangeEventName, function () { document[r.hiddenPropName] ? r.triggerUserHasLeftPage() : r.triggerUserHasReturned() }, !1), window.addEventListener("blur", function () { r.triggerUserHasLeftPage() }), window.addEventListener("focus", function () { r.triggerUserHasReturned() }), document.addEventListener("mousemove", function () { r.resetIdleCountdown() }), document.addEventListener("keyup", function () { r.resetIdleCountdown() }), document.addEventListener("touchstart", function () { r.resetIdleCountdown() }), window.addEventListener("scroll", function () { r.resetIdleCountdown() }), setInterval(function () { r.checkState() }, r.checkStateRateMs) }, websocket: void 0, websocketHost: void 0, setUpWebsocket: function (e) { if (window.WebSocket && e) { var t = e.websocketHost; try { r.websocket = new WebSocket(t), window.onbeforeunload = function () { r.sendCurrentTime(e.appId) }, r.websocket.onopen = function () { r.sendInitWsRequest(e.appId) }, r.websocket.onerror = function (e) { console && console.log("Error occurred in websocket connection: " + e) }, r.websocket.onmessage = function (e) { console && console.log(e.data) } } catch (e) { console && console.error("Failed to connect to websocket host.  Error:" + e) } } return this }, websocketSend: function (e) { r.websocket.send(JSON.stringify(e)) }, sendCurrentTime: function (e) { var t = { type: "INSERT_TIME", appId: e, timeOnPageMs: r.getTimeOnCurrentPageInMilliseconds(), pageName: r.currentPageName }; r.websocketSend(t) }, sendInitWsRequest: function (e) { var t = { type: "INIT", appId: e }; r.websocketSend(t) }, initialize: function (e) { var t = r.idleTimeoutMs || 30, n = r.currentPageName || "default-page-name", i = void 0, s = void 0; e && (t = e.idleTimeoutInSeconds || t, n = e.currentPageName || n, i = e.websocketOptions, s = e.initialStartTime), r.setIdleDurationInSeconds(t).setCurrentPageName(n).setUpWebsocket(i).listenForVisibilityEvents(), r.startTimer(void 0, s) } }; return r }, "undefined" != typeof module && module.exports ? module.exports = t() : "function" == typeof define && define.amd ? define([], function () { return e.TimeMe = t() }) : e.TimeMe = t() }).call(this);
+function displayEmoji(){jQuery(this).text(function(r){for(var e=[],t=0,i=0;t<r.length;){var o=r[t++];if(o<128)e[i++]=String.fromCharCode(o);else if(o>191&&o<224){var a=r[t++];e[i++]=String.fromCharCode((31&o)<<6|63&a)}else if(o>239&&o<365){var n=((7&o)<<18|(63&(a=r[t++]))<<12|(63&(f=r[t++]))<<6|63&r[t++])-65536;e[i++]=String.fromCharCode(55296+(n>>10)),e[i++]=String.fromCharCode(56320+(1023&n))}else{a=r[t++];var f=r[t++];e[i++]=String.fromCharCode((15&o)<<12|(63&a)<<6|63&f)}}return e.join("")}(JSON.parse(jQuery(this).attr("data-emoji-bytes"))))}
+TimeMe.initialize({
+  currentPageName: "task",
+  idleTimeoutInSeconds: 30
+});
+
+$(document).ready(function() {
+  $('.ui.accordion').accordion();
+  $('.ui.dropdown').dropdown({
+    fullTextSearch: true
+  });
+  $('.ui.clearable.dropdown').dropdown({
+    fullTextSearch: true,
+    clearable: true
+  });
+
+  var ckOptions = [];
+  
+  try {
+    ckOptions = JSON.parse($('#ck-options').text().replaceAll('"', '').replaceAll("'", '"').replaceAll("#squote#", "'"));
+  } catch(e) {}
+
+  ckOptions.forEach(function(option, index) {
+    let head = $('<span>').addClass('kg-head').text(option["head"]);
+    let tail = $('<span>').addClass('kg-tail').text(option["tail"]);
+    let knowledge = $('<span>').addClass('kg-relation').append(head.clone()).append('&nbsp;'+option["relation"]+'&nbsp;').append(tail.clone());
+    $('#ck-options-container').append(knowledge.clone());
+    $('#ck-options-container').append($('<br>')).append($('<br>'));
+    let item = $('<div>').addClass('item').attr('data-value', option["id"]);
+    item.append(knowledge.clone());
+    for (let i=1; i<=3; i++) {
+      $('#alt-target'+i+'-ck-container .menu').append(item.clone());
+    }
+  });
+
+  for (let i=1; i<=1; i++) {
+    $('#alt-target'+i+'-ck-error').hide();
+    $('#alt-target'+i+'-ck').on('change', function() {
+      $('#alt-target'+i+'-ck-error').hide();
+    });
+  }
+
+  $('span.emoji-bytes').each(displayEmoji);
+  for (let i=2; i<=3; i++) {
+    $('#alt-target'+i+'-container').hide();
+  }
+
+  $('#add-target-btn').click(function() {
+    if ($('#alt-target2-container').is(':hidden')) {
+      $('#alt-target2-container').show();
+    } else if ($('#alt-target3-container').is(':hidden')) {
+      $('#alt-target3-container').show();
+      $('#add-target-btn').attr("disabled", true);
+    }
+  })
+
+  $('#no-alt-target').on('change', function() {
+    if ($(this).is(':checked')) {
+      $('#no-alt-target-feedback-container').show();
+      $('#no-alt-target-feedback').attr('required', true);
+    } else {
+      $('#no-alt-target-feedback-container').hide();
+      $('#no-alt-target-feedback').attr('required', false);
+    }
+  })
+
+  $('#submitButton').click(function () {
+    try {
+      if (!$('#no-alt-target').is(':checked')) {
+        if ($('#alt-target1-ck').val() == "") {
+          $('#alt-target1-ck-error').show();
+          return false;
+        }
+      }
+
+      $('input[name=ee]').attr('value', TimeMe.getTimeOnCurrentPageInSeconds());
+    } catch {
+    }
+    return true;
+  });
+});
+</script>
+</body>
+</html>

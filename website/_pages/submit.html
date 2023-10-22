@@ -1,0 +1,63 @@
+---
+layout: page
+permalink: /submit/
+title: Submit
+---
+
+<form class="ui equal width form">
+    <div class="fields">
+        <div class="required field">
+            <label>Contributor</label>
+            <input type="text" name="contributor" placeholder="e.g. EPFL NLP Lab">
+        </div>
+        <div class="required field">
+            <label>Task(s)</label>
+            <div class="ui fluid search selection clearable multiple dropdown">
+                <input type="hidden" name="task" id="task">
+                <i class="dropdown icon"></i>
+                <div class="default text">Select Task(s)</div>
+                <div class="menu">
+                    <div class="item" data-value="dialogue">Dialogue</div>
+                    <div class="item" data-value="summarization">Dialogue Summarization</div>
+                    <div class="item" data-value="intent">Intent Detection</div>
+                    <div class="item" data-value="safety">Safety Detection</div>
+                    <div class="item" data-value="stance">Stance Classification</div>
+                    <div class="header">Machine Translation</div>
+                    <div class="item" data-value="mt_en_de">en-de</div>
+                    <div class="item" data-value="mt_en_de">en-fr</div>
+                    <div class="item" data-value="mt_en_de">en-ru</div>
+                    <div class="item" data-value="mt_en_de">zh-en</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fields">
+        <div class="required field">
+            <label>Model Name</label>
+            <input type="text" name="task" placeholder="e.g. Llama-2">
+        </div>
+        <div class="required field">
+            <label>Model Size</label>
+            <input type="text" name="params" placeholder="e.g. 7B">
+        </div>
+        <div class="field">
+            <label>Model Link</label>
+            <input type="text" name="model-link" placeholder="e.g. https://huggingface.co/t5-base">
+        </div>
+    </div>
+    <div class="field">
+        <label>Comments</label>
+        <textarea rows="3" name="comments" placeholder=""></textarea>
+    </div>
+    <div class="ui placeholder segment">
+        <div class="ui icon header">
+          <i class="file outline icon"></i>
+          No predictions uploaded.
+        </div>
+        <div class="ui secondary button">Upload</div>
+      </div>
+    <button class="ui primary labeled icon button">
+        <i class="paper plane icon"></i>
+        Submit
+    </button>
+  </form>
