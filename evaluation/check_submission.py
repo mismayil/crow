@@ -1,3 +1,19 @@
+'''
+This script can be used to check the format of the submission file(s) for the CRoW leaderboard.
+The script checks the following:
+- The submission file is a valid json file
+- Each sample in the submission file has the following fields: `task`, `example_id`, `prediction`
+- The `task` field is a string and is one of the CRoW tasks
+- The `example_id` field is a string and is a valid sha256 hash
+- The `prediction` field is an integer and is either 0 or 1
+- The submission file contains the correct number of samples for each task
+- Each `example_id` is unique in the submission file
+
+Usage:
+
+python evaluation/check_submission.py <path_to_submission_file_1> <path_to_submission_file_2> ...
+
+'''
 import argparse
 import json
 import re
