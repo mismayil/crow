@@ -333,14 +333,15 @@ p > img {
 }
 
 nav {
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  float: none;
+  text-align: center;
+  // margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
 
   @include mobile {
     float: none;
-    margin-top: 9px;
+    // margin-top: 9px;
     display: block;
     font-size: 16px;
   }
@@ -1227,5 +1228,12 @@ pre {
   }
   .tasks-table-container {
     overflow-x: scroll;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .ui.grid>.row.header-row {
+    text-align: center;
+    justify-content: center;
   }
 }
