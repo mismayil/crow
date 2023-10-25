@@ -1,6 +1,6 @@
 # CRoW: Benchmarking Commonsense Reasoning in Real-World Tasks
 
-[Paper]() | [Website](https://mete.is/crow) | [Leaderboard](https://mete.is/crow/leaderboard) | [Download data](https://mete.is/crow/tasks)
+[Paper](http://arxiv.org/abs/2310.15239) | [Website](https://mete.is/crow) | [Leaderboard](https://mete.is/crow/leaderboard) | [Download data](https://mete.is/crow/tasks)
 
 CRoW is a multi-task benchmark to evaluate commonsense reasoning ability of NLP systems in solving real-world tasks where this ability is required.
 
