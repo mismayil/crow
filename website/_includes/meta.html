@@ -1,6 +1,9 @@
 <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+<meta name="author" content="{{ site.author }}" />
+<meta name="description" content="{{ page.description }}">
+<meta property="og:locale" content="en_US">
 
 {% if page.excerpt %}
 <meta property="og:description" content="{{ page.excerpt| strip_html }}" />
@@ -9,7 +12,9 @@
 {% else %}
 <meta property="og:description" content="{{ site.description }}" />
 {% endif %}
-<meta name="author" content="{{ site.name }}" />
+
+<meta name="og:url" content="{{ site.url }}">
+<meta property="og:site_name" content="{{ site.name }}">
 
 {% if page.title %}
 <meta property="og:title" content="{{ page.title }}" />
