@@ -38,7 +38,7 @@
       <div class="wrapper-masthead">
         <div class="container">
           <header class="masthead clearfix">
-            <div class="ui grid">
+            <div class="ui container grid">
               <div class="row header-row">
                 <div class="col">
                   <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.baseurl }}{{ site.avatar }}" alt="{{ site.title }}" /></a>
@@ -52,10 +52,10 @@
               <div class="centered row">
                 <div class="col">
                   <nav>
-                    <a href="{{ site.baseurl }}/">Home</a>
-                    <a href="{{ site.baseurl }}/tasks">Tasks</a>
-                    <a href="{{ site.baseurl }}/leaderboard">Leaderboard</a>
-                    <a href="{{ site.baseurl }}/getting-started">Getting Started</a>
+                    <a id="home" href="{{ site.baseurl }}/">Home</a>
+                    <a id="tasks" href="{{ site.baseurl }}/tasks">Tasks</a>
+                    <a id="leaderboard" href="{{ site.baseurl }}/leaderboard">Leaderboard</a>
+                    <a id="getting-started" href="{{ site.baseurl }}/getting-started">Getting Started</a>
                     <!-- <a href="{{ site.baseurl }}/submit">Submit</a> -->
                     <a href="https://forms.gle/Eb4Dr4PPGNGygTeJ8" target="_blank">Submit</a>
                   </nav>
@@ -83,4 +83,16 @@
 
     {% include analytics.html %}
   </body>
+  <script>
+    let path = window.location.pathname;
+    let menu = ["home", "tasks", "leaderboard", "getting-started"];
+
+    for (let i = 0; i < menu.length; i++) {
+      if (path.includes(menu[i]) || (path == "/crow/" && menu[i] == "home")) {
+        $("#" + menu[i]).addClass("active");
+      } else {
+        $("#" + menu[i]).removeClass("active");
+      }
+    }
+  </script>
 </html>
